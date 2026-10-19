@@ -61,7 +61,7 @@ odds_api:
   bulk_bookmakers: draftkings,fanduel,betmgm,williamhill_us,espnbet,fanatics,betrivers,pinnacle,kalshi,lowvig
   derivative_markets: {NFL: "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1", NBA: "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1"}   # alternate_team_totals added 2026-10-19 (reviewer-approved): DraftKings lists team totals only as alternates
   prop_markets: {NFL: "player_pass_yds,player_rush_yds,player_reception_yds,player_receptions", NBA: "player_points,player_rebounds,player_assists,player_threes"}
-  event_bookmakers: draftkings,fanduel,betmgm,pinnacle,kalshi,lowvig
+  event_bookmakers: draftkings,fanduel,betmgm,williamhill_us,espnbet,fanatics,betrivers,pinnacle,kalshi,lowvig   # 10 books = 1 region, same credits; more books for the M1 prop consensus
   max_credits_per_run: 600
   monthly_soft_cap: 16000        # per billing cycle
   cycle_reset_day: 18            # 20K plan resets on the 18th
@@ -122,6 +122,23 @@ m2:                              # NFL model information check; pre-registered a
   carryover: 0.5                 # last season's rating shrunk halfway to the league mean
   holm_alpha_one_sided: 0.025
   diag_disagreement_pts: 2.0     # diagnostic only, never a gate
+
+m1:                              # NBA points props model; spec frozen 2026-10-19, pending reviewer OK; nothing evaluated yet
+  market: player_points          # main posted line per player; alternates excluded
+  venues: [draftkings, fanduel]
+  min_projected_minutes: 12      # NBA rule (Oct 16, 2026): no unders for players expected under 12 min; universe excludes them entirely
+  consensus_books: [pinnacle, betmgm, williamhill_us, espnbet, fanatics, betrivers, draftkings, fanduel]   # venue always excluded
+  consensus_min_books: 3         # at the exact line, fresh, venue excluded
+  consensus_devig: power
+  decision_scans: [nba-evening, nba-late]
+  close_max_gap_min: 10          # close snapshot must be within 10 minutes before tip
+  training_seasons: ["2023-24", "2024-25", "2025-26"]
+  historical_injury_features: false   # no timestamped archive before 2026-10-19; forward-only
+  sims: 10000
+  blend: {space: logit, ridge_lambda: 50.0, burn_in_game_dates: 20}
+  gate0: {metric: log_score_exact_points, must_beat: [rolling10_negbin, shrunk_rate_x_recent_minutes]}
+  gateA: {min_forecasts: 500, min_game_dates: 100, metric: log_loss_over_under, cluster: game_date, ci: 0.95}
+  gateB: {research_min_ev: 0.03, clv_benchmark: leave_venue_out_consensus_close}
 
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"
