@@ -1,0 +1,122 @@
+{
+ "id": "nfl-20251026-40c2ebd9-team_totals-denver-broncos-under-26p5",
+ "contract": "NFL|40c2ebd9ddd5ce8ff5b1ada730bb1785|team_totals|denver-broncos|under|+26.5",
+ "sport": "NFL",
+ "event_id": "40c2ebd9ddd5ce8ff5b1ada730bb1785",
+ "game": "Dallas Cowboys @ Denver Broncos",
+ "commence_time": "2025-10-26T20:25:00Z",
+ "family": "team_totals",
+ "group": "alt",
+ "side": "Under",
+ "description": "Denver Broncos",
+ "point": 26.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 2.36,
+ "effective_dec": 2.36,
+ "venue_quote_age_s": 1.0,
+ "fair_prob": 0.43647433606743036,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.436474,
+  "multiplicative": 0.439898,
+  "additive": 0.437613
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.436474,
+   "age_s": 0.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.015386,
+ "p_adj": 0.421089,
+ "ev_quoted": 0.030079,
+ "ev_adj_net": -0.013731,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.013731,
+ "decision_at": "2025-10-26T13:45:39+00:00",
+ "api_retrieved_at": "2026-10-19T06:18:46.632494+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054521_americanfootball_nfl_hist_ba38e58d.json.gz",
+  "raw/2026-10-19/061846_americanfootball_nfl_hist_event_40c2ebd9_90323118.json.gz"
+ ],
+ "scan": "d1-w8-sun-morning",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "week": 8,
+ "scan_name": "sun-morning",
+ "scan_at": "2025-10-26T09:48:00-04:00",
+ "snapshot_at": "2025-10-26T13:45:39Z",
+ "report_family": "team_totals",
+ "threshold": 0.03,
+ "exec": {
+  "10": {
+   "available": true,
+   "price_dec": 2.36,
+   "ev_at_orig_fair": 0.030079,
+   "eligible": true,
+   "requested": "2025-10-26T13:55:39Z",
+   "snapshot": "2025-10-26T13:55:38Z",
+   "actual_delay_min": 9.98,
+   "ref": "raw/2026-10-19/061851_americanfootball_nfl_hist_event_40c2ebd9_3d474e75.json.gz",
+   "clv_pinnacle": {
+    "prob": -0.008156,
+    "ev": -0.019248,
+    "logodds": -0.033489
+   }
+  },
+  "30": {
+   "available": true,
+   "price_dec": 2.36,
+   "ev_at_orig_fair": 0.030079,
+   "eligible": true,
+   "requested": "2025-10-26T14:15:39Z",
+   "snapshot": "2025-10-26T14:15:38Z",
+   "actual_delay_min": 29.98,
+   "ref": "raw/2026-10-19/061852_americanfootball_nfl_hist_event_40c2ebd9_d592e7ad.json.gz",
+   "clv_pinnacle": {
+    "prob": -0.008156,
+    "ev": -0.019248,
+    "logodds": -0.033489
+   }
+  }
+ },
+ "close_requested_at": "2025-10-26T20:15:38+00:00",
+ "close_api_retrieved_at": "2026-10-19T06:18:54.510639+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/061854_americanfootball_nfl_hist_event_40c2ebd9_e33d55c5.json.gz"
+ ],
+ "close_pinnacle_p": 0.415573,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 23.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": -0.008156,
+  "ev": -0.019247,
+  "logodds": -0.033488
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "close_snapshot": "2025-10-26T20:15:38Z",
+ "close_gap_min": 9.37,
+ "close_gap_ok": true,
+ "result": "loss",
+ "units": -1.0
+}

@@ -1,0 +1,122 @@
+{
+ "id": "nfl-20251102-b08df670-team_totals-los-angeles-rams-under-28p5",
+ "contract": "NFL|b08df670a95f1809707b335dc75081c6|team_totals|los-angeles-rams|under|+28.5",
+ "sport": "NFL",
+ "event_id": "b08df670a95f1809707b335dc75081c6",
+ "game": "New Orleans Saints @ Los Angeles Rams",
+ "commence_time": "2025-11-02T21:05:00Z",
+ "family": "team_totals",
+ "group": "alt",
+ "side": "Under",
+ "description": "Los Angeles Rams",
+ "point": 28.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 2.24,
+ "effective_dec": 2.24,
+ "venue_quote_age_s": 29.0,
+ "fair_prob": 0.47809416762762347,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.478094,
+  "multiplicative": 0.479275,
+  "additive": 0.478486
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.478094,
+   "age_s": 2.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.015046,
+ "p_adj": 0.463048,
+ "ev_quoted": 0.070931,
+ "ev_adj_net": 0.029727,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.029727,
+ "decision_at": "2025-11-02T19:40:39+00:00",
+ "api_retrieved_at": "2026-10-19T06:19:06.770059+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054529_americanfootball_nfl_hist_6c8158f1.json.gz",
+  "raw/2026-10-19/061906_americanfootball_nfl_hist_event_b08df670_a0b22d44.json.gz"
+ ],
+ "scan": "d1-w9-sun-late",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "week": 9,
+ "scan_name": "sun-late",
+ "scan_at": "2025-11-02T14:45:00-05:00",
+ "snapshot_at": "2025-11-02T19:40:39Z",
+ "report_family": "team_totals",
+ "threshold": 0.03,
+ "exec": {
+  "10": {
+   "available": true,
+   "price_dec": 2.1,
+   "ev_at_orig_fair": 0.003998,
+   "eligible": false,
+   "requested": "2025-11-02T19:50:39Z",
+   "snapshot": "2025-11-02T19:50:38Z",
+   "actual_delay_min": 9.98,
+   "ref": "raw/2026-10-19/061911_americanfootball_nfl_hist_event_b08df670_24a59054.json.gz",
+   "clv_pinnacle": {
+    "prob": 0.001904,
+    "ev": 0.003997,
+    "logodds": 0.00763
+   }
+  },
+  "30": {
+   "available": true,
+   "price_dec": 2.1,
+   "ev_at_orig_fair": 0.003998,
+   "eligible": false,
+   "requested": "2025-11-02T20:10:39Z",
+   "snapshot": "2025-11-02T20:10:38Z",
+   "actual_delay_min": 29.98,
+   "ref": "raw/2026-10-19/061911_americanfootball_nfl_hist_event_b08df670_23bcade1.json.gz",
+   "clv_pinnacle": {
+    "prob": 0.001904,
+    "ev": 0.003997,
+    "logodds": 0.00763
+   }
+  }
+ },
+ "close_requested_at": "2025-11-02T20:55:38+00:00",
+ "close_api_retrieved_at": "2026-10-19T06:19:13.738336+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/061913_americanfootball_nfl_hist_event_b08df670_6bb593d5.json.gz"
+ ],
+ "close_pinnacle_p": 0.478094,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": -8.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": 0.031666,
+  "ev": 0.070931,
+  "logodds": 0.127432
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "close_snapshot": "2025-11-02T20:55:38Z",
+ "close_gap_min": 9.37,
+ "close_gap_ok": true,
+ "result": "loss",
+ "units": -1.0
+}

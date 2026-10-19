@@ -1,0 +1,122 @@
+{
+ "id": "nfl-20251026-88187a33-team_totals-tennessee-titans-under-14p5",
+ "contract": "NFL|88187a33b007c088d75c6cd14c83086c|team_totals|tennessee-titans|under|+14.5",
+ "sport": "NFL",
+ "event_id": "88187a33b007c088d75c6cd14c83086c",
+ "game": "Tennessee Titans @ Indianapolis Colts",
+ "commence_time": "2025-10-26T20:25:00Z",
+ "family": "team_totals",
+ "group": "alt",
+ "side": "Under",
+ "description": "Tennessee Titans",
+ "point": 14.5,
+ "venue": "fanduel",
+ "has_account": true,
+ "price_dec": 2.16,
+ "effective_dec": 2.16,
+ "venue_quote_age_s": -27.0,
+ "fair_prob": 0.47809416762762347,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.478094,
+  "multiplicative": 0.479275,
+  "additive": 0.478486
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.478094,
+   "age_s": 18.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.015046,
+ "p_adj": 0.463048,
+ "ev_quoted": 0.032683,
+ "ev_adj_net": -0.007317,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "best_account_venue": "fanduel",
+ "best_account_ev": -0.007317,
+ "decision_at": "2025-10-26T13:45:39+00:00",
+ "api_retrieved_at": "2026-10-19T06:18:47.456295+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054521_americanfootball_nfl_hist_ba38e58d.json.gz",
+  "raw/2026-10-19/061847_americanfootball_nfl_hist_event_88187a33_b9d2373e.json.gz"
+ ],
+ "scan": "d1-w8-sun-morning",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "week": 8,
+ "scan_name": "sun-morning",
+ "scan_at": "2025-10-26T09:48:00-04:00",
+ "snapshot_at": "2025-10-26T13:45:39Z",
+ "report_family": "team_totals",
+ "threshold": 0.03,
+ "exec": {
+  "10": {
+   "available": true,
+   "price_dec": 2.16,
+   "ev_at_orig_fair": 0.032683,
+   "eligible": true,
+   "requested": "2025-10-26T13:55:39Z",
+   "snapshot": "2025-10-26T13:55:38Z",
+   "actual_delay_min": 9.98,
+   "ref": "raw/2026-10-19/061852_americanfootball_nfl_hist_event_88187a33_480eb812.json.gz",
+   "clv_pinnacle": {
+    "prob": 0.023368,
+    "ev": 0.050475,
+    "logodds": 0.09373
+   }
+  },
+  "30": {
+   "available": true,
+   "price_dec": 2.16,
+   "ev_at_orig_fair": 0.032683,
+   "eligible": true,
+   "requested": "2025-10-26T14:15:39Z",
+   "snapshot": "2025-10-26T14:15:38Z",
+   "actual_delay_min": 29.98,
+   "ref": "raw/2026-10-19/061853_americanfootball_nfl_hist_event_88187a33_641d4912.json.gz",
+   "clv_pinnacle": {
+    "prob": 0.023368,
+    "ev": 0.050475,
+    "logodds": 0.09373
+   }
+  }
+ },
+ "close_requested_at": "2025-10-26T20:15:38+00:00",
+ "close_api_retrieved_at": "2026-10-19T06:18:55.150001+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/061855_americanfootball_nfl_hist_event_88187a33_f6127e82.json.gz"
+ ],
+ "close_pinnacle_p": 0.486331,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 28.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": 0.023368,
+  "ev": 0.050474,
+  "logodds": 0.093729
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "close_snapshot": "2025-10-26T20:15:38Z",
+ "close_gap_min": 9.37,
+ "close_gap_ok": true,
+ "result": "win",
+ "units": 1.16
+}

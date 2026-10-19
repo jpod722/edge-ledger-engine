@@ -1,0 +1,676 @@
+[
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "ac02b1b59aa0623845378a02bc530c68",
+  "game": "Miami Dolphins @ Atlanta Falcons",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 320,
+   "below_threshold": 34
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "a061e80d1f50eab193b34d19f8e59f62",
+  "game": "Chicago Bears @ Baltimore Ravens",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "below_threshold": 32,
+   "no_fresh_sources": 315
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "53d4369464c66630f03a5d128cd39b08",
+  "game": "Buffalo Bills @ Carolina Panthers",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 327,
+   "below_threshold": 30
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "9c1f73e48ca9750f6e7d5d64874057c2",
+  "game": "New York Jets @ Cincinnati Bengals",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "below_threshold": 29,
+   "no_fresh_sources": 317
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "3536a3e857050d2dd6e2019ceb668f67",
+  "game": "Cleveland Browns @ New England Patriots",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 311,
+   "below_threshold": 36
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "abc4104a9ac597ce37d703613256fd6c",
+  "game": "San Francisco 49ers @ Houston Texans",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 314,
+   "below_threshold": 34
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "a8ebe01e05675c109b53a97f653f8653",
+  "game": "New York Giants @ Philadelphia Eagles",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 317,
+   "below_threshold": 32
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "a8dd9bb0681692540d067bd0e9e66989",
+  "game": "Tampa Bay Buccaneers @ New Orleans Saints",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 323,
+   "below_threshold": 32
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "40c2ebd9ddd5ce8ff5b1ada730bb1785",
+  "game": "Dallas Cowboys @ Denver Broncos",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 327,
+   "below_threshold": 35
+  },
+  "candidates": 1
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "88187a33b007c088d75c6cd14c83086c",
+  "game": "Tennessee Titans @ Indianapolis Colts",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 312,
+   "below_threshold": 35
+  },
+  "candidates": 1
+ },
+ {
+  "week": 8,
+  "scan": "sun-morning",
+  "event_id": "fb900eef07307ebf5c1930341ecd852a",
+  "game": "Green Bay Packers @ Pittsburgh Steelers",
+  "snapshot": "2025-10-26T13:45:39Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 324,
+   "below_threshold": 32
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-late",
+  "event_id": "a8dd9bb0681692540d067bd0e9e66989",
+  "game": "Tampa Bay Buccaneers @ New Orleans Saints",
+  "snapshot": "2025-10-26T18:40:38Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "below_threshold": 13,
+   "venue_stale": 172,
+   "no_fresh_sources": 322
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-late",
+  "event_id": "40c2ebd9ddd5ce8ff5b1ada730bb1785",
+  "game": "Dallas Cowboys @ Denver Broncos",
+  "snapshot": "2025-10-26T18:40:38Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "no_fresh_sources": 328,
+   "below_threshold": 36
+  },
+  "candidates": 0
+ },
+ {
+  "week": 8,
+  "scan": "sun-late",
+  "event_id": "88187a33b007c088d75c6cd14c83086c",
+  "game": "Tennessee Titans @ Indianapolis Colts",
+  "snapshot": "2025-10-26T18:40:38Z",
+  "dropped_lookahead": 0,
+  "families": {
+   "h2h": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "spreads": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "totals": [
+    "draftkings",
+    "fanduel",
+    "lowvig",
+    "pinnacle"
+   ],
+   "team_totals": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "spreads_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ],
+   "totals_h1": [
+    "draftkings",
+    "fanduel",
+    "pinnacle"
+   ]
+  },
+  "rejections": {
+   "venue_stale": 181,
+   "no_fresh_sources": 311,
+   "below_threshold": 17
+  },
+  "candidates": 0
+ }
+]

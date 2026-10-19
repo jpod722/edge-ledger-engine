@@ -1,0 +1,69 @@
+{
+ "track": "D1 derivatives replay (research tier, Pinnacle-only)",
+ "weeks_done": [
+  8,
+  9
+ ],
+ "stage1_complete": true,
+ "complete": false,
+ "credits": 2000,
+ "credits_by_kind": {
+  "decision": 1740,
+  "delay_10": 100,
+  "delay_30": 100,
+  "close": 60
+ },
+ "credits_per_game_snapshot_decision": 60.0,
+ "forecast_per_game_snapshot": 60,
+ "remaining_after": 14300,
+ "game_snapshots": 29,
+ "dropped_lookahead_quotes": 0,
+ "coverage": {
+  "alt_spreads": {
+   "game_snapshots": 29,
+   "pinnacle_present": 29,
+   "venue_present": 29,
+   "pinnacle_share": 1.0
+  },
+  "alt_totals": {
+   "game_snapshots": 29,
+   "pinnacle_present": 29,
+   "venue_present": 29,
+   "pinnacle_share": 1.0
+  },
+  "team_totals": {
+   "game_snapshots": 29,
+   "pinnacle_present": 29,
+   "venue_present": 29,
+   "pinnacle_share": 1.0
+  },
+  "first_half_spreads": {
+   "game_snapshots": 29,
+   "pinnacle_present": 29,
+   "venue_present": 29,
+   "pinnacle_share": 1.0
+  },
+  "first_half_totals": {
+   "game_snapshots": 29,
+   "pinnacle_present": 29,
+   "venue_present": 29,
+   "pinnacle_share": 1.0
+  }
+ },
+ "candidates": 6,
+ "candidates_by_family": {
+  "team_totals": 5,
+  "alt_spreads": 1
+ },
+ "rejections": {
+  "no_fresh_sources": 9297,
+  "below_threshold": 891,
+  "venue_stale": 876
+ },
+ "credits_per_candidate": 333.3,
+ "generated_at": "2026-10-19T06:19:14.233170+00:00",
+ "stage_gate": [
+  "pause: 6 candidates < 10"
+ ],
+ "results": "sealed until all D1 weeks have run (CLV, survival and ROI)"
+}

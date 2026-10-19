@@ -1,0 +1,16 @@
+{
+ "week": 8,
+ "sunday": "2025-10-26",
+ "candidates": 2,
+ "credits": 940,
+ "credits_by_kind": {
+  "decision": 840,
+  "delay_10": 40,
+  "delay_30": 40,
+  "close": 20
+ },
+ "remaining_after": 15360,
+ "stopped": null,
+ "complete": true,
+ "ran_at": "2026-10-19T06:18:55.151893+00:00"
+}
