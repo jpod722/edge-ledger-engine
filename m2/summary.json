@@ -1,0 +1,91 @@
+{
+ "track": "M2 NFL model information check",
+ "line_source": "nflverse schedules spread_line/total_line (timing undocumented; near-close)",
+ "eval_seasons": [
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "results": {
+  "spread": {
+   "n_games": 1855,
+   "clusters": 124,
+   "mse_base": 161.7437,
+   "mse_blend": 161.7464,
+   "gain_mean": -0.0027,
+   "lo": -0.391,
+   "hi": 0.3995,
+   "p_le_0": 0.5285
+  },
+  "total": {
+   "n_games": 1855,
+   "clusters": 124,
+   "mse_base": 171.8865,
+   "mse_blend": 172.0288,
+   "gain_mean": -0.1423,
+   "lo": -0.6929,
+   "hi": 0.4427,
+   "p_le_0": 0.689
+  }
+ },
+ "pass": {
+  "spread": false,
+  "total": false
+ },
+ "diagnostics_not_gates": {
+  "spread": {
+   "gamma_by_season": {
+    "2019": -0.1385,
+    "2020": -0.1368,
+    "2021": -0.0631,
+    "2022": -0.0804,
+    "2023": -0.0505,
+    "2024": -0.0677,
+    "2025": -0.0916
+   },
+   "gain_by_season": {
+    "2019": 0.3674,
+    "2020": -1.4311,
+    "2021": 0.3054,
+    "2022": -0.4558,
+    "2023": 0.2587,
+    "2024": 0.5371,
+    "2025": 0.3575
+   },
+   "hit_rate_when_disagree": {
+    "n": 1062,
+    "hit": 0.4972,
+    "breakeven_at_-110": 0.5238
+   }
+  },
+  "total": {
+   "gamma_by_season": {
+    "2019": -0.2141,
+    "2020": -0.1923,
+    "2021": -0.231,
+    "2022": -0.1932,
+    "2023": -0.1604,
+    "2024": -0.1338,
+    "2025": -0.1075
+   },
+   "gain_by_season": {
+    "2019": -0.0597,
+    "2020": 1.6344,
+    "2021": -0.6655,
+    "2022": -0.5028,
+    "2023": -0.547,
+    "2024": -0.6351,
+    "2025": -0.1076
+   },
+   "hit_rate_when_disagree": {
+    "n": 1044,
+    "hit": 0.4837,
+    "breakeven_at_-110": 0.5238
+   }
+  }
+ }
+}
