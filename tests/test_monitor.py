@@ -84,3 +84,18 @@ def test_diff_injuries():
     assert monitor.diff_injuries(old, new)[0]["status"] == "Out"
     assert monitor.diff_injuries(new, {})[0]["status"] == "removed"
     assert monitor.diff_injuries(new, new) == []
+
+
+def test_budget_reserves_closes(tmp_path):
+    cfg = load_cfg()
+    cfg["monitor"]["nightly_cap_credits"] = 3          # tiny cap: baseline polls must stop before the close
+    clock = Clock()
+    s = S(clock)
+    monitor.api_key = lambda: "k"
+    RawStore(tmp_path).manifest.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep).run()
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    polls = [x for x in log if x["kind"] == "poll"]
+    assert any("close" in x["reason"] for x in polls)                  # the close still happened
+    assert any(x["kind"] == "poll_skipped_budget" for x in log)
+    assert len(polls) <= 3

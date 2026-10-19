@@ -274,6 +274,11 @@ class Monitor:
                 if "close" not in whys and last_poll.get(eid) and now - last_poll[eid] < timedelta(seconds=50):
                     self.log("poll_merged", event_id=eid, reason=why)
                     continue
+                # keep one credit per game that still needs its close; closes are never skipped for budget
+                pending_closes = sum(1 for g in games if g["id"] not in closed and parse_ts(g["commence_time"]) > now)
+                if "close" not in whys and self.api.used + 1 + pending_closes > self.m["nightly_cap_credits"]:
+                    self.log("poll_skipped_budget", event_id=eid, reason=why, used=self.api.used, reserved=pending_closes)
+                    continue
                 if not self.poll(e, why):
                     stop_credits = True
                 last_poll[eid] = now
