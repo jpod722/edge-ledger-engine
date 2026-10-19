@@ -71,6 +71,28 @@ clv:
   secondary: independent_consensus   # kalshi + lowvig, excludes pinnacle
   close_minutes_before: 5
 
+d1:                              # derivatives research track; pre-registered 2026-10-19, frozen
+  venues: [draftkings, fanduel]
+  sources: [pinnacle]            # Kalshi/LowVig absent from 2025 historical derivatives; no disagreement test
+  markets: "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1"
+  scans:
+    - {name: sun-morning, at_et: "09:48"}
+    - {name: sun-late, at_et: "14:45", within_min: 120, news: true}
+  stage1_weeks: [8, 9]
+  stage2_weeks: [10, 11]
+  stage_cap_credits: 3000
+  min_remaining_credits: 9000    # protects live scans + closes (high case 7,000) and the 2,000 reserve
+  forecast_per_game_snapshot: 60
+  delays_min: [10, 30]           # +2 not measurable: historical snapshots are 5 minutes apart
+  close_target_min: 5
+  max_close_gap_min: 10          # a close snapshot further than this before kickoff is a missing benchmark
+  min_pinnacle_coverage: 0.5
+  min_stage1_candidates: 10
+  min_closed_for_verdict: 30
+  min_survival_10: 0.6
+  max_method_sensitive: 0.3
+  holm_alpha_one_sided: 0.025
+
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"
   monitor_min_n: 50

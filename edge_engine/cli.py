@@ -214,6 +214,10 @@ def main(argv=None):
     b.add_argument("--start", required=True)
     b.add_argument("--latency-min", type=int, default=10)
     sub.add_parser("backtest-report")
+    dr = sub.add_parser("d1-run")
+    dr.add_argument("--weeks", type=int, nargs="+", required=True)
+    dp = sub.add_parser("d1-report")
+    dp.add_argument("--final", action="store_true")
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -232,6 +236,12 @@ def main(argv=None):
     elif a.cmd == "backtest-report":
         from .backtest import report as bt_report
         bt_report(a, cfg)
+    elif a.cmd == "d1-run":
+        from .d1 import run_weeks
+        run_weeks(a, cfg)
+    elif a.cmd == "d1-report":
+        from .d1 import report as d1_report
+        d1_report(a, cfg)
     elif a.cmd == "probe":
         from .probe import run as probe_run
         probe_run(a, cfg)

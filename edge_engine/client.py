@@ -65,15 +65,20 @@ class CreditGuard(Exception):
 
 
 class OddsAPI:
-    def __init__(self, key: str, store: RawStore, max_credits: int, session=None):
+    def __init__(self, key: str, store: RawStore, max_credits: int, session=None,
+                 min_remaining: int | None = None, remaining: int | None = None):
         self.key, self.store, self.max_credits = key, store, max_credits
+        self.min_remaining, self.remaining = min_remaining, remaining
         self.used = 0
+        self.by_label: dict[str, int] = {}
         self.s = session or requests.Session()
         self.refs: list[str] = []
 
     def _get(self, path: str, params: dict, label: str, est_cost: int):
         if self.used + est_cost > self.max_credits:
             raise CreditGuard(f"run credit cap {self.max_credits} reached ({self.used} used)")
+        if self.min_remaining is not None and (self.remaining is None or self.remaining - est_cost < self.min_remaining):
+            raise CreditGuard(f"account floor {self.min_remaining} would be breached ({self.remaining} remaining)")
         url = f"{BASE}{path}"
         for attempt in range(2):
             r = self.s.get(url, params={**params, "apiKey": self.key}, timeout=30)
@@ -88,6 +93,8 @@ class OddsAPI:
         ref = self.store.save(label, r.content, meta)
         self.refs.append(ref)
         self.used += cost
+        if r.headers.get("x-requests-remaining") is not None:
+            self.remaining = int(float(r.headers["x-requests-remaining"]))
         if r.status_code != 200:
             raise RuntimeError(f"Odds API {r.status_code} on {path}: {r.text[:200]}")  # fail closed
         return r.json(), retrieved, ref
@@ -110,6 +117,31 @@ class OddsAPI:
                          {"date": date_iso, "markets": markets, "bookmakers": bookmakers,
                           "oddsFormat": "decimal", "dateFormat": "iso"},
                          f"{sport_key}_hist", n)
+
+
+    def historical_event_odds(self, sport_key: str, event_id: str, date_iso: str, markets: str, bookmakers: str,
+                              kind: str = "event"):
+        before = self.used
+        res = self._get(f"/historical/sports/{sport_key}/events/{event_id}/odds",
+                        {"date": date_iso, "markets": markets, "bookmakers": bookmakers,
+                         "oddsFormat": "decimal", "dateFormat": "iso"},
+                        f"{sport_key}_hist_event_{event_id[:8]}", 10 * len(markets.split(",")))
+        self.by_label[kind] = self.by_label.get(kind, 0) + self.used - before
+        return res
+
+    def last_remaining(self) -> int | None:
+        return self.remaining
+
+
+def last_remaining_from_manifest(store: RawStore) -> int | None:
+    """Most recent x-requests-remaining header in the raw manifest."""
+    if not store.manifest.exists():
+        return None
+    for line in reversed(store.manifest.read_text().splitlines()):
+        v = json.loads(line).get("credits_remaining")
+        if v not in (None, ""):
+            return int(float(v))
+    return None
 
 
 def espn_get(store: RawStore, url: str, label: str, session=None) -> dict:
