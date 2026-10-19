@@ -218,6 +218,8 @@ def main(argv=None):
     dr.add_argument("--weeks", type=int, nargs="+", required=True)
     dp = sub.add_parser("d1-report")
     dp.add_argument("--final", action="store_true")
+    sub.add_parser("s1-run")
+    sub.add_parser("s1-report")
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -242,6 +244,12 @@ def main(argv=None):
     elif a.cmd == "d1-report":
         from .d1 import report as d1_report
         d1_report(a, cfg)
+    elif a.cmd == "s1-run":
+        from .s1 import run as s1_run
+        s1_run(a, cfg)
+    elif a.cmd == "s1-report":
+        from .s1 import report as s1_report
+        s1_report(a, cfg)
     elif a.cmd == "probe":
         from .probe import run as probe_run
         probe_run(a, cfg)

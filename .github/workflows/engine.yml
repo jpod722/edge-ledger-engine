@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       task:
-        description: "scan | close | grade | backtest | backtest-report | probe | d1"
+        description: "scan | close | grade | backtest | backtest-report | probe | d1 | s1"
         required: true
       args:
         description: "extra CLI args, e.g. --sport NBA --scan nba-evening --window today_et --derivatives --props"
@@ -45,6 +45,9 @@ jobs:
           set -e
           case "$TASK" in
             scan|close|grade|backtest-report|probe|d1-report) python -m edge_engine.cli --data data $TASK $ARGS ;;
+            s1)
+              python -m edge_engine.cli --data data s1-run
+              python -m edge_engine.cli --data data s1-report ;;
             d1)
               python -m edge_engine.cli --data data d1-run $ARGS
               python -m edge_engine.cli --data data d1-report ;;

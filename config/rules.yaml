@@ -1,6 +1,6 @@
 # Edge Ledger engine rules. Every change bumps `version` and is recorded in git history.
 # Values marked "starting estimate" are engineering assumptions to validate, not fitted results.
-version: "2026-10-19.v4"
+version: "2026-10-19.v4.1"
 mode: paper                      # paper | live. Paper until validation passes (see validation:).
 
 sports:
@@ -59,7 +59,7 @@ staking:
 
 odds_api:
   bulk_bookmakers: draftkings,fanduel,betmgm,williamhill_us,espnbet,fanatics,betrivers,pinnacle,kalshi,lowvig
-  derivative_markets: {NFL: "alternate_spreads,alternate_totals,team_totals,spreads_h1,totals_h1", NBA: "alternate_spreads,alternate_totals,team_totals,spreads_h1,totals_h1"}
+  derivative_markets: {NFL: "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1", NBA: "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1"}   # alternate_team_totals added 2026-10-19 (reviewer-approved): DraftKings lists team totals only as alternates
   prop_markets: {NFL: "player_pass_yds,player_rush_yds,player_reception_yds,player_receptions", NBA: "player_points,player_rebounds,player_assists,player_threes"}
   event_bookmakers: draftkings,fanduel,betmgm,pinnacle,kalshi,lowvig
   max_credits_per_run: 600
@@ -92,6 +92,24 @@ d1:                              # derivatives research track; pre-registered 20
   min_survival_10: 0.6
   max_method_sensitive: 0.3
   holm_alpha_one_sided: 0.025
+
+s1:                              # stale-line research track; pre-registered and approved 2026-10-19, frozen
+  weeks: [4, 5, 6, 7]
+  start_et: "11:00"
+  end_et: "12:55"
+  kickoff_from_et: "12:55"
+  kickoff_to_et: "13:30"
+  books: [pinnacle, lowvig, draftkings, fanduel]
+  venues: [draftkings, fanduel]
+  min_move: 0.015                # Pinnacle devigged fair move toward the side, between consecutive snapshots
+  capture_window_s: 60           # decision at snapshot timestamp + 60 s; later-stamped quotes dropped
+  max_snapshots: 26
+  cap_credits: 2000
+  min_remaining_credits: 9000
+  max_close_gap_min: 10
+  min_triggered: 10
+  min_closed_for_verdict: 30
+  min_opportunity_5: 0.5
 
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"
