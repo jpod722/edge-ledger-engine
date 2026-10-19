@@ -1,0 +1,49 @@
+name: nba-ingest
+# One-off ingestion of NBA box scores from ESPN for the M1 Gate 0 test. No Odds API credits.
+on:
+  workflow_dispatch:
+    inputs:
+      seasons:
+        description: "space-separated seasons, e.g. 2023-24 2024-25 2025-26"
+        required: true
+      probe:
+        description: "probe one game only (true/false)"
+        required: false
+        default: "false"
+concurrency:
+  group: nba-ingest
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests==2.32.3
+      - name: Check out the data branch
+        run: |
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git clone --quiet --depth 1 --branch data --single-branch "$URL" data
+      - name: Ingest
+        run: |
+          for s in ${{ github.event.inputs.seasons }}; do
+            if [ "${{ github.event.inputs.probe }}" = "true" ]; then
+              python -m edge_engine.nba_ingest --data data --season "$s" --probe
+            else
+              python -m edge_engine.nba_ingest --data data --season "$s"
+            fi
+          done
+      - name: Commit data
+        if: always()
+        run: |
+          cd data
+          git config user.name "edge-engine"; git config user.email "edge-engine@users.noreply.github.com"
+          git add -A
+          git commit -q -m "nba ingest ${{ github.event.inputs.seasons }} $(date -u +%FT%TZ)" || exit 0
+          for i in 1 2 3 4 5; do git push -q origin data && break; git pull -q --rebase origin data; done
