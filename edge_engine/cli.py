@@ -220,6 +220,7 @@ def main(argv=None):
     dp.add_argument("--final", action="store_true")
     m2p = sub.add_parser("m2")
     m2p.add_argument("--cache", default="/tmp/nfl")
+    sub.add_parser("m1-gate0")
     sub.add_parser("s1-run")
     sub.add_parser("s1-report")
     pr = sub.add_parser("probe")
@@ -249,6 +250,9 @@ def main(argv=None):
     elif a.cmd == "m2":
         from .m2 import run as m2_run
         m2_run(a, cfg)
+    elif a.cmd == "m1-gate0":
+        from .m1 import run as m1_run
+        m1_run(a, cfg)
     elif a.cmd == "s1-run":
         from .s1 import run as s1_run
         s1_run(a, cfg)
