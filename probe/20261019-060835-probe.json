@@ -1,0 +1,655 @@
+{
+ "run_id": "20261019-060835-probe",
+ "date": "2025-11-09",
+ "decision_at": "2025-11-09T14:48:00Z",
+ "markets": "alternate_spreads,alternate_totals,team_totals,alternate_team_totals,spreads_h1,totals_h1,h2h_h1",
+ "bookmakers": "pinnacle,lowvig,betonlineag,kalshi,draftkings,fanduel,betmgm,williamhill_us,espnbet,betrivers",
+ "credits_total": 171,
+ "calls": [
+  {
+   "kind": "events",
+   "requested": "2025-11-09T14:48:00Z",
+   "snapshot": "2025-11-09T14:45:37Z",
+   "previous": "2025-11-09T14:40:37Z",
+   "next": "2025-11-09T14:50:37Z",
+   "credits": 1,
+   "ref": "raw/2026-10-19/060832_americanfootball_nfl_hist_events_74c97689.json.gz"
+  },
+  {
+   "kind": "event_odds",
+   "requested": "2025-11-09T14:48:00Z",
+   "snapshot": "2025-11-09T14:45:37Z",
+   "previous": "2025-11-09T14:40:37Z",
+   "next": "2025-11-09T14:50:37Z",
+   "credits": 70,
+   "ref": "raw/2026-10-19/060833_americanfootball_nfl_hist_event_9900b89c_7cae633c.json.gz"
+  },
+  {
+   "kind": "event_odds",
+   "requested": "2025-11-09T14:48:00Z",
+   "snapshot": "2025-11-09T14:45:37Z",
+   "previous": "2025-11-09T14:40:37Z",
+   "next": "2025-11-09T14:50:37Z",
+   "credits": 70,
+   "ref": "raw/2026-10-19/060833_americanfootball_nfl_hist_event_740b8437_bf86c69a.json.gz"
+  },
+  {
+   "kind": "delay_2m",
+   "requested": "2025-11-09T14:50:00Z",
+   "snapshot": "2025-11-09T14:45:37Z",
+   "previous": "2025-11-09T14:40:37Z",
+   "next": "2025-11-09T14:50:37Z",
+   "credits": 10,
+   "ref": "raw/2026-10-19/060834_americanfootball_nfl_hist_event_9900b89c_d2_0b32c55f.json.gz"
+  },
+  {
+   "kind": "delay_10m",
+   "requested": "2025-11-09T14:58:00Z",
+   "snapshot": "2025-11-09T14:55:37Z",
+   "previous": "2025-11-09T14:50:37Z",
+   "next": "2025-11-09T15:00:37Z",
+   "credits": 10,
+   "ref": "raw/2026-10-19/060834_americanfootball_nfl_hist_event_9900b89c_d10_b822d215.json.gz"
+  },
+  {
+   "kind": "delay_30m",
+   "requested": "2025-11-09T15:18:00Z",
+   "snapshot": "2025-11-09T15:15:37Z",
+   "previous": "2025-11-09T15:10:37Z",
+   "next": "2025-11-09T15:20:37Z",
+   "credits": 10,
+   "ref": "raw/2026-10-19/060835_americanfootball_nfl_hist_event_9900b89c_d30_91f891ff.json.gz"
+  }
+ ],
+ "events": [
+  {
+   "event_id": "9900b89c4776c5b47dd26ca4c755edf9",
+   "game": "Baltimore Ravens @ Minnesota Vikings",
+   "commence_time": "2025-11-09T18:00:00Z",
+   "minutes_to_start": 192,
+   "coverage": {
+    "alternate_spreads": {
+     "draftkings": {
+      "outcomes": 50,
+      "points": 18,
+      "two_sided_rungs": 18,
+      "age_s": -24
+     },
+     "williamhill_us": {
+      "outcomes": 50,
+      "points": 18,
+      "two_sided_rungs": 18,
+      "age_s": -26
+     },
+     "fanduel": {
+      "outcomes": 102,
+      "points": 30,
+      "two_sided_rungs": 30,
+      "age_s": 7
+     },
+     "betrivers": {
+      "outcomes": 94,
+      "points": 34,
+      "two_sided_rungs": 34,
+      "age_s": 24
+     },
+     "pinnacle": {
+      "outcomes": 26,
+      "points": 12,
+      "two_sided_rungs": 12,
+      "age_s": 20
+     }
+    },
+    "alternate_team_totals": {
+     "draftkings": {
+      "outcomes": 84,
+      "points": 42,
+      "two_sided_rungs": 42,
+      "age_s": -24
+     },
+     "fanduel": {
+      "outcomes": 158,
+      "points": 79,
+      "two_sided_rungs": 79,
+      "age_s": 7
+     }
+    },
+    "alternate_totals": {
+     "draftkings": {
+      "outcomes": 50,
+      "points": 25,
+      "two_sided_rungs": 25,
+      "age_s": -24
+     },
+     "williamhill_us": {
+      "outcomes": 114,
+      "points": 57,
+      "two_sided_rungs": 57,
+      "age_s": -26
+     },
+     "fanduel": {
+      "outcomes": 114,
+      "points": 57,
+      "two_sided_rungs": 57,
+      "age_s": 7
+     },
+     "betrivers": {
+      "outcomes": 106,
+      "points": 53,
+      "two_sided_rungs": 53,
+      "age_s": 24
+     },
+     "pinnacle": {
+      "outcomes": 26,
+      "points": 13,
+      "two_sided_rungs": 13,
+      "age_s": 20
+     }
+    },
+    "h2h_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -24
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 44
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -26
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 7
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 26
+     },
+     "betrivers": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 24
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -11
+     }
+    },
+    "spreads_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -24
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 44
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -26
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 7
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 26
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -11
+     }
+    },
+    "totals_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -24
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 44
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -26
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 7
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 26
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -11
+     }
+    },
+    "team_totals": {
+     "espnbet": {
+      "outcomes": 12,
+      "points": 6,
+      "two_sided_rungs": 6,
+      "age_s": 44
+     },
+     "fanduel": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": 7
+     },
+     "betonlineag": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": 26
+     },
+     "betrivers": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": 24
+     },
+     "pinnacle": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": -11
+     }
+    }
+   }
+  },
+  {
+   "event_id": "740b843794cc89176c4ffe38b66d30d9",
+   "game": "Arizona Cardinals @ Seattle Seahawks",
+   "commence_time": "2025-11-09T21:05:00Z",
+   "minutes_to_start": 377,
+   "coverage": {
+    "alternate_spreads": {
+     "draftkings": {
+      "outcomes": 50,
+      "points": 20,
+      "two_sided_rungs": 20,
+      "age_s": 23
+     },
+     "williamhill_us": {
+      "outcomes": 48,
+      "points": 20,
+      "two_sided_rungs": 20,
+      "age_s": -9
+     },
+     "fanduel": {
+      "outcomes": 102,
+      "points": 33,
+      "two_sided_rungs": 33,
+      "age_s": 9
+     },
+     "betrivers": {
+      "outcomes": 92,
+      "points": 38,
+      "two_sided_rungs": 38,
+      "age_s": -13
+     },
+     "pinnacle": {
+      "outcomes": 26,
+      "points": 13,
+      "two_sided_rungs": 13,
+      "age_s": 20
+     }
+    },
+    "alternate_team_totals": {
+     "draftkings": {
+      "outcomes": 84,
+      "points": 42,
+      "two_sided_rungs": 42,
+      "age_s": 23
+     },
+     "fanduel": {
+      "outcomes": 160,
+      "points": 80,
+      "two_sided_rungs": 80,
+      "age_s": 9
+     }
+    },
+    "alternate_totals": {
+     "draftkings": {
+      "outcomes": 50,
+      "points": 25,
+      "two_sided_rungs": 25,
+      "age_s": 23
+     },
+     "williamhill_us": {
+      "outcomes": 108,
+      "points": 54,
+      "two_sided_rungs": 54,
+      "age_s": -9
+     },
+     "fanduel": {
+      "outcomes": 112,
+      "points": 56,
+      "two_sided_rungs": 56,
+      "age_s": 9
+     },
+     "betrivers": {
+      "outcomes": 108,
+      "points": 54,
+      "two_sided_rungs": 54,
+      "age_s": -13
+     },
+     "pinnacle": {
+      "outcomes": 26,
+      "points": 13,
+      "two_sided_rungs": 13,
+      "age_s": 20
+     }
+    },
+    "h2h_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 23
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -1
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -9
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 9
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 15
+     },
+     "betrivers": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -13
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -2
+     }
+    },
+    "spreads_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 23
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -1
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -9
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 9
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 15
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -2
+     }
+    },
+    "totals_h1": {
+     "draftkings": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 23
+     },
+     "espnbet": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -1
+     },
+     "williamhill_us": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -9
+     },
+     "fanduel": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 9
+     },
+     "betonlineag": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": 15
+     },
+     "pinnacle": {
+      "outcomes": 2,
+      "points": 1,
+      "two_sided_rungs": 1,
+      "age_s": -2
+     }
+    },
+    "team_totals": {
+     "espnbet": {
+      "outcomes": 12,
+      "points": 6,
+      "two_sided_rungs": 6,
+      "age_s": -1
+     },
+     "fanduel": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": 9
+     },
+     "betonlineag": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": 15
+     },
+     "betrivers": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": -13
+     },
+     "pinnacle": {
+      "outcomes": 4,
+      "points": 2,
+      "two_sided_rungs": 2,
+      "age_s": -2
+     }
+    }
+   }
+  }
+ ],
+ "latency": [
+  {
+   "delay_min": 2,
+   "requested": "2025-11-09T14:50:00Z",
+   "snapshot": "2025-11-09T14:45:37Z",
+   "coverage": {
+    "draftkings": {
+     "outcomes": 50,
+     "points": 18,
+     "two_sided_rungs": 18,
+     "age_s": -24
+    },
+    "williamhill_us": {
+     "outcomes": 50,
+     "points": 18,
+     "two_sided_rungs": 18,
+     "age_s": -26
+    },
+    "fanduel": {
+     "outcomes": 102,
+     "points": 30,
+     "two_sided_rungs": 30,
+     "age_s": 7
+    },
+    "betrivers": {
+     "outcomes": 94,
+     "points": 34,
+     "two_sided_rungs": 34,
+     "age_s": 24
+    },
+    "pinnacle": {
+     "outcomes": 26,
+     "points": 12,
+     "two_sided_rungs": 12,
+     "age_s": 20
+    }
+   }
+  },
+  {
+   "delay_min": 10,
+   "requested": "2025-11-09T14:58:00Z",
+   "snapshot": "2025-11-09T14:55:37Z",
+   "coverage": {
+    "draftkings": {
+     "outcomes": 50,
+     "points": 18,
+     "two_sided_rungs": 18,
+     "age_s": 22
+    },
+    "williamhill_us": {
+     "outcomes": 48,
+     "points": 17,
+     "two_sided_rungs": 17,
+     "age_s": 16
+    },
+    "fanduel": {
+     "outcomes": 102,
+     "points": 30,
+     "two_sided_rungs": 30,
+     "age_s": -4
+    },
+    "betrivers": {
+     "outcomes": 94,
+     "points": 34,
+     "two_sided_rungs": 34,
+     "age_s": 3
+    },
+    "pinnacle": {
+     "outcomes": 26,
+     "points": 12,
+     "two_sided_rungs": 12,
+     "age_s": 25
+    }
+   }
+  },
+  {
+   "delay_min": 30,
+   "requested": "2025-11-09T15:18:00Z",
+   "snapshot": "2025-11-09T15:15:37Z",
+   "coverage": {
+    "draftkings": {
+     "outcomes": 50,
+     "points": 18,
+     "two_sided_rungs": 18,
+     "age_s": 16
+    },
+    "williamhill_us": {
+     "outcomes": 48,
+     "points": 17,
+     "two_sided_rungs": 17,
+     "age_s": 29
+    },
+    "fanduel": {
+     "outcomes": 102,
+     "points": 30,
+     "two_sided_rungs": 30,
+     "age_s": 19
+    },
+    "betrivers": {
+     "outcomes": 94,
+     "points": 34,
+     "two_sided_rungs": 34,
+     "age_s": 16
+    },
+    "pinnacle": {
+     "outcomes": 26,
+     "points": 12,
+     "two_sided_rungs": 12,
+     "age_s": 13
+    }
+   }
+  }
+ ]
+}
