@@ -1,0 +1,85 @@
+# Edge Ledger engine rules. Every change bumps `version` and is recorded in git history.
+# Values marked "starting estimate" are engineering assumptions to validate, not fitted results.
+version: "2026-10-19.v4"
+mode: paper                      # paper | live. Paper until validation passes (see validation:).
+
+sports:
+  NFL: americanfootball_nfl
+  NBA: basketball_nba
+
+devig_method: power              # baseline; multiplicative and additive are logged for comparison
+sharp_books: [pinnacle, kalshi, lowvig]
+weights: {pinnacle: 0.5, kalshi: 0.25, lowvig: 0.25}        # starting estimate
+split_threshold: 0.03
+single_source_min_ev: 0.03
+
+# research candidates are logged for study; "bet" is a stricter, execution-adjusted bar
+research_min_ev: 0.02
+bet_groups: [main]               # alt, deriv and prop stay research-only until calibrated
+bet_min_ev: {main: 0.02, alt: 0.03, deriv: 0.04, prop: 0.04}   # applied to haircut, net EV
+
+uncertainty:                     # p_adj = p - z * sqrt((dispersion/2)^2 + method_spread^2 + base_se^2)
+  z: 1.0
+  base_se: {main: 0.010, alt: 0.015, deriv: 0.025, prop: 0.025}  # starting estimate
+execution_drag: {main: 0.005, alt: 0.0075, deriv: 0.01, prop: 0.01}  # starting estimate; replace with measured drag
+
+staleness:                       # seconds from source last_update to decision time; starting estimates
+  main_s: 120
+  prop_s: 90
+  near_start_minutes: 15
+  near_start_s: 45
+  news_window_s: 30
+
+bettable_books: [draftkings, fanduel, kalshi, betmgm, williamhill_us, espnbet, fanatics, betrivers]
+accounts: [draftkings, fanduel, kalshi]
+kalshi: {taker_rate: 0.07, maker_rate_sports: 0.0175}
+
+props:
+  fair_books: [pinnacle, fanduel, draftkings, betmgm]
+  weights: {pinnacle: 0.4, fanduel: 0.3, draftkings: 0.15, betmgm: 0.15}   # starting estimate
+  min_books: 3
+
+key_numbers:
+  NFL:
+    spreads: [3, 7, 10, 14, 6, 4]
+    spreads_h1: [0, 3, 7]
+    totals: [37, 41, 43, 44, 47, 51]
+    team_totals: [17, 20, 24, 27]
+  NBA: {}
+
+staking:
+  bankroll: 2500
+  kelly_fraction: 0.25
+  max_bet_pct: 0.02
+  max_prop_pct: 0.01
+  max_game_pct: 0.04
+  max_team_pct: 0.03
+  max_player_pct: 0.015
+  min_stake_usd: 5
+
+odds_api:
+  bulk_bookmakers: draftkings,fanduel,betmgm,williamhill_us,espnbet,fanatics,betrivers,pinnacle,kalshi,lowvig
+  derivative_markets: {NFL: "alternate_spreads,alternate_totals,team_totals,spreads_h1,totals_h1", NBA: "alternate_spreads,alternate_totals,team_totals,spreads_h1,totals_h1"}
+  prop_markets: {NFL: "player_pass_yds,player_rush_yds,player_reception_yds,player_receptions", NBA: "player_points,player_rebounds,player_assists,player_threes"}
+  event_bookmakers: draftkings,fanduel,betmgm,pinnacle,kalshi,lowvig
+  max_credits_per_run: 600
+  monthly_soft_cap: 16000
+
+clv:
+  primary: pinnacle_close        # exact contract, devigged; no silent substitution
+  secondary: independent_consensus   # kalshi + lowvig, excludes pinnacle
+  close_minutes_before: 5
+
+learning:                        # frozen: monitoring only until the evaluation period ends
+  frozen_until: "2027-01-05"
+  monitor_min_n: 50
+  change_min_n: 200
+  ci: 0.95
+  adjustment: holm               # multiple-testing correction across buckets
+  cluster_by: [event_id, date]
+
+validation:                      # pre-registered gates for leaving paper mode
+  backtest_holdout_weeks: [13, 14, 15, 16, 17, 18]
+  required: "holdout mean Pinnacle-close CLV > 0 with 95% CI lower bound > 0 (clustered by game), at bet tier"
+  live_paper_weeks: 4
+  thresholds_reported: [0.02, 0.03, 0.04, 0.05]
