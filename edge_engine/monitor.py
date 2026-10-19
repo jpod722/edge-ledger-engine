@@ -71,6 +71,9 @@ class Monitor:
         self.now = clock or utcnow
         self.sleep = sleep or time.sleep
         self.books = cfg["odds_api"]["event_bookmakers"]
+        self.cfg, self.data = cfg, data
+        self.first_payload: dict = {}
+        self.forecasts_done = False
 
     def log(self, kind: str, **kw):
         with open(self.log_p, "a") as f:
@@ -88,7 +91,9 @@ class Monitor:
 
     def poll(self, e: dict, reason: str):
         try:
-            _, retrieved, ref = self.api.event_odds(SK, e["id"], self.m["market"], self.books)
+            payload, retrieved, ref = self.api.event_odds(SK, e["id"], self.m["market"], self.books)
+            if e["id"] not in self.first_payload:
+                self.first_payload[e["id"]] = (payload, retrieved)
             self.log("poll", event_id=e["id"], reason=reason, retrieved_at=retrieved, ref=ref,
                      minutes_to_tip=round((parse_ts(e["commence_time"]) - self.now()).total_seconds() / 60, 2))
             return True
@@ -98,6 +103,34 @@ class Monitor:
         except RuntimeError as err:
             self.log("poll_error", event_id=e["id"], reason=reason, detail=str(err)[:200])
             return True
+
+    def prepare_box(self):
+        """Current-season box scores through yesterday (ET), free from ESPN. Failure never stops the monitor."""
+        try:
+            from .nba_ingest import incremental
+            yday = (self.now().astimezone(ET) - timedelta(days=1)).date()
+            n = incremental(self.data, self.m["season"], yday, session=self.s)
+            self.log("box_ingest", season=self.m["season"], games_added=n, through=str(yday))
+        except Exception as err:  # noqa: BLE001
+            self.log("box_ingest_error", detail=str(err)[:300])
+
+    def forecast(self, games):
+        """Frozen M1 / M1.1 forecasts for every contract in each game's first snapshot (the decision time)."""
+        self.forecasts_done = True
+        try:
+            import pandas as pd
+            from . import m1_live
+            frozen = json.loads(m1_live.FROZEN.read_text())
+            path = Path(self.data) / "m1" / "boxscores" / f"{self.m['season']}.csv.gz"
+            box = pd.read_csv(path) if path.exists() else pd.DataFrame(columns=["dnp", "minutes", "pts", "date", "player_id", "player", "team"])
+            recs = m1_live.forecasts(box, [self.first_payload[e["id"]] for e in games if e["id"] in self.first_payload],
+                                     self.cfg, frozen)
+            day = f"{self.now().astimezone(ET):%Y-%m-%d}"
+            out = m1_live.write_and_push(self.data, day, recs)
+            self.log("forecasts", n=len(recs), eligible=sum(r["eligible"] for r in recs), file=out,
+                     frozen_at=frozen["frozen_at"])
+        except Exception as err:  # noqa: BLE001
+            self.log("forecast_error", detail=str(err)[:300])
 
     def fetch_free(self, url: str, label: str):
         try:
@@ -113,6 +146,8 @@ class Monitor:
         start = self.now()
         hard_stop = start + timedelta(minutes=self.m["max_runtime_min"])
         games = self.games_tonight()
+        if games:
+            self.prepare_box()
         if not games:
             self.log("done", reason="no games")
             return
@@ -184,6 +219,9 @@ class Monitor:
                 if not self.poll(e, why):
                     stop_credits = True
                 last_poll[eid] = now
+            if not self.forecasts_done and all(e["id"] in self.first_payload for e in games
+                                                   if parse_ts(e["commence_time"]) > now):
+                self.forecast(games)
             self.sleep(self.m["loop_s"])
         self.log("done", reason="finished", credits=self.api.used, remaining=self.api.remaining)
 

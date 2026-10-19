@@ -23,7 +23,43 @@ from .client import utcnow
 BASE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 SEASONS = {"2023-24": (date(2023, 10, 24), date(2024, 4, 14)),
            "2024-25": (date(2024, 10, 22), date(2025, 4, 13)),
-           "2025-26": (date(2025, 10, 21), date(2026, 4, 12))}
+           "2025-26": (date(2025, 10, 21), date(2026, 4, 12)),
+           "2026-27": (date(2026, 10, 20), date(2027, 4, 11))}
+EXHIBITION_TEAMS = {"STARS", "STRIPES", "WORLD", "EAST", "WEST", "LEB", "GIA", "DUR"}   # All-Star formats
+
+
+def incremental(data: str, season: str, through: date, session=None, pause: float = 0.15) -> int:
+    """Append games from dates after the last stored date up to `through` (inclusive). Returns games added."""
+    s = session or requests.Session()
+    path = Path(data) / "m1" / "boxscores" / f"{season}.csv.gz"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    old = []
+    if path.exists():
+        with gzip.open(path, "rt") as f:
+            old = list(csv.DictReader(f))
+    have_games = {r["game_id"] for r in old}
+    last = max((r["date"][:10] for r in old), default=None)
+    d0 = SEASONS[season][0] if last is None else date.fromisoformat(last) - timedelta(days=1)
+    rows, added, d = [], 0, d0
+    while d <= through:
+        sb = get(s, f"{BASE}/scoreboard?dates={d:%Y%m%d}")
+        for ev in (sb or {}).get("events", []):
+            done = (ev.get("status", {}).get("type", {}) or {}).get("completed")
+            if ev["id"] in have_games or not done or (ev.get("season") or {}).get("type") not in (2, None):
+                continue
+            js = get(s, f"{BASE}/summary?event={ev['id']}")
+            if js:
+                new = [r for r in parse_summary(js, season) if r["team"] not in EXHIBITION_TEAMS]
+                rows += new
+                added += 1
+                have_games.add(ev["id"])
+            time.sleep(pause)
+        d += timedelta(days=1)
+    with gzip.open(path, "wt") as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS)
+        w.writeheader()
+        w.writerows(old + rows)
+    return added
 FIELDS = ["season", "game_id", "date", "team", "opponent", "home", "team_score", "opp_score", "periods",
           "player_id", "player", "starter", "dnp", "dnp_reason", "minutes", "pts", "fgm", "fga", "tpm", "tpa",
           "ftm", "fta", "oreb", "dreb", "reb", "ast", "stl", "blk", "tov", "pf", "plus_minus"]
