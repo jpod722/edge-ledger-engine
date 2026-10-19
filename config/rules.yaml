@@ -111,6 +111,18 @@ s1:                              # stale-line research track; pre-registered and
   min_closed_for_verdict: 30
   min_opportunity_5: 0.5
 
+m2:                              # NFL model information check; pre-registered and approved 2026-10-19; run once
+  data_from_season: 2013         # 2013 only seeds priors
+  first_fit_season: 2014
+  eval_seasons: [2019, 2020, 2021, 2022, 2023, 2024, 2025]
+  wp_lo: 0.10
+  wp_hi: 0.90
+  half_life_games: 4
+  prior_games: 3
+  carryover: 0.5                 # last season's rating shrunk halfway to the league mean
+  holm_alpha_one_sided: 0.025
+  diag_disagreement_pts: 2.0     # diagnostic only, never a gate
+
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"
   monitor_min_n: 50

@@ -218,6 +218,8 @@ def main(argv=None):
     dr.add_argument("--weeks", type=int, nargs="+", required=True)
     dp = sub.add_parser("d1-report")
     dp.add_argument("--final", action="store_true")
+    m2p = sub.add_parser("m2")
+    m2p.add_argument("--cache", default="/tmp/nfl")
     sub.add_parser("s1-run")
     sub.add_parser("s1-report")
     pr = sub.add_parser("probe")
@@ -244,6 +246,9 @@ def main(argv=None):
     elif a.cmd == "d1-report":
         from .d1 import report as d1_report
         d1_report(a, cfg)
+    elif a.cmd == "m2":
+        from .m2 import run as m2_run
+        m2_run(a, cfg)
     elif a.cmd == "s1-run":
         from .s1 import run as s1_run
         s1_run(a, cfg)
