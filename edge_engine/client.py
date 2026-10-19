@@ -39,14 +39,23 @@ class RawStore:
             f.write(json.dumps({**meta, "file": str(rel), "sha256": sha, "bytes": len(body)}) + "\n")
         return str(rel)
 
-    def credits_this_month(self, now: datetime) -> int:
+    @staticmethod
+    def cycle_start(now: datetime, reset_day: int) -> datetime:
+        """Start of the current billing cycle (credits reset on `reset_day` of each month, UTC)."""
+        y, m = now.year, now.month
+        if now.day < reset_day:
+            y, m = (y - 1, 12) if m == 1 else (y, m - 1)
+        return datetime(y, m, reset_day, tzinfo=timezone.utc)
+
+    def credits_this_month(self, now: datetime, reset_day: int = 1) -> int:
+        """Credits billed since the current billing cycle began."""
         if not self.manifest.exists():
             return 0
-        month = now.strftime("%Y-%m")
+        start = self.cycle_start(now, reset_day).isoformat()
         total = 0
         for line in self.manifest.read_text().splitlines():
             m = json.loads(line)
-            if m.get("retrieved_at", "").startswith(month):
+            if m.get("retrieved_at", "") >= start:
                 total += int(m.get("credits_last") or 0)
         return total
 

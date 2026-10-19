@@ -73,7 +73,7 @@ def report(run_id: str, sport: str, cands: list[dict], cfg: dict, credits: int) 
 def cmd_scan(a, cfg):
     now = utcnow()
     store, led = RawStore(a.data), Ledger(a.data)
-    month_used = store.credits_this_month(now)
+    month_used = store.credits_this_month(now, cfg["odds_api"].get("cycle_reset_day", 1))
     api = OddsAPI(api_key(), store, cfg["odds_api"]["max_credits_per_run"])
     sk = cfg["sports"][a.sport]
     oa = cfg["odds_api"]

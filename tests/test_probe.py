@@ -14,3 +14,12 @@ def test_coverage_counts_two_sided_rungs_and_age():
     assert c["alternate_spreads"]["pinnacle"] == {"outcomes": 3, "points": 2, "two_sided_rungs": 1, "age_s": 30}
     assert c["team_totals"]["pinnacle"]["two_sided_rungs"] == 1
     assert c["team_totals"]["pinnacle"]["age_s"] == 60
+
+
+def test_billing_cycle_start():
+    from datetime import datetime, timezone
+    from edge_engine.client import RawStore
+    t = lambda *a: datetime(*a, tzinfo=timezone.utc)
+    assert RawStore.cycle_start(t(2026, 11, 5), 18) == t(2026, 10, 18)
+    assert RawStore.cycle_start(t(2026, 11, 18), 18) == t(2026, 11, 18)
+    assert RawStore.cycle_start(t(2027, 1, 2), 18) == t(2026, 12, 18)

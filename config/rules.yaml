@@ -63,7 +63,8 @@ odds_api:
   prop_markets: {NFL: "player_pass_yds,player_rush_yds,player_reception_yds,player_receptions", NBA: "player_points,player_rebounds,player_assists,player_threes"}
   event_bookmakers: draftkings,fanduel,betmgm,pinnacle,kalshi,lowvig
   max_credits_per_run: 600
-  monthly_soft_cap: 16000
+  monthly_soft_cap: 16000        # per billing cycle
+  cycle_reset_day: 18            # 20K plan resets on the 18th
 
 clv:
   primary: pinnacle_close        # exact contract, devigged; no silent substitution
