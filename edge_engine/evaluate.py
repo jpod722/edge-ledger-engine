@@ -65,6 +65,7 @@ class Candidate:
     paper: bool
     stake_usd: float
     reasons: list
+    sharp_detail: list = field(default_factory=list)   # per-book reasons a sharp source was not used
     best_account_venue: str | None = None
     best_account_ev: float | None = None
     decision_at: str = ""
@@ -111,7 +112,7 @@ def price_quotes(quotes: list[Quote], cfg: dict, decision_at: datetime, *, scan:
         else:
             fair = consensus(q, cfg["sharp_books"], cfg["weights"], pbb, keys, method,
                              decision_at, cutoff, exclude={q.book}, allow_ladder=True)
-        reasons += [r for r in fair.reasons if r == "no_fresh_sources"]
+        reasons += [r for r in fair.reasons if r.startswith("no_price_")]
         fair_method = "+".join(sorted({s.how for s in fair.sources})) or "none"
         dec = q.dec
         if q.book == "kalshi":
@@ -126,7 +127,7 @@ def price_quotes(quotes: list[Quote], cfg: dict, decision_at: datetime, *, scan:
             sources=[{"book": s.book, "p": round(s.p, 6), "age_s": s.age_s, "how": s.how} for s in fair.sources],
             dispersion=round(fair.dispersion, 6), push_prob=round(push, 6), se=0.0, p_adj=None,
             ev_quoted=None, ev_adj_net=None, tier="rejected", paper=cfg["mode"] == "paper", stake_usd=0.0,
-            reasons=reasons, decision_at=decision_at.isoformat(), api_retrieved_at=api_retrieved_at,
+            reasons=reasons, sharp_detail=[r for r in fair.reasons if not r.startswith("no_price_")], decision_at=decision_at.isoformat(), api_retrieved_at=api_retrieved_at,
             raw_refs=list(raw_refs or []), scan=scan, config_version=cfg["version"],
         )
         if fair.p is not None:

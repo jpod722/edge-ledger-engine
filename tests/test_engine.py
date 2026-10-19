@@ -207,3 +207,12 @@ def test_grading_with_pushes():
 def test_windows():
     assert in_window(KICK, "within:200", NOW) and not in_window(KICK, "within:60", NOW)
     assert not in_window(ts(10), "all", NOW)
+
+
+def test_no_price_reasons_are_specific():
+    from edge_engine.fair import no_price_reason
+    assert no_price_reason(["pinnacle_stale_300s"]) == "no_price_sharp_stale"
+    assert no_price_reason(["pinnacle_stale_300s", "kalshi_ladder_no_safe_interp"]) == "no_price_outside_or_across_key"
+    assert no_price_reason(["pinnacle_ladder_too_few_rungs"]) == "no_price_no_exact_point"
+    assert no_price_reason(["pinnacle_no_exact_quote"]) == "no_price_no_sharp_quote"
+    assert no_price_reason([]) == "no_price_no_sharp_quote"

@@ -86,7 +86,8 @@ def source_fair(book: str, q: Quote, pairs_by_book: dict, keys: list[float], met
                     return SourceFair(book, p, age, "ladder", {method: p}), None
                 return None, f"{book}_ladder_no_safe_interp"
             if lad:
-                return None, f"{book}_ladder_low_quality"
+                kind = "too_few_rungs" if len(lad.points) < 3 else "nonmonotone"
+                return None, f"{book}_ladder_{kind}"
     return None, f"{book}_no_exact_quote"
 
 
@@ -111,7 +112,7 @@ def consensus(q: Quote, books: list[str], weights: dict, pairs_by_book: dict, ke
         elif why:
             reasons.append(why)
     if not srcs:
-        return Fair(None, [], 0.0, 0.0, reasons + ["no_fresh_sources"])
+        return Fair(None, [], 0.0, 0.0, reasons + [no_price_reason(reasons)])
     wsum = sum(weights.get(s.book, 0) for s in srcs)
     if wsum <= 0:
         return Fair(None, srcs, 0.0, 0.0, reasons + ["zero_weight"])
@@ -125,6 +126,20 @@ def consensus(q: Quote, books: list[str], weights: dict, pairs_by_book: dict, ke
             alts.append(sum(w * v for w, v in vals) / wsum)
     mspread = (max(alts) - min(alts)) if len(alts) > 1 else 0.0
     return Fair(p, srcs, disp, mspread, reasons)
+
+
+def no_price_reason(book_reasons: list[str]) -> str:
+    """One label for why no sharp source priced the contract (per-book detail is kept separately)."""
+    rs = [r for r in book_reasons if "_stale_" not in r]
+    if book_reasons and not rs:
+        return "no_price_sharp_stale"
+    for tag, label in (("no_safe_interp", "no_price_outside_or_across_key"),
+                       ("too_few_rungs", "no_price_no_exact_point"),
+                       ("nonmonotone", "no_price_ladder_nonmonotone"),
+                       ("no_exact_quote", "no_price_no_sharp_quote")):
+        if any(tag in r for r in rs):
+            return label
+    return "no_price_no_sharp_quote"
 
 
 def index_pairs(pairs: list[Pair]) -> dict:
