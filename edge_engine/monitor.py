@@ -30,6 +30,7 @@ from .archive import ESPN_INJ, INDEX_PAGES, PDF_RE, UA, stored_paths
 
 ET = ZoneInfo("America/New_York")
 SK = "basketball_nba"
+KALSHI = "https://api.elections.kalshi.com/trade-api/v2"
 
 
 def parse_ts(s):
@@ -73,6 +74,7 @@ class Monitor:
         self.books = cfg["odds_api"]["event_bookmakers"]
         self.cfg, self.data = cfg, data
         self.first_payload: dict = {}
+        self.kalshi_tickers: set = set()
         self.forecasts_done = False
 
     def log(self, kind: str, **kw):
@@ -132,11 +134,50 @@ class Monitor:
         except Exception as err:  # noqa: BLE001
             self.log("forecast_error", detail=str(err)[:300])
 
-    def fetch_free(self, url: str, label: str):
+    def kalshi_snapshot(self):
+        """All open Kalshi NBA player-points markets (top of book, open interest). Free; no Odds API credits."""
+        cur, n = None, 0
+        for _ in range(self.m["kalshi_max_pages"]):
+            url = f"{KALSHI}/markets?series_ticker={self.m['kalshi_series']}&status=open&limit=200" + (f"&cursor={cur}" if cur else "")
+            r, ref = self.fetch_free(url, "kalshi_markets", kind="kalshi")
+            for wait in (5, 15):
+                if r is None or r.status_code != 429:
+                    break
+                self.sleep(wait)
+                r, ref = self.fetch_free(url, "kalshi_markets", kind="kalshi")
+            if r is None or r.status_code != 200:
+                self.log("kalshi_error", status=getattr(r, "status_code", None))
+                return
+            d = r.json()
+            n += len(d.get("markets", []))
+            for mk in d.get("markets", []):
+                self.kalshi_tickers.add(mk.get("ticker"))
+            cur = d.get("cursor")
+            if not cur:
+                break
+            self.sleep(self.m["kalshi_pause_s"])
+        self.log("kalshi_snapshot", markets=n)
+
+    def kalshi_trades(self):
+        """Every trade on the markets seen tonight (fills, not just quotes)."""
+        n = 0
+        for t in sorted(x for x in self.kalshi_tickers if x):
+            url = f"{KALSHI}/markets/trades?ticker={t}&limit=1000"
+            r, _ = self.fetch_free(url, "kalshi_trades", kind="kalshi")
+            for wait in (5, 15):
+                if r is None or r.status_code != 429:
+                    break
+                self.sleep(wait)
+                r, _ = self.fetch_free(url, "kalshi_trades", kind="kalshi")
+            n += int(r is not None and r.status_code == 200)
+            self.sleep(self.m["kalshi_pause_s"])
+        self.log("kalshi_trades", markets=n)
+
+    def fetch_free(self, url: str, label: str, kind: str = "availability"):
         try:
             r = self.s.get(url, timeout=30, headers=UA)
             ref = self.store.save(label, r.content, {"retrieved_at": self.now().isoformat(), "path": url, "params": {},
-                                                     "status": r.status_code, "credits_last": 0, "kind": "availability"})
+                                                     "status": r.status_code, "credits_last": 0, "kind": kind})
             return r, ref
         except requests.RequestException as err:
             self.log("fetch_error", url=url, detail=str(err)[:200])
@@ -158,7 +199,7 @@ class Monitor:
         last_tip = max(parse_ts(e["commence_time"]) for e in games)
         next_base = {e["id"]: start for e in games}
         closed, queue, last_poll = set(), [], {}
-        inj_state, next_inj, next_pdf = None, start, start
+        inj_state, next_inj, next_pdf, next_kalshi = None, start, start, start
         have_pdfs = stored_paths(self.store)
         stop_credits = False
         while self.now() < min(hard_stop, last_tip + timedelta(minutes=self.m["after_last_tip_min"])):
@@ -186,6 +227,9 @@ class Monitor:
                                 have_pdfs.add(url)
                                 self.log("official_report", first_seen=now.isoformat(), url=url, ref=pref)
                 next_pdf = now + timedelta(seconds=self.m["official_poll_s"])
+            if now >= next_kalshi:
+                self.kalshi_snapshot()
+                next_kalshi = now + timedelta(minutes=self.m["baseline_min"])
             due = []
             for e in games:
                 tip = parse_ts(e["commence_time"])
@@ -223,6 +267,7 @@ class Monitor:
                                                    if parse_ts(e["commence_time"]) > now):
                 self.forecast(games)
             self.sleep(self.m["loop_s"])
+        self.kalshi_trades()
         self.log("done", reason="finished", credits=self.api.used, remaining=self.api.remaining)
 
 

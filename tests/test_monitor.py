@@ -47,6 +47,10 @@ class S:
             return R(inj("Out" if self.clock() >= T0 + timedelta(minutes=20) else "Questionable"))
         if url in monitor.INDEX_PAGES:
             return R(b"<html></html>")
+        if "kalshi.com" in url:
+            if "/markets/trades" in url:
+                return R({"trades": [{"ticker": "KXNBAPTS-X-1", "yes_price_dollars": "0.40", "count_fp": "5"}]})
+            return R({"markets": [{"ticker": "KXNBAPTS-X-1"}], "cursor": ""})
         if "/events/g1/odds" in url:
             self.polls.append(self.clock())
             return R({"id": "g1", "bookmakers": []}, cost=1)
@@ -71,6 +75,7 @@ def test_status_change_triggers_reaction_polls_and_close(tmp_path):
     assert len(close) == 1 and 0 < close[0]["minutes_to_tip"] <= 6
     assert all(p < TIP for p in s.polls)                                   # never polls after tip
     assert kinds[-1] == "done"
+    assert "kalshi_snapshot" in kinds and "kalshi_trades" in kinds
 
 
 def test_diff_injuries():

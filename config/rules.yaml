@@ -143,6 +143,9 @@ m1:                              # NBA points props model; spec frozen 2026-10-1
 monitor:                         # nightly NBA points-prop monitor (prospective dataset, reviewer plan Oct 19)
   market: player_points
   season: "2026-27"
+  kalshi_series: KXNBAPTS        # Kalshi NBA player points ladders; captured free, data only
+  kalshi_max_pages: 10
+  kalshi_pause_s: 1.5
   baseline_min: 20               # per game until tip
   reaction_polls_min: [0, 2, 5, 10]   # after an ESPN status change for a team in that game
   close_window_min: 6            # close poll inside the last 6 minutes (within the 10-minute close rule)
