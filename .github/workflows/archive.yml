@@ -1,0 +1,35 @@
+name: availability-archive
+# Timestamped NBA injury/availability snapshots for the M1 points model. No Odds API credits.
+on:
+  schedule:
+    - cron: "11 14-23,0-4 * * *"     # hourly, 10 AM - midnight ET (EDT)
+    - cron: "41 21-23 * * *"         # extra half-hour snapshots 5:41-7:41 PM ET, before most tip-offs
+  workflow_dispatch: {}
+concurrency:
+  group: availability-archive
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests==2.32.3
+      - name: Check out the data branch
+        run: |
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git clone --quiet --depth 1 --branch data --single-branch "$URL" data
+      - run: python -m edge_engine.archive --data data
+      - name: Commit data
+        run: |
+          cd data
+          git config user.name "edge-engine"; git config user.email "edge-engine@users.noreply.github.com"
+          git add -A
+          git commit -q -m "availability archive $(date -u +%FT%TZ)" || exit 0
+          for i in 1 2 3; do git push -q origin data && break; git pull -q --rebase origin data; done
