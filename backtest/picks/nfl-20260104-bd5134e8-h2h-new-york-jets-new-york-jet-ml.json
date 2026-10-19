@@ -1,0 +1,97 @@
+{
+ "id": "nfl-20260104-bd5134e8-h2h-new-york-jets-new-york-jet-ml",
+ "contract": "NFL|bd5134e8440a2b12cc8ac98ab4f18093|h2h||new-york-jets|ml",
+ "sport": "NFL",
+ "event_id": "bd5134e8440a2b12cc8ac98ab4f18093",
+ "game": "New York Jets @ Buffalo Bills",
+ "commence_time": "2026-01-04T21:25:00Z",
+ "family": "h2h",
+ "group": "main",
+ "side": "New York Jets",
+ "description": "",
+ "point": null,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 6.75,
+ "effective_dec": 6.75,
+ "venue_quote_age_s": 17.0,
+ "fair_prob": 0.15637093338353322,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.155087,
+  "multiplicative": 0.177104,
+  "additive": 0.163178
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.158863,
+   "age_s": 19.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.15131,
+   "age_s": 19.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.007553,
+ "push_prob": 0.0,
+ "se": 0.024375,
+ "p_adj": 0.131995,
+ "ev_quoted": 0.055504,
+ "ev_adj_net": -0.114031,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.114031,
+ "decision_at": "2026-01-04T19:40:37+00:00",
+ "api_retrieved_at": "2026-10-19T05:46:21.721183+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054621_americanfootball_nfl_hist_d114828a.json.gz"
+ ],
+ "scan": "bt-w18-news2",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 6.75,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054622_americanfootball_nfl_hist_dec48fc1.json.gz",
+ "week": 18,
+ "holdout": true,
+ "snapshot_at": "2026-01-04T19:40:37+00:00",
+ "close_requested_at": "2026-01-04T21:20:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:46:23.855943+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054623_americanfootball_nfl_hist_84d8e59f.json.gz"
+ ],
+ "close_pinnacle_p": 0.15832,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 273.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": 0.134278,
+ "close_indep_books": [
+  "lowvig"
+ ],
+ "clv_pinnacle": {
+  "prob": 0.010172,
+  "ev": 0.068662,
+  "logodds": 0.078421
+ },
+ "clv_indep": {
+  "prob": -0.01387,
+  "ev": -0.093624,
+  "logodds": -0.114452
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.010172,
+  "ev": 0.06866,
+  "logodds": 0.078418
+ },
+ "result": "loss",
+ "units": -1.0
+}

@@ -1,0 +1,97 @@
+{
+ "id": "nfl-20251214-cd5151f8-h2h-kansas-city-chiefs-kansas-city--ml",
+ "contract": "NFL|cd5151f8a1e7fcba4901929e77b94acd|h2h||kansas-city-chiefs|ml",
+ "sport": "NFL",
+ "event_id": "cd5151f8a1e7fcba4901929e77b94acd",
+ "game": "Los Angeles Chargers @ Kansas City Chiefs",
+ "commence_time": "2025-12-14T18:00:00Z",
+ "family": "h2h",
+ "group": "main",
+ "side": "Kansas City Chiefs",
+ "description": "",
+ "point": null,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.42,
+ "effective_dec": 1.42,
+ "venue_quote_age_s": 60.0,
+ "fair_prob": 0.7244359341544693,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.723012,
+  "multiplicative": 0.710709,
+  "additive": 0.718792
+ },
+ "method_sensitive": true,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.727199,
+   "age_s": 6.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.718826,
+   "age_s": 17.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.008373,
+ "push_prob": 0.0,
+ "se": 0.016172,
+ "p_adj": 0.708264,
+ "ev_quoted": 0.028699,
+ "ev_adj_net": 0.000735,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.000735,
+ "decision_at": "2025-12-11T19:45:37+00:00",
+ "api_retrieved_at": "2026-10-19T05:46:01.606447+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054601_americanfootball_nfl_hist_7c0a79f2.json.gz"
+ ],
+ "scan": "bt-w15-thu",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.42,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054602_americanfootball_nfl_hist_6d218c2b.json.gz",
+ "week": 15,
+ "holdout": true,
+ "snapshot_at": "2025-12-11T19:45:37+00:00",
+ "close_requested_at": "2025-12-14T17:55:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:46:06.620638+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054606_americanfootball_nfl_hist_bf80bc5c.json.gz"
+ ],
+ "close_pinnacle_p": 0.718717,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 276.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": 0.720287,
+ "close_indep_books": [
+  "lowvig"
+ ],
+ "clv_pinnacle": {
+  "prob": 0.014492,
+  "ev": 0.020578,
+  "logodds": 0.070607
+ },
+ "clv_indep": {
+  "prob": 0.016062,
+  "ev": 0.022807,
+  "logodds": 0.078385
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.014492,
+  "ev": 0.020578,
+  "logodds": 0.070606
+ },
+ "result": "loss",
+ "units": -1.0
+}

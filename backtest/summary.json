@@ -1,0 +1,410 @@
+{
+ "weeks_done": 18,
+ "complete": true,
+ "credits_used": 3420,
+ "train": {
+  "research@2%": {
+   "n": 8,
+   "pin_clv_prob": [
+    0.02266433333333333,
+    0.010448666666666667,
+    0.03563666666666667,
+    6
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    2
+   ],
+   "exec_clv_prob": [
+    0.023953,
+    0.008652400000000001,
+    0.0384118,
+    5
+   ],
+   "beat_close_pct": 0.625,
+   "missed_pct": 0.25,
+   "units": -0.19,
+   "roi": -0.0238
+  },
+  "bet@2%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@3%": {
+   "n": 4,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    3
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    3
+   ],
+   "beat_close_pct": 0.5,
+   "missed_pct": 0.0,
+   "units": -2.0,
+   "roi": -0.5
+  },
+  "bet@3%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@4%": {
+   "n": 1,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "beat_close_pct": 0.0,
+   "missed_pct": 0.0,
+   "units": -1.0,
+   "roi": -1.0
+  },
+  "bet@4%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@5%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "bet@5%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  }
+ },
+ "holdout": {
+  "research@2%": {
+   "n": 4,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    3
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    3
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    3
+   ],
+   "beat_close_pct": 0.75,
+   "missed_pct": 0.0,
+   "units": -2.0,
+   "roi": -0.5
+  },
+  "bet@2%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@3%": {
+   "n": 1,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "beat_close_pct": 1.0,
+   "missed_pct": 0.0,
+   "units": -1.0,
+   "roi": -1.0
+  },
+  "bet@3%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@4%": {
+   "n": 1,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "beat_close_pct": 1.0,
+   "missed_pct": 0.0,
+   "units": -1.0,
+   "roi": -1.0
+  },
+  "bet@4%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  },
+  "research@5%": {
+   "n": 1,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    1
+   ],
+   "beat_close_pct": 1.0,
+   "missed_pct": 0.0,
+   "units": -1.0,
+   "roi": -1.0
+  },
+  "bet@5%": {
+   "n": 0,
+   "pin_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "indep_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "exec_clv_prob": [
+    null,
+    null,
+    null,
+    0
+   ],
+   "beat_close_pct": null,
+   "missed_pct": null,
+   "units": 0,
+   "roi": null
+  }
+ },
+ "generated_at": "2026-10-19T05:46:25.118001+00:00"
+}

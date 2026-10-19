@@ -1,0 +1,95 @@
+{
+ "id": "nfl-20251005-e9de9c43-spreads-cincinnati-bengals-cincinnati-b-10p5",
+ "contract": "NFL|e9de9c4390a28a90f437760050b23531|spreads||cincinnati-bengals|+10.5",
+ "sport": "NFL",
+ "event_id": "e9de9c4390a28a90f437760050b23531",
+ "game": "Detroit Lions @ Cincinnati Bengals",
+ "commence_time": "2025-10-05T20:26:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Cincinnati Bengals",
+ "description": "",
+ "point": 10.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.89,
+ "effective_dec": 1.89,
+ "venue_quote_age_s": 26.0,
+ "fair_prob": 0.5455885824339896,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.54859,
+  "multiplicative": 0.54691,
+  "additive": 0.548047
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.539762,
+   "age_s": 25.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.557419,
+   "age_s": 43.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.017657,
+ "push_prob": 0.0,
+ "se": 0.013437,
+ "p_adj": 0.532151,
+ "ev_quoted": 0.031162,
+ "ev_adj_net": 0.000766,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.000766,
+ "decision_at": "2025-10-05T13:45:38+00:00",
+ "api_retrieved_at": "2026-10-19T05:45:04.481618+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054504_americanfootball_nfl_hist_ceba76b3.json.gz"
+ ],
+ "scan": "bt-w5-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.89,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054505_americanfootball_nfl_hist_d103ed6b.json.gz",
+ "week": 5,
+ "holdout": false,
+ "snapshot_at": "2025-10-05T13:45:38+00:00",
+ "close_requested_at": "2025-10-05T20:21:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:07.596337+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054507_americanfootball_nfl_hist_0a7d0bcb.json.gz"
+ ],
+ "close_pinnacle_p": 0.549988,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 37.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": 0.020888,
+  "ev": 0.039478,
+  "logodds": 0.08409
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.020887,
+  "ev": 0.039477,
+  "logodds": 0.084088
+ },
+ "result": "loss",
+ "units": -1.0
+}

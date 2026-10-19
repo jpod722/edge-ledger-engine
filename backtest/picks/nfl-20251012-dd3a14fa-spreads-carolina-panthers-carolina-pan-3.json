@@ -1,0 +1,97 @@
+{
+ "id": "nfl-20251012-dd3a14fa-spreads-carolina-panthers-carolina-pan-3",
+ "contract": "NFL|dd3a14fa1529e79bd338a7bfd71d5b3a|spreads||carolina-panthers|+3",
+ "sport": "NFL",
+ "event_id": "dd3a14fa1529e79bd338a7bfd71d5b3a",
+ "game": "Dallas Cowboys @ Carolina Panthers",
+ "commence_time": "2025-10-12T17:01:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Carolina Panthers",
+ "description": "",
+ "point": 3.0,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 2.0,
+ "effective_dec": 2.0,
+ "venue_quote_age_s": 71.0,
+ "fair_prob": 0.5150329085834109,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.515276,
+  "multiplicative": 0.514726,
+  "additive": 0.515098
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.514561,
+   "age_s": 29.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.515991,
+   "age_s": 61.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.001429,
+ "push_prob": 0.0,
+ "se": 0.01004,
+ "p_adj": 0.504993,
+ "ev_quoted": 0.030066,
+ "ev_adj_net": 0.004987,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.004987,
+ "decision_at": "2025-10-12T13:45:39+00:00",
+ "api_retrieved_at": "2026-10-19T05:45:10.408055+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054510_americanfootball_nfl_hist_acfd7041.json.gz"
+ ],
+ "scan": "bt-w6-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 2.0,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054511_americanfootball_nfl_hist_19aab67d.json.gz",
+ "week": 6,
+ "holdout": false,
+ "snapshot_at": "2025-10-12T13:45:39+00:00",
+ "close_requested_at": "2025-10-12T16:56:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:14.280653+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054514_americanfootball_nfl_hist_fbc2afbb.json.gz"
+ ],
+ "close_pinnacle_p": 0.527886,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 33.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": 0.527886,
+ "close_indep_books": [
+  "lowvig"
+ ],
+ "clv_pinnacle": {
+  "prob": 0.027886,
+  "ev": 0.055772,
+  "logodds": 0.111661
+ },
+ "clv_indep": {
+  "prob": 0.027886,
+  "ev": 0.055772,
+  "logodds": 0.111661
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.027886,
+  "ev": 0.055772,
+  "logodds": 0.11166
+ },
+ "result": "win",
+ "units": 1.0
+}

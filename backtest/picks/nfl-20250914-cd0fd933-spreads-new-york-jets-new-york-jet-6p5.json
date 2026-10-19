@@ -1,0 +1,86 @@
+{
+ "id": "nfl-20250914-cd0fd933-spreads-new-york-jets-new-york-jet-6p5",
+ "contract": "NFL|cd0fd9335b5182d3bfed35ab8d5ab6fb|spreads||new-york-jets|+6.5",
+ "sport": "NFL",
+ "event_id": "cd0fd9335b5182d3bfed35ab8d5ab6fb",
+ "game": "Buffalo Bills @ New York Jets",
+ "commence_time": "2025-09-14T17:01:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "New York Jets",
+ "description": "",
+ "point": 6.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.95,
+ "effective_dec": 1.95,
+ "venue_quote_age_s": 70.0,
+ "fair_prob": 0.531708511637306,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.531709,
+  "multiplicative": 0.530612,
+  "additive": 0.531355
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.531709,
+   "age_s": 70.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.01006,
+ "p_adj": 0.521649,
+ "ev_quoted": 0.036832,
+ "ev_adj_net": 0.012215,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.012215,
+ "decision_at": "2025-09-11T18:45:39+00:00",
+ "api_retrieved_at": "2026-10-19T05:44:43.663361+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054443_americanfootball_nfl_hist_037c628c.json.gz"
+ ],
+ "scan": "bt-w2-thu",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.95,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054444_americanfootball_nfl_hist_ae26b4de.json.gz",
+ "week": 2,
+ "holdout": false,
+ "snapshot_at": "2025-09-11T18:45:39+00:00",
+ "close_requested_at": "2025-09-14T16:56:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:44:48.384610+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054448_americanfootball_nfl_hist_358db733.json.gz"
+ ],
+ "close_pinnacle_p": null,
+ "close_pinnacle_how": null,
+ "close_pinnacle_age_s": null,
+ "close_pinnacle_reason": "pinnacle_ladder_low_quality",
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "result": "loss",
+ "units": -1.0
+}

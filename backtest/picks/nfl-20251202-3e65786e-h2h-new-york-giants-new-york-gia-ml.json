@@ -1,0 +1,97 @@
+{
+ "id": "nfl-20251202-3e65786e-h2h-new-york-giants-new-york-gia-ml",
+ "contract": "NFL|3e65786eddd4c7aee9e7f2504f6fdedc|h2h||new-york-giants|ml",
+ "sport": "NFL",
+ "event_id": "3e65786eddd4c7aee9e7f2504f6fdedc",
+ "game": "New York Giants @ New England Patriots",
+ "commence_time": "2025-12-02T01:15:00Z",
+ "family": "h2h",
+ "group": "main",
+ "side": "New York Giants",
+ "description": "",
+ "point": null,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 4.3,
+ "effective_dec": 4.3,
+ "venue_quote_age_s": 48.0,
+ "fair_prob": 0.238103985341115,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.238318,
+  "multiplicative": 0.252205,
+  "additive": 0.243128
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.237689,
+   "age_s": 34.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.238947,
+   "age_s": 34.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.001258,
+ "push_prob": 0.0,
+ "se": 0.016959,
+ "p_adj": 0.221145,
+ "ev_quoted": 0.023847,
+ "ev_adj_net": -0.054076,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.054076,
+ "decision_at": "2025-11-30T14:45:37+00:00",
+ "api_retrieved_at": "2026-10-19T05:45:50.618173+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054550_americanfootball_nfl_hist_ba909805.json.gz"
+ ],
+ "scan": "bt-w13-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 4.2,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054551_americanfootball_nfl_hist_ed023561.json.gz",
+ "week": 13,
+ "holdout": true,
+ "snapshot_at": "2025-11-30T14:45:37+00:00",
+ "close_requested_at": "2025-12-02T01:10:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:54.613743+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054554_americanfootball_nfl_hist_b2f76fbf.json.gz"
+ ],
+ "close_pinnacle_p": 0.235743,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 300.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": 0.2405,
+ "close_indep_books": [
+  "lowvig"
+ ],
+ "clv_pinnacle": {
+  "prob": 0.003185,
+  "ev": 0.013696,
+  "logodds": 0.017763
+ },
+ "clv_indep": {
+  "prob": 0.007942,
+  "ev": 0.03415,
+  "logodds": 0.043983
+ },
+ "clv_pinnacle_exec": {
+  "prob": -0.002352,
+  "ev": -0.009879,
+  "logodds": -0.013011
+ },
+ "result": "loss",
+ "units": -1.0
+}

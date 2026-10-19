@@ -1,0 +1,95 @@
+{
+ "id": "nfl-20250928-09f55b4a-spreads-jacksonville-jaguars-jacksonville-3p5",
+ "contract": "NFL|09f55b4a19a83eb951a9400a11123477|spreads||jacksonville-jaguars|+3.5",
+ "sport": "NFL",
+ "event_id": "09f55b4a19a83eb951a9400a11123477",
+ "game": "Jacksonville Jaguars @ San Francisco 49ers",
+ "commence_time": "2025-09-28T20:06:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Jacksonville Jaguars",
+ "description": "",
+ "point": 3.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.91,
+ "effective_dec": 1.91,
+ "venue_quote_age_s": 18.0,
+ "fair_prob": 0.5372875603711076,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.536833,
+  "multiplicative": 0.535623,
+  "additive": 0.536444
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.538169,
+   "age_s": 19.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.535498,
+   "age_s": 45.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.002671,
+ "push_prob": 0.0,
+ "se": 0.010164,
+ "p_adj": 0.527124,
+ "ev_quoted": 0.026219,
+ "ev_adj_net": 0.001807,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.001807,
+ "decision_at": "2025-09-28T13:45:39+00:00",
+ "api_retrieved_at": "2026-10-19T05:44:56.628073+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054456_americanfootball_nfl_hist_149cde81.json.gz"
+ ],
+ "scan": "bt-w4-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.91,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054457_americanfootball_nfl_hist_e1533c92.json.gz",
+ "week": 4,
+ "holdout": false,
+ "snapshot_at": "2025-09-28T13:45:39+00:00",
+ "close_requested_at": "2025-09-28T20:01:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:01.575391+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054501_americanfootball_nfl_hist_6b0660fc.json.gz"
+ ],
+ "close_pinnacle_p": 0.549988,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 44.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": 0.026428,
+  "ev": 0.050478,
+  "logodds": 0.106313
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.026428,
+  "ev": 0.050477,
+  "logodds": 0.106312
+ },
+ "result": "win",
+ "units": 0.91
+}

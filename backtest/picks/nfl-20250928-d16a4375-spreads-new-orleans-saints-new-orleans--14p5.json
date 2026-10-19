@@ -1,0 +1,90 @@
+{
+ "id": "nfl-20250928-d16a4375-spreads-new-orleans-saints-new-orleans--14p5",
+ "contract": "NFL|d16a43752aaac66e9ff8768d8590b662|spreads||new-orleans-saints|+14.5",
+ "sport": "NFL",
+ "event_id": "d16a43752aaac66e9ff8768d8590b662",
+ "game": "New Orleans Saints @ Buffalo Bills",
+ "commence_time": "2025-09-28T17:01:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "New Orleans Saints",
+ "description": "",
+ "point": 14.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.95,
+ "effective_dec": 1.95,
+ "venue_quote_age_s": 12.0,
+ "fair_prob": 0.527003213247518,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.526548,
+  "multiplicative": 0.525575,
+  "additive": 0.526233
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.527886,
+   "age_s": 5.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.525211,
+   "age_s": 14.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.002676,
+ "push_prob": 0.0,
+ "se": 0.010138,
+ "p_adj": 0.516865,
+ "ev_quoted": 0.027656,
+ "ev_adj_net": 0.002887,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.002887,
+ "decision_at": "2025-09-28T15:35:38+00:00",
+ "api_retrieved_at": "2026-10-19T05:44:58.209543+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054458_americanfootball_nfl_hist_9e00b69a.json.gz"
+ ],
+ "scan": "bt-w4-news1",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": null,
+ "exec_status": "missed",
+ "exec_ref": "raw/2026-10-19/054459_americanfootball_nfl_hist_c48adbb6.json.gz",
+ "week": 4,
+ "holdout": false,
+ "snapshot_at": "2025-09-28T15:35:38+00:00",
+ "close_requested_at": "2025-09-28T16:56:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:01.067303+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054501_americanfootball_nfl_hist_b57f6fa7.json.gz"
+ ],
+ "close_pinnacle_p": 0.52904,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 30.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": 0.01622,
+  "ev": 0.031628,
+  "logodds": 0.064998
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "result": "win",
+ "units": 0.95
+}

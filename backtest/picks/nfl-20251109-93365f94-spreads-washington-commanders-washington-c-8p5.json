@@ -1,0 +1,91 @@
+{
+ "id": "nfl-20251109-93365f94-spreads-washington-commanders-washington-c-8p5",
+ "contract": "NFL|93365f943b3aa23705bc9e1c7b47d7f8|spreads||washington-commanders|+8.5",
+ "sport": "NFL",
+ "event_id": "93365f943b3aa23705bc9e1c7b47d7f8",
+ "game": "Detroit Lions @ Washington Commanders",
+ "commence_time": "2025-11-09T21:25:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Washington Commanders",
+ "description": "",
+ "point": 8.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.91,
+ "effective_dec": 1.91,
+ "venue_quote_age_s": 46.0,
+ "fair_prob": 0.54623915937207,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.546239,
+  "multiplicative": 0.544529,
+  "additive": 0.545685
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.546239,
+   "age_s": 20.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.010145,
+ "p_adj": 0.536094,
+ "ev_quoted": 0.043317,
+ "ev_adj_net": 0.01894,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.01894,
+ "decision_at": "2025-11-09T14:45:37+00:00",
+ "api_retrieved_at": "2026-10-19T05:45:33.269115+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054533_americanfootball_nfl_hist_9fc31d32.json.gz"
+ ],
+ "scan": "bt-w10-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.91,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054534_americanfootball_nfl_hist_7ff0846d.json.gz",
+ "week": 10,
+ "holdout": false,
+ "snapshot_at": "2025-11-09T14:45:37+00:00",
+ "close_requested_at": "2025-11-09T21:20:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:45:36.886933+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054536_americanfootball_nfl_hist_c5b99ed0.json.gz"
+ ],
+ "close_pinnacle_p": 0.519876,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 267.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": -0.003684,
+  "ev": -0.007036,
+  "logodds": -0.014763
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_pinnacle_exec": {
+  "prob": -0.003684,
+  "ev": -0.007037,
+  "logodds": -0.014765
+ },
+ "result": "loss",
+ "units": -1.0
+}

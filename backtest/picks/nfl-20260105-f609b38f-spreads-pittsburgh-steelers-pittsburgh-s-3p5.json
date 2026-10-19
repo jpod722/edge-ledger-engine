@@ -1,0 +1,90 @@
+{
+ "id": "nfl-20260105-f609b38f-spreads-pittsburgh-steelers-pittsburgh-s-3p5",
+ "contract": "NFL|f609b38fe2bf0687644ad8603e28220b|spreads||pittsburgh-steelers|+3.5",
+ "sport": "NFL",
+ "event_id": "f609b38fe2bf0687644ad8603e28220b",
+ "game": "Baltimore Ravens @ Pittsburgh Steelers",
+ "commence_time": "2026-01-05T01:20:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Pittsburgh Steelers",
+ "description": "",
+ "point": 3.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 2.0,
+ "effective_dec": 2.0,
+ "venue_quote_age_s": 31.0,
+ "fair_prob": 0.5110347743423955,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.510584,
+  "multiplicative": 0.51023,
+  "additive": 0.51047
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.511909,
+   "age_s": 20.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.50926,
+   "age_s": 6.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.002649,
+ "push_prob": 0.0,
+ "se": 0.010094,
+ "p_adj": 0.500941,
+ "ev_quoted": 0.02207,
+ "ev_adj_net": -0.003119,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.003119,
+ "decision_at": "2026-01-04T14:45:37+00:00",
+ "api_retrieved_at": "2026-10-19T05:46:19.336372+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054619_americanfootball_nfl_hist_9dd336af.json.gz"
+ ],
+ "scan": "bt-w18-sun",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 1.95,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054620_americanfootball_nfl_hist_cd1a9f31.json.gz",
+ "week": 18,
+ "holdout": true,
+ "snapshot_at": "2026-01-04T14:45:37+00:00",
+ "close_requested_at": "2026-01-05T01:15:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:46:24.217883+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054624_americanfootball_nfl_hist_5fbeef97.json.gz"
+ ],
+ "close_pinnacle_p": null,
+ "close_pinnacle_how": null,
+ "close_pinnacle_age_s": null,
+ "close_pinnacle_reason": "pinnacle_ladder_low_quality",
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "result": "win",
+ "units": 1.0
+}

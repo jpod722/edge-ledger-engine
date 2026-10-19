@@ -1,0 +1,97 @@
+{
+ "id": "nfl-20250907-8e0e2d92-h2h-detroit-lions-detroit-lion-ml",
+ "contract": "NFL|8e0e2d9237098222f9ca7554b11b12bb|h2h||detroit-lions|ml",
+ "sport": "NFL",
+ "event_id": "8e0e2d9237098222f9ca7554b11b12bb",
+ "game": "Detroit Lions @ Green Bay Packers",
+ "commence_time": "2025-09-07T20:25:00Z",
+ "family": "h2h",
+ "group": "main",
+ "side": "Detroit Lions",
+ "description": "",
+ "point": null,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 2.24,
+ "effective_dec": 2.24,
+ "venue_quote_age_s": 6.0,
+ "fair_prob": 0.4558892462936761,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.455595,
+  "multiplicative": 0.45769,
+  "additive": 0.456287
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.456461,
+   "age_s": 7.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.454728,
+   "age_s": 7.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.001733,
+ "push_prob": 0.0,
+ "se": 0.010218,
+ "p_adj": 0.445671,
+ "ev_quoted": 0.021192,
+ "ev_adj_net": -0.006696,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.006696,
+ "decision_at": "2025-09-04T18:45:38+00:00",
+ "api_retrieved_at": "2026-10-19T05:44:36.430929+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/054436_americanfootball_nfl_hist_ec198c34.json.gz"
+ ],
+ "scan": "bt-w1-thu",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4",
+ "exec_dec": 2.24,
+ "exec_status": "filled",
+ "exec_ref": "raw/2026-10-19/054437_americanfootball_nfl_hist_d98c0a9a.json.gz",
+ "week": 1,
+ "holdout": false,
+ "snapshot_at": "2025-09-04T18:45:38+00:00",
+ "close_requested_at": "2025-09-07T20:20:00+00:00",
+ "close_api_retrieved_at": "2026-10-19T05:44:41.383073+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/054441_americanfootball_nfl_hist_02b54e11.json.gz"
+ ],
+ "close_pinnacle_p": 0.494677,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 319.0,
+ "close_pinnacle_reason": null,
+ "close_indep_p": 0.485965,
+ "close_indep_books": [
+  "lowvig"
+ ],
+ "clv_pinnacle": {
+  "prob": 0.048248,
+  "ev": 0.108075,
+  "logodds": 0.193817
+ },
+ "clv_indep": {
+  "prob": 0.039536,
+  "ev": 0.088561,
+  "logodds": 0.158956
+ },
+ "clv_pinnacle_exec": {
+  "prob": 0.048248,
+  "ev": 0.108076,
+  "logodds": 0.193819
+ },
+ "result": "loss",
+ "units": -1.0
+}
