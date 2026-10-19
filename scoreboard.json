@@ -1,0 +1,57 @@
+{
+ "generated_at": "2026-10-19T18:21:30.360503+00:00",
+ "paper_only": true,
+ "health": {
+  "monitor_last_night": {
+   "date": "2026-10-19",
+   "games": 0,
+   "polls": 0,
+   "injury_changes": 0,
+   "kalshi_snapshots": 0,
+   "finished": true
+  },
+  "status": "green",
+  "problems": [],
+  "errors": {},
+  "injury_archive_snapshots_24h": 43
+ },
+ "credits": {
+  "remaining": 12380,
+  "used_last_7_days": 7585,
+  "floor": 9000,
+  "reset": "Nov 18"
+ },
+ "tracks": {
+  "gate_a": {
+   "title": "Does the points model beat the market?",
+   "state": "collecting",
+   "logged": 0,
+   "eligible": 0,
+   "resolved": 0,
+   "game_dates": 0,
+   "need_forecasts": 500,
+   "need_game_dates": 100,
+   "complete": false,
+   "results": "sealed"
+  },
+  "k1": {
+   "title": "Do Kalshi resting orders beat Kalshi's close?",
+   "state": "collecting",
+   "rungs_logged": 0,
+   "fills": 0,
+   "fill_dates": 0,
+   "need_fills": 300,
+   "need_dates": 40,
+   "complete": false,
+   "results": "sealed"
+  },
+  "n1": {
+   "title": "Are books slow after injury news?",
+   "state": "collecting",
+   "injury_changes": 0,
+   "reaction_polls": 0,
+   "note": "collecting; the analysis plan is written and frozen before any of this data is analysed"
+  }
+ },
+ "rules": "Results stay sealed until each test's sample is complete. Nothing here is a bet."
+}
