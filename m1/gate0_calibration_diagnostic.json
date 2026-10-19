@@ -1,0 +1,5 @@
+{"note": "Diagnostic only, not a gate. Synthetic line = floor(rolling-10 points avg) + 0.5; real book lines will be sharper.",
+ "deciles_pred_vs_actual_over": [[0.316,0.353],[0.364,0.394],[0.387,0.427],[0.404,0.453],[0.419,0.452],[0.434,0.483],[0.449,0.489],[0.466,0.508],[0.488,0.541],[0.534,0.602]],
+ "by_role_over_rate_actual_vs_pred": {"starter": [0.470,0.433], "rotation": [0.474,0.425], "fringe": [0.465,0.410]},
+ "ou_log_loss": {"m1": 0.6857, "coin": 0.6931, "base_rate": 0.6914},
+ "finding": "Monotone but biased: M1 under-predicts overs by about 4 probability points in every decile and role."}

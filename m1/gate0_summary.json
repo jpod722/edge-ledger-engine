@@ -1,0 +1,61 @@
+{
+ "track": "M1 Gate 0 (historical log score, exact points)",
+ "eval_seasons": [
+  "2024-25",
+  "2025-26"
+ ],
+ "n_player_games": 41627,
+ "game_dates": 313,
+ "mean_log_score": {
+  "m1": -3.17718,
+  "b1_rolling10_negbin": -3.28775,
+  "b2_shrunk_rate_x_recent_minutes": -3.26807
+ },
+ "m1_minus_b1": {
+  "mean": 0.11056,
+  "lo": 0.10201,
+  "hi": 0.11935,
+  "clusters": 313
+ },
+ "m1_minus_b2": {
+  "mean": 0.09089,
+  "lo": 0.08365,
+  "hi": 0.09816,
+  "clusters": 313
+ },
+ "pass": true,
+ "by_role_diagnostic": {
+  "starter": {
+   "n": 21701,
+   "m1_minus_b1": 0.0223,
+   "m1_minus_b2": 0.01793
+  },
+  "rotation": {
+   "n": 11754,
+   "m1_minus_b1": 0.11281,
+   "m1_minus_b2": 0.08087
+  },
+  "fringe": {
+   "n": 8172,
+   "m1_minus_b1": 0.34171,
+   "m1_minus_b2": 0.29907
+  }
+ },
+ "constants_fit_on_2023_24": {
+  "role_rate": {
+   "fringe": 0.3706,
+   "rotation": 0.42,
+   "starter": 0.5248
+  },
+  "role_sd": {
+   "fringe": 6.8799,
+   "rotation": 6.6109,
+   "starter": 5.9829
+  },
+  "size_b1": 6.245710071481814,
+  "size_b2": 6.304388425505202,
+  "size_m1": 11.743592848664166,
+  "rate_sd_scale": 4.869739392389901
+ },
+ "deviation_from_spec": "joint distribution integrated on a minutes x rate grid instead of 10,000 draws (same model, no simulation noise)"
+}
