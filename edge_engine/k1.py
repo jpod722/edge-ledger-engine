@@ -89,6 +89,7 @@ def quotes(box: pd.DataFrame, markets: list[dict], decision_at: str, games: list
             out.append(rec)
             continue
         pid = cand[0][0]
+        rec["player_id"], rec["team"] = str(pid), cand[0][1]
         if pid not in cache:
             hist = app[(app.player_id == pid) & (app.date < pd.Timestamp(tip))]
             if len(hist) < m1.MIN_APPS:

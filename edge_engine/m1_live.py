@@ -162,6 +162,7 @@ def forecasts(box: pd.DataFrame, payloads: list[tuple[dict, str]], cfg: dict, fr
                     out.append(rec)
                     continue
                 pid = cand[0][0]
+                rec["player_id"], rec["team"] = str(pid), cand[0][1]
                 hist = app[(app.player_id == pid) & (app.date < tip)]
                 if len(hist) < m1.MIN_APPS:
                     rec["reason"] = f"prior_appearances_{len(hist)}_lt_{m1.MIN_APPS}"
