@@ -75,6 +75,9 @@ class Monitor:
         self.cfg, self.data = cfg, data
         self.first_payload: dict = {}
         self.kalshi_tickers: set = set()
+        self.kalshi_first: list = []
+        self.kalshi_first_at = None
+        self.kalshi_collecting = True
         self.forecasts_done = False
 
     def log(self, kind: str, **kw):
@@ -131,6 +134,12 @@ class Monitor:
             out = m1_live.write_and_push(self.data, day, recs)
             self.log("forecasts", n=len(recs), eligible=sum(r["eligible"] for r in recs), file=out,
                      frozen_at=frozen["frozen_at"])
+            if self.kalshi_first:
+                from . import k1
+                kq = k1.quotes(box, self.kalshi_first, self.kalshi_first_at, games, self.cfg, frozen)
+                kout = k1.write_and_push(self.data, day, kq)
+                self.log("k1_quotes", n=len(kq), eligible=sum(r["eligible"] for r in kq), file=kout,
+                         decision_at=self.kalshi_first_at)
         except Exception as err:  # noqa: BLE001
             self.log("forecast_error", detail=str(err)[:300])
 
@@ -150,12 +159,17 @@ class Monitor:
                 return
             d = r.json()
             n += len(d.get("markets", []))
+            if self.kalshi_first_at is None or self.kalshi_collecting:
+                self.kalshi_first.extend(d.get("markets", []))
             for mk in d.get("markets", []):
                 self.kalshi_tickers.add(mk.get("ticker"))
             cur = d.get("cursor")
             if not cur:
                 break
             self.sleep(self.m["kalshi_pause_s"])
+        if self.kalshi_first_at is None:
+            self.kalshi_first_at = self.now().isoformat()
+        self.kalshi_collecting = False
         self.log("kalshi_snapshot", markets=n)
 
     def kalshi_trades(self):

@@ -140,6 +140,20 @@ m1:                              # NBA points props model; spec frozen 2026-10-1
   gateA: {min_forecasts: 500, min_game_dates: 100, metric: log_loss_over_under, cluster: game_date, ci: 0.95}
   gateB: {research_min_ev: 0.03, clv_benchmark: leave_venue_out_consensus_close}
 
+k1:                              # Kalshi paper maker test; approved by the reviewer 2026-10-19; frozen
+  series: KXNBAPTS
+  model: m1_1                    # M1 and the naive mid +/- offset poster scored on the identical rung set
+  offset: 0.03                   # fixed 3 cents (a price-scaled offset would be K1.1)
+  contracts: 10
+  fill_rule: through_only        # a later trade strictly through our price before tip; at-price prints are diagnostic only
+  cancel_after_news_s: 60        # any injury status change for either team cancels that game's orders
+  close: last_two_sided_snapshot_within_10_min_before_tip   # missing otherwise; never last trade or one-sided
+  fees: {maker_rate: 0.0175}
+  gate: {min_fills: 300, min_game_dates: 40, metric: clv_cents_vs_close_mid, cluster: game_date, ci: 0.95,
+         also_beat: naive_mid_offset}
+  diagnostics_only: [settled_pnl_after_fees, fill_rate, adverse_selection, at_price_print_volume, top_of_book_depth]
+  real_money: "never automatic; passing only qualifies a separately pre-registered pilot"
+
 monitor:                         # nightly NBA points-prop monitor (prospective dataset, reviewer plan Oct 19)
   market: player_points
   season: "2026-27"
