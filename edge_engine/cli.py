@@ -214,6 +214,10 @@ def main(argv=None):
     b.add_argument("--start", required=True)
     b.add_argument("--latency-min", type=int, default=10)
     sub.add_parser("backtest-report")
+    pr = sub.add_parser("probe")
+    pr.add_argument("--date", default="2025-11-09")
+    pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
+    pr.add_argument("--max-credits", type=int, default=200)
     a = ap.parse_args(argv)
     cfg = load_cfg(a.config)
     if a.cmd == "scan":
@@ -228,6 +232,9 @@ def main(argv=None):
     elif a.cmd == "backtest-report":
         from .backtest import report as bt_report
         bt_report(a, cfg)
+    elif a.cmd == "probe":
+        from .probe import run as probe_run
+        probe_run(a, cfg)
 
 
 if __name__ == "__main__":
