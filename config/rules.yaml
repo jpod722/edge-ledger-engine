@@ -140,6 +140,19 @@ m1:                              # NBA points props model; spec frozen 2026-10-1
   gateA: {min_forecasts: 500, min_game_dates: 100, metric: log_loss_over_under, cluster: game_date, ci: 0.95}
   gateB: {research_min_ev: 0.03, clv_benchmark: leave_venue_out_consensus_close}
 
+monitor:                         # nightly NBA points-prop monitor (prospective dataset, reviewer plan Oct 19)
+  market: player_points
+  baseline_min: 20               # per game until tip
+  reaction_polls_min: [0, 2, 5, 10]   # after an ESPN status change for a team in that game
+  close_window_min: 6            # close poll inside the last 6 minutes (within the 10-minute close rule)
+  injury_poll_s: 60
+  official_poll_s: 120
+  loop_s: 20
+  after_last_tip_min: 10
+  max_runtime_min: 340           # GitHub job limit is 360
+  nightly_cap_credits: 150
+  min_remaining_credits: 3000    # keeps the reserve
+
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"
   monitor_min_n: 50

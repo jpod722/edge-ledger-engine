@@ -1,0 +1,38 @@
+name: nba-monitor
+# Nightly NBA points-prop monitor. Two windows so late tips are covered within the 6-hour job limit.
+on:
+  schedule:
+    - cron: "30 21 * * *"          # 5:30 PM EDT / 4:30 PM EST
+    - cron: "20 2 * * *"           # continues for late games (queues behind the first run)
+    - cron: "0 16 * * 0,6"         # weekend afternoon games
+  workflow_dispatch: {}
+concurrency:
+  group: nba-monitor
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests==2.32.3 PyYAML==6.0.2
+      - name: Check out the data branch
+        run: |
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git clone --quiet --depth 1 --branch data --single-branch "$URL" data
+      - run: python -m edge_engine.monitor --data data
+      - name: Commit data
+        if: always()
+        run: |
+          cd data
+          git config user.name "edge-engine"; git config user.email "edge-engine@users.noreply.github.com"
+          git add -A
+          git commit -q -m "nba monitor $(date -u +%FT%TZ)" || exit 0
+          for i in 1 2 3 4 5; do git push -q origin data && break; git pull -q --rebase origin data; done
