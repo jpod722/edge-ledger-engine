@@ -1,0 +1,49 @@
+name: kalshi-smoke
+# Pipe check from GitHub's IP: one KXNBAPTS top-of-book read through the monitor's own code, a burst to see
+# whether Kalshi rate-limits this IP, and a trades read. Free, no Odds API credits, writes nothing to the data branch.
+on:
+  schedule:
+    - cron: "0 13 20 10 *"         # 9:00 AM ET 2026-10-20, opening day
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests==2.32.3 PyYAML==6.0.2
+      - name: Kalshi pipe check
+        env:
+          ODDS_API_KEY: "unused-by-this-check"
+        run: |
+          python - <<'PY'
+          import json, time, yaml, requests, tempfile
+          from edge_engine.monitor import Monitor, KALSHI
+          cfg = yaml.safe_load(open("config/rules.yaml"))
+          d = tempfile.mkdtemp()
+          m = Monitor(d, cfg)
+          m.kalshi_snapshot()
+          logs = [json.loads(l) for l in open(m.log_p)]
+          print("snapshot log:", logs)
+          mk = m.kalshi_first
+          two = [x for x in mk if x.get("yes_bid_dollars") not in (None, "0.0000") and x.get("yes_ask_dollars") not in (None, "1.0000")]
+          print(f"markets={len(mk)} two_sided={len(two)} tickers={len(m.kalshi_tickers)}")
+          for x in two[:5]:
+              print(x.get("ticker"), x.get("yes_sub_title"), "bid", x.get("yes_bid_dollars"), "ask", x.get("yes_ask_dollars"),
+                    "oi", x.get("open_interest_fp"))
+          codes = []
+          for _ in range(30):
+              codes.append(requests.get(f"{KALSHI}/markets?series_ticker=KXNBAPTS&status=open&limit=1", timeout=30).status_code)
+          print("burst of 30 status codes:", {c: codes.count(c) for c in set(codes)})
+          m.kalshi_tickers = set(sorted(t for t in m.kalshi_tickers if t)[:3])
+          m.kalshi_trades()
+          logs = [json.loads(l) for l in open(m.log_p)]
+          print("trades log:", logs[-1])
+          ok = logs[0]["kind"] == "kalshi_snapshot" and len(mk) > 0 and logs[-1].get("markets") == len(m.kalshi_tickers)
+          print("RESULT:", "PASS" if ok else "FAIL")
+          raise SystemExit(0 if ok else 1)
+          PY

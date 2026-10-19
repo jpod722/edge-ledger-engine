@@ -99,3 +99,19 @@ def test_budget_reserves_closes(tmp_path):
     assert any("close" in x["reason"] for x in polls)                  # the close still happened
     assert any(x["kind"] == "poll_skipped_budget" for x in log)
     assert len(polls) <= 3
+
+
+def test_stop_at_caps_runtime(tmp_path):
+    """A one-off early run stops at its --stop-at-et time even when its game has not tipped."""
+    cfg = load_cfg()
+    clock = Clock()
+    s = S(clock)
+    monitor.api_key = lambda: "k"
+    RawStore(tmp_path).manifest.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    stop = T0 + timedelta(minutes=30)
+    monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep, stop_at=stop).run()
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    assert log[-1]["kind"] == "done"
+    assert all(p <= stop for p in s.polls)
+    assert not any(x["kind"] == "poll" and "close" in x["reason"] for x in log)
+    assert "kalshi_trades" in [x["kind"] for x in log]                # still collects trades on the way out

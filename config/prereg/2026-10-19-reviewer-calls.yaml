@@ -1,0 +1,45 @@
+# Reviewer calls of 2026-10-19 (reply to the Full Status Review). Committed before any query of the data concerned.
+# Nothing here changes a frozen model, scorer or threshold.
+
+decisions:
+  k1h: run once under the spec below; result cannot qualify money and cannot change live K1 in either direction
+  nba_548_scan: keep main lines only; drop props and derivatives (applied after the 2026-10-19 5:48 PM NFL scan)
+  v4_props: retired from v4 in both sports (FanDuel is a target, never a vote); applied after the 2026-10-19 NFL scan
+  n1: collect only; no look at the data until this plan is committed (it is, below)
+  frozen_items: untouched (M1, M1.1, Gate A scorer, K1 scorer, thresholds)
+
+k1h:                                   # Kalshi last-season replay, early read only (outcomes seen in Gate 0; prices not)
+  live_k1_unchanged_either_sign: true  # positive does not loosen 3c or size; negative does not pause live K1
+  universe: every 2025-26 regular-season date with listed KXNBAPTS markets, thin months included
+  exclusions: do not reuse the Feb-Jun market pages already opened; if a pull showed a bid, ask or last trade, never reopen it
+  sample: all dates if the rate limit allows, else stratified by month (no simple random sample)
+  decision_time: min(17:30 ET, tip - 90 min)
+  quote: last hourly candle closed at or before decision_time
+  orders: same as live K1 (YES/NO bids 3c inside M1.1 fair, 10 contracts, never cross the ask)
+  fills: through-only trades after decision_time and before tip
+  close: last two-sided mid within 10 min before tip
+  fee: maker 0.0175 x n x P x (1-P), rounded up to the next cent per fill (as in the frozen K1 scorer)
+  primary: M1.1 minus naive mid+-3c poster, per-date CLV dollars after fees, cluster bootstrap by game date; liquidity-weighted and equal-date
+  sensitivities:                       # pre-registered, never alternate primaries
+    - drop rungs whose quoting candle is more than 20 min stale
+    - drop fills in the last 90 min before tip (crude stand-in for the injury cancel)
+    - 1-lot beside 10-lot
+  report: fill rate, share of rungs where the 3c shade can rest, fee drag, CLV by price band (<15c, 15-85c, >85c) and role, DNP vs played settlement shown separately
+  settlement: Kalshi recorded settlement value (inactive players settle at Kalshi's fair price, not void)
+
+n1:                                    # injury-reaction latency; descriptive until the stop rule is met
+  events: transitions into or out of Out only (no GTD/Questionable chatter)
+  change_time: interval (previous ESPN poll, first poll showing the change], up to 60 s; official-report agreement = clean subset; ESPN-only flagged
+  resolvable: a price snapshot exists within 3 min before the change interval; all others go to a coverage table, not the latency average
+  thresholds:                          # exactly two, both fixed now
+    delta_prob: 0.03                   # no-vig P(over) on the player's own points at the same line
+    delta_line: 1.0                    # one full point of line move on the player's own points
+  primary: at +2 min, DraftKings or FanDuel own-player-points no-vig still within delta of its pre-news price while Pinnacle has moved >= delta
+  placebo: same-time windows on same-night players with no status change, scored identically
+  order_reported: [own minutes, own points, teammates' points, team total, spread]
+  clustering: by game
+  stop: fewer than 40 qualifying Outs by 2026-12-25 -> stays descriptive
+  known_gap: the 20-min baseline means few events will have a price within 3 min before the change (see status note)
+
+gate_a:
+  timestamp: primary already scores the decision-time (first-snapshot) consensus price, as logged in each forecast record (market_p_over); no change

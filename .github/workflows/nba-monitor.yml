@@ -5,8 +5,10 @@ on:
     - cron: "30 21 * * *"          # 5:30 PM EDT / 4:30 PM EST
     - cron: "20 2 * * *"           # continues for late games (queues behind the first run)
     - cron: "0 16 * * 0,6"         # weekend afternoon games
-    - cron: "30 18 20 10 *"        # opening day 2026-10-20: 3:00 PM ET tip
-  workflow_dispatch: {}
+    - cron: "45 17 20 10 *"        # opening day 2026-10-20: 1:45 PM ET start for the 3:00 PM tip (cron often runs late)
+  workflow_dispatch:
+    inputs:
+      stop_at_et: {description: "optional HH:MM ET hard stop (one-off early runs)", required: false, default: ""}
 concurrency:
   group: nba-monitor
   cancel-in-progress: false
@@ -29,7 +31,16 @@ jobs:
           URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git clone --quiet --depth 1 --branch data --single-branch "$URL" data
           cd data && git config user.name "edge-engine" && git config user.email "edge-engine@users.noreply.github.com"
-      - run: python -m edge_engine.monitor --data data
+      - name: Run the monitor
+        run: |
+          # the opening-day early run covers only the 3:00 PM game, so the 5:30 PM run starts on time
+          STOP="${{ inputs.stop_at_et }}"
+          if [ "${{ github.event.schedule }}" = "45 17 20 10 *" ]; then STOP="15:15"; fi
+          if [ -n "$STOP" ]; then
+            python -m edge_engine.monitor --data data --stop-at-et "$STOP"
+          else
+            python -m edge_engine.monitor --data data
+          fi
       - name: Commit data
         if: always()
         run: |

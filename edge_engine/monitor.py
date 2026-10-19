@@ -61,8 +61,9 @@ def diff_injuries(old: dict, new: dict) -> list[dict]:
 
 
 class Monitor:
-    def __init__(self, data: str, cfg: dict, session=None, clock=None, sleep=None):
+    def __init__(self, data: str, cfg: dict, session=None, clock=None, sleep=None, stop_at=None):
         self.m = cfg["monitor"]
+        self.stop_at = stop_at                       # optional hard stop (aware datetime) for a one-off early run
         self.store = RawStore(data)
         self.log_p = Path(data) / "monitor" / f"{utcnow().astimezone(ET):%Y-%m-%d}.jsonl"
         self.log_p.parent.mkdir(parents=True, exist_ok=True)
@@ -200,6 +201,8 @@ class Monitor:
     def run(self):
         start = self.now()
         hard_stop = start + timedelta(minutes=self.m["max_runtime_min"])
+        if self.stop_at is not None:
+            hard_stop = min(hard_stop, self.stop_at)
         games = self.games_tonight()
         if games:
             self.prepare_box()
@@ -294,6 +297,11 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data")
     ap.add_argument("--config")
+    ap.add_argument("--stop-at-et", help="HH:MM ET today; stop the loop then (one-off early runs)")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(a.config or Path(__file__).resolve().parent.parent / "config" / "rules.yaml"))
-    Monitor(a.data, cfg).run()
+    stop = None
+    if a.stop_at_et:
+        hh, mm = map(int, a.stop_at_et.split(":"))
+        stop = utcnow().astimezone(ET).replace(hour=hh, minute=mm, second=0, microsecond=0)
+    Monitor(a.data, cfg, stop_at=stop).run()
