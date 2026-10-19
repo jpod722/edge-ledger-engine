@@ -1,0 +1,109 @@
+{
+ "id": "nfl-20250928-b7934d72-spreads-atlanta-falcons-atlanta-falc-m2p5",
+ "contract": "NFL|b7934d72587b62de0f563ac9acbaa770|spreads||atlanta-falcons|-2.5",
+ "sport": "NFL",
+ "event_id": "b7934d72587b62de0f563ac9acbaa770",
+ "game": "Washington Commanders @ Atlanta Falcons",
+ "commence_time": "2025-09-28T17:01:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "Atlanta Falcons",
+ "description": "",
+ "point": -2.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.91,
+ "effective_dec": 1.91,
+ "venue_quote_age_s": 71.0,
+ "fair_prob": 0.5397617971525679,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.539762,
+  "multiplicative": 0.538265,
+  "additive": 0.539276
+ },
+ "method_sensitive": false,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.539762,
+   "age_s": 73.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.0,
+ "push_prob": 0.0,
+ "se": 0.010111,
+ "p_adj": 0.52965,
+ "ev_quoted": 0.030945,
+ "ev_adj_net": 0.006632,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [
+  "single_source"
+ ],
+ "sharp_detail": [
+  "lowvig_ladder_too_few_rungs"
+ ],
+ "best_account_venue": "draftkings",
+ "best_account_ev": 0.006632,
+ "decision_at": "2025-09-28T16:31:39+00:00",
+ "api_retrieved_at": "2026-10-19T06:32:12.877812+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/063212_americanfootball_nfl_hist_616cfccb.json.gz"
+ ],
+ "scan": "s1-w4-k19",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4.1",
+ "week": 4,
+ "k": 19,
+ "snapshot_at": "2025-09-28T16:30:39+00:00",
+ "threshold": 0.03,
+ "track": "comparison",
+ "exec": {
+  "5": {
+   "available": true,
+   "price_dec": 1.91,
+   "ev_at_orig_fair": 0.030945,
+   "eligible": true,
+   "snapshot": "2025-09-28T16:35:38+00:00",
+   "clv_pinnacle": null
+  },
+  "10": {
+   "available": true,
+   "price_dec": 1.91,
+   "ev_at_orig_fair": 0.030945,
+   "eligible": true,
+   "snapshot": "2025-09-28T16:40:38+00:00",
+   "clv_pinnacle": null
+  }
+ },
+ "close_requested_at": "2025-09-28T16:50:38+00:00",
+ "close_api_retrieved_at": "2026-10-19T06:32:15.949400+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/063215_americanfootball_nfl_hist_e10366e0.json.gz"
+ ],
+ "close_pinnacle_p": null,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 24.0,
+ "close_pinnacle_reason": "close_gap_10.37_min",
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "close_snapshot": "2025-09-28T16:50:38+00:00",
+ "close_gap_min": 10.37,
+ "close_gap_ok": false,
+ "result": "win",
+ "units": 0.91
+}

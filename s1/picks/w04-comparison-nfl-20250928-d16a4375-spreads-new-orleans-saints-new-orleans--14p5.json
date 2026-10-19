@@ -1,0 +1,111 @@
+{
+ "id": "nfl-20250928-d16a4375-spreads-new-orleans-saints-new-orleans--14p5",
+ "contract": "NFL|d16a43752aaac66e9ff8768d8590b662|spreads||new-orleans-saints|+14.5",
+ "sport": "NFL",
+ "event_id": "d16a43752aaac66e9ff8768d8590b662",
+ "game": "New Orleans Saints @ Buffalo Bills",
+ "commence_time": "2025-09-28T17:01:00Z",
+ "family": "spreads",
+ "group": "main",
+ "side": "New Orleans Saints",
+ "description": "",
+ "point": 14.5,
+ "venue": "draftkings",
+ "has_account": true,
+ "price_dec": 1.95,
+ "effective_dec": 1.95,
+ "venue_quote_age_s": 110.0,
+ "fair_prob": 0.5243295073090629,
+ "fair_method": "direct",
+ "devig_method": "power",
+ "fair_by_method": {
+  "power": 0.523876,
+  "multiplicative": 0.523018,
+  "additive": 0.523598
+ },
+ "method_sensitive": true,
+ "sources": [
+  {
+   "book": "pinnacle",
+   "p": 0.525211,
+   "age_s": 67.0,
+   "how": "direct"
+  },
+  {
+   "book": "lowvig",
+   "p": 0.522541,
+   "age_s": 72.0,
+   "how": "direct"
+  }
+ ],
+ "dispersion": 0.00267,
+ "push_prob": 0.0,
+ "se": 0.010127,
+ "p_adj": 0.514203,
+ "ev_quoted": 0.022443,
+ "ev_adj_net": -0.002305,
+ "tier": "research",
+ "paper": true,
+ "stake_usd": 0.0,
+ "reasons": [],
+ "sharp_detail": [],
+ "best_account_venue": "draftkings",
+ "best_account_ev": -0.002305,
+ "decision_at": "2025-09-28T15:11:38+00:00",
+ "api_retrieved_at": "2026-10-19T06:31:59.957646+00:00",
+ "raw_refs": [
+  "raw/2026-10-19/063159_americanfootball_nfl_hist_a216bcb9.json.gz"
+ ],
+ "scan": "s1-w4-k3",
+ "engine_version": "4.0.0",
+ "config_version": "2026-10-19.v4.1",
+ "week": 4,
+ "k": 3,
+ "snapshot_at": "2025-09-28T15:10:38+00:00",
+ "threshold": 0.02,
+ "track": "comparison",
+ "exec": {
+  "5": {
+   "available": true,
+   "price_dec": 1.95,
+   "ev_at_orig_fair": 0.022443,
+   "eligible": true,
+   "snapshot": "2025-09-28T15:15:38+00:00",
+   "clv_pinnacle": null
+  },
+  "10": {
+   "available": true,
+   "price_dec": 1.95,
+   "ev_at_orig_fair": 0.022443,
+   "eligible": true,
+   "snapshot": "2025-09-28T15:20:39+00:00",
+   "clv_pinnacle": null
+  }
+ },
+ "close_requested_at": "2025-09-28T16:50:38+00:00",
+ "close_api_retrieved_at": "2026-10-19T06:32:15.949400+00:00",
+ "close_raw_refs": [
+  "raw/2026-10-19/063215_americanfootball_nfl_hist_e10366e0.json.gz"
+ ],
+ "close_pinnacle_p": null,
+ "close_pinnacle_how": "direct",
+ "close_pinnacle_age_s": 24.0,
+ "close_pinnacle_reason": "close_gap_10.37_min",
+ "close_indep_p": null,
+ "close_indep_books": [],
+ "clv_pinnacle": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "clv_indep": {
+  "prob": null,
+  "ev": null,
+  "logodds": null
+ },
+ "close_snapshot": "2025-09-28T16:50:38+00:00",
+ "close_gap_min": 10.37,
+ "close_gap_ok": false,
+ "result": "win",
+ "units": 0.95
+}

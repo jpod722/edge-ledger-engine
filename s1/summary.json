@@ -1,0 +1,106 @@
+{
+ "track": "S1 stale lines (research tier)",
+ "weeks_done": [
+  4,
+  5,
+  6,
+  7
+ ],
+ "complete": true,
+ "credits": 1920,
+ "remaining_after": 12380,
+ "snapshots": 96,
+ "snapshot_gaps_s": [
+  299,
+  300,
+  301
+ ],
+ "dropped_lookahead": 0,
+ "raw_triggers": 8,
+ "triggered_research": 0,
+ "comparison_research": 3,
+ "generated_at": "2026-10-19T06:33:12.704113+00:00",
+ "results": {
+  "triggered": {
+   "n": 0,
+   "with_valid_close": 0,
+   "clv_decision": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "clv_decision_logodds": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "missing_close_reasons": {},
+   "available_5": null,
+   "opportunity_5": null,
+   "clv_exec_5": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "available_10": null,
+   "opportunity_10": null,
+   "clv_exec_10": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "units": 0,
+   "roi": null
+  },
+  "comparison": {
+   "n": 3,
+   "with_valid_close": 0,
+   "clv_decision": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "clv_decision_logodds": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "missing_close_reasons": {
+    "close_gap_min": 3
+   },
+   "available_5": 1.0,
+   "opportunity_5": 1.0,
+   "clv_exec_5": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "available_10": 1.0,
+   "opportunity_10": 1.0,
+   "clv_exec_10": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null,
+    "p_le_0": null
+   },
+   "units": 2.86,
+   "roi": 0.9533
+  }
+ },
+ "verdict": "stop"
+}

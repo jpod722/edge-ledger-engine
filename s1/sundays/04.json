@@ -1,0 +1,19 @@
+{
+ "week": 4,
+ "sunday": "2025-09-28",
+ "snapshots": 24,
+ "first": "2025-09-28T14:55:38+00:00",
+ "last": "2025-09-28T16:50:38+00:00",
+ "gaps_s": [
+  299,
+  300,
+  301
+ ],
+ "dropped_lookahead": 0,
+ "raw_triggers": 2,
+ "triggered_research": 0,
+ "comparison_research": 2,
+ "credits": 480,
+ "remaining_after": 13820,
+ "ran_at": "2026-10-19T06:32:16.354027+00:00"
+}
