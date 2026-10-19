@@ -1,0 +1,19 @@
+{
+ "at": "2026-10-19T05:43:13.502520+00:00",
+ "bet": 0,
+ "config_version": "2026-10-19.v4",
+ "credits_est": 74,
+ "credits_month_before": 0,
+ "engine_version": "4.0.0",
+ "events": 15,
+ "mode": "scan",
+ "paper": true,
+ "quotes": 3837,
+ "rejected": 1863,
+ "report_md": "**NFL scan \u00b7 20261019-054310-setup-test** \u00b7 PAPER \u2014 not validated, do not bet\n\nNo bet-tier plays.\n\nResearch candidates logged: 3 \u00b7 rejected: 1863 \u00b7 credits: 74",
+ "research": 3,
+ "run_id": "20261019-054310-setup-test",
+ "scan": "setup-test",
+ "sport": "NFL",
+ "window": "all"
+}

@@ -1,0 +1,25 @@
+{
+ "run_id": "20261019-054310-setup-test",
+ "files": [
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-2823e986-totals-over-over-44",
+   "file": "ledger/picks/nfl-20261025-2823e986-totals-over-over-44.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-totals-over-over-41p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-totals-over-over-41p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261027-4853610e-h2h-philadelphia-eagles-philadelphia-ml",
+   "file": "ledger/picks/nfl-20261027-4853610e-h2h-philadelphia-eagles-philadelphia-ml.json"
+  },
+  {
+   "collection": "runs",
+   "doc_id": "20261019-054310-setup-test",
+   "file": "runs/20261019-054310-setup-test.json"
+  }
+ ]
+}
