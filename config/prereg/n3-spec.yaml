@@ -1,0 +1,98 @@
+# N3 — NFL player-props model. Pre-registered 2026-10-19 after reviewer conditions (thesis + three-gate skeleton approved,
+# paper only). Written and committed BEFORE any 2023-2025 outcome is computed or any prop price is pulled.
+# Every constant marked FIT is estimated once on 2018-2022 regular seasons, written to config/n3_frozen.json, then frozen.
+# Weeks 2023-2025 are evaluation only. Nothing is refit on them.
+
+thesis: vacated usage the book has not fully repriced; not a better season average and not sharp-vs-soft line shopping
+
+markets: [receptions, receiving_yards, rushing_yards]       # no passing yards, no touchdowns
+report_splits: {rushing_yards: [RB, QB]}                    # QB rushing is its own Gate 0 test
+
+data:
+  source: nflverse-data releases (pbp, snap_counts, stats_player_week, players, schedules); regular season weeks 1-18
+  outcomes: stats_player_week receptions / receiving_yards / rushing_yards
+  ids: snap_counts pfr_player_id -> players.gsis_id
+  game_lines: schedules spread_line / total_line (close-ish) stand in for the kick-90 market in Gate 0 only (disclosed look-ahead, minutes)
+  inactive: in Gate 0 a player is inactive if he recorded no offensive snap; in 2026 the official inactive list at kick-90
+  route_rate: offense snap share in every season (participation file unused, so train and serve match)
+
+notation:
+  EW(x; h, n0, prior): (sum_j w_j x_j + n0*prior) / (sum_j w_j + n0), w_j = 0.5^(age_j / h), age in team games before the forecast, prior games only
+  h: 3                                    # games, fixed
+  n0: FIT from grid {1, 2, 4, 8} per feature family (team, share, efficiency), minimizing 2018-2022 squared error
+  ITT: implied team total = (total + team spread) / 2 ; M: implied margin = team spread (positive = favored)
+
+model:
+  team_plays:        "P = EW(plays) + c_T * (ITT - 22.5)                              ; c_T FIT (OLS)"
+  pass_rate:         "pi = a + b * EW(neutral_pass_rate) + k * M                       ; a, b, k FIT (OLS). neutral = qtr<=3, down<=3, |score diff|<=7"
+  dropbacks:         "D = P * pi ; designed rushes R = P * (1 - pi)                    ; plays = dropbacks + designed rushes, no kneels/spikes/2pt"
+  targets:           "lambda_i = D * s_i * t_i ; s_i = EW(snap share, active games), t_i = EW(targets per (dropback x snap share)) shrunk to position prior"
+  carries_RB:        "c_i = R * EW(designed-carry share)"
+  carries_QB:        "c_i = D * EW(scramble rate) + R * EW(designed-carry share)"
+  absence:
+    absent_teammate: ">= 15% offense snaps over the team's prior 4 games and inactive"
+    vacated:         "V = (1 - phi) * sum over absent a of a's lambda (or c) as if active   ; phi_target, phi_carry FIT = fraction that disappears"
+    split:           "i gains V * omega_i ; omega_i = (n_pair * p_i + m * v_i) / (n_pair + m), m = 4 (prior strength, fixed)"
+    p_i:             "i's observed share of the volume a vacated, in prior games (this and last season) without a; n_pair = number of such games"
+    v_i:             "position vacuum: v_i proportional to lambda_i * (theta if pos_i == pos_a else 1), normalized over active teammates ; theta FIT"
+  qb_out:
+    definition:      "team's primary QB (>= 70% of team dropbacks over prior 4 games) inactive"
+    haircuts:        "D *= h_D ; catch prob *= h_C ; yards-per-catch mean *= h_Y   ; h_D, h_C, h_Y FIT on 2018-2022 QB-out games (actual / modeled)"
+  receiving_efficiency:
+    adot:            "EW(air yards per target) shrunk to position prior"
+    catch_prob:      "EW(catch rate) shrunk toward logistic(alpha_pos + beta * aDOT)   ; alpha_pos, beta FIT"
+    ypc_mean:        "EW(yards per catch) shrunk toward gamma0 + gamma1 * aDOT          ; gamma0, gamma1 FIT"
+  rushing_efficiency: "per-carry yards drawn from the 2018-2022 empirical distribution by position (RB, QB), shifted by EW(ypc) - position mean"
+  opponent_adjustment: none in the primary (sensitivity only)
+  simulation:
+    targets:   "NegBin(mean lambda, size r_target_pos)    ; r FIT by position"
+    catches:   "Binomial(targets, catch_prob)"
+    rec_yards: "sum over catches of (Gamma(shape kappa_pos, mean ypc_mean + 5) - 5) ; kappa FIT by position"
+    carries:   "NegBin(mean c, size r_carry_pos)          ; r FIT by position"
+    draws: {gate0: 4000, live: 20000}
+
+eligibility:
+  appearances: ">= 3 prior active games this season with the current team"
+  volume_floor: {receptions: "lambda >= 3.0", receiving_yards: "lambda >= 3.0", rushing_RB: "c >= 6.0", rushing_QB: "primary QB and c >= 2.0"}
+  positions: {receiving: [WR, TE, RB], rushing: [RB, QB]}
+
+baseline_B1: "season-to-date mean; receptions ~ Poisson(mean); yards ~ Normal(mean, sd), sd = sqrt((n*s^2 + 4*(cv_pos*mean)^2)/(n+4)), cv_pos FIT"
+
+gate0:
+  sample: 2023-2025 regular seasons, every eligible player-game (weeks where eligibility holds)
+  metric: CRPS (sample-based, E|X-y| - 0.5 E|X-X'|); gain = CRPS_B1 - CRPS_N3 per player-game
+  tests: [receptions, receiving_yards, rushing_yards_RB, rushing_yards_QB]
+  pass_per_stat: "95% cluster bootstrap by game (2,000 reps), Holm across the 4 tests, adjusted lower bound > 0
+                  AND point estimate of gain on the absence subset > 0"
+  absence_subset: "player-games where his team has >= 1 absent teammate (15% rule)"
+  reported: [headline beneficiary (highest prior share among remaining same-team players) vs secondary (2nd-3rd), calibration (PIT) by stat, opponent-adjusted sensitivity]
+  consequence: "a stat that fails gets no price pull; the program stops only if all four fail"
+  run: once, on the committed code; results committed sealed-then-opened in one step
+
+gateA:
+  market_input: "Pinnacle no-vig at decision; no Pinnacle quote -> prop unscored. DK/FD/BetMGM/Caesars are targets, never votes"
+  devig: "multiplicative at posted American odds: p_over = q_over / (q_over + q_under), q = implied prob; integer lines: probabilities conditional on no push"
+  blend: "logit p = logit m + w * (logit model - logit m); w MAP with prior N(0, 0.5^2) on the summed (not mean) log loss"
+  fit_w: "walk-forward over the contiguous 2025 Weeks 10-14 block (Week 10 burn-in); frozen before it touches 2026"
+  robustness_weeks: "2023 and 2024 scattered weeks scored with w frozen at the end of the 2025 block (robustness table, not walk-forward; reviewer to confirm)"
+  pass: ">= 2,000 resolved props over the full declared sample; cluster bootstrap by game lower bound of (market LL - blend LL) > 0"
+  futility_look: "after tranche 1 only: point estimate <= 0 -> tranche 2 is not bought; cannot pass or retune anything"
+
+gateB:
+  decision_time: "official inactive list (kick-90); if late, list post or kick-60, whichever first, time logged"
+  stale_rule: "a quote > 30 min from the decision, or from before the list, drops the game; never back-filled"
+  close: "last Pinnacle quote at or before kick, within 10 min; else unscored"
+  play: "blend EV >= 4% AND model EV >= 4% vs that book; one play per player per game (highest EV; tie: receptions, then yards, then rushes)"
+  ev_identity: "EV = P(win) * (d - 1) - P(loss), push mass excluded, d = decimal odds at that book"
+  voids: "did-not-play voids; one snap and the play stands; in-game exits reported beside the result"
+  pass: ">= 250 plays over >= 6 weeks; Pinnacle no-vig close CLV lower bound > 0"
+  ladders: "excluded from Gate B; exploratory log-loss by rung only if storing them costs no extra market credit"
+
+credits:
+  gate0: 0
+  tranche1: "after Gate 0 passes for receptions: 2025 Weeks 10-14, receptions only (~750)"
+  receiving_yards_in_tranche1: "only if Gate 0 cleared them and the morning header keeps the high-case reset path >= 3,000"
+  forward_logging: "from Week 9, only after Gate 0; counts toward the same pre-reset cap; raw model and Pinnacle probabilities stored, blend applied later with frozen w"
+  reset_path_rule: "no N3 pull unless remaining - pull - 287 * days_to_reset >= 3,000 (287 = high-case daily burn after the NBA scan trim)"
+  tranche2: not approved
+real_money: "separate sign-off after Gate B, and only if w is off zero"
