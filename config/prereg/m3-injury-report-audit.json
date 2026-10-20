@@ -1,0 +1,31 @@
+{
+ "2023-24": {
+  "game_dates": 162,
+  "with_report_near_5pm": 162,
+  "missing": [],
+  "variants": {
+   "05PM": 162
+  }
+ },
+ "2024-25": {
+  "game_dates": 165,
+  "with_report_near_5pm": 164,
+  "missing": [
+   "2025-02-16"
+  ],
+  "variants": {
+   "05PM": 164
+  }
+ },
+ "2025-26": {
+  "game_dates": 166,
+  "with_report_near_5pm": 165,
+  "missing": [
+   "2026-02-15"
+  ],
+  "variants": {
+   "05_00PM": 104,
+   "05PM": 61
+  }
+ }
+}
