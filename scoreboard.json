@@ -1,23 +1,23 @@
 {
- "generated_at": "2026-10-20T13:23:31.673719+00:00",
+ "generated_at": "2026-10-20T17:57:11.968605+00:00",
  "paper_only": true,
  "health": {
   "monitor_last_night": {
-   "date": "2026-10-19",
-   "games": 0,
-   "polls": 0,
-   "injury_changes": 0,
-   "kalshi_snapshots": 0,
+   "date": "2026-10-20",
+   "games": 3,
+   "polls": 51,
+   "injury_changes": 8,
+   "kalshi_snapshots": 17,
    "finished": true
   },
   "status": "green",
   "problems": [],
   "errors": {},
-  "injury_archive_snapshots_24h": 101
+  "injury_archive_snapshots_24h": 568
  },
  "credits": {
-  "remaining": 12367,
-  "used_last_7_days": 7598,
+  "remaining": 12316,
+  "used_last_7_days": 7649,
   "floor": 9000,
   "reset": "Nov 18"
  },
@@ -48,7 +48,7 @@
   "n1": {
    "title": "Are books slow after injury news?",
    "state": "collecting",
-   "injury_changes": 0,
+   "injury_changes": 8,
    "reaction_polls": 0,
    "note": "collecting; the analysis plan is written and frozen before any of this data is analysed"
   }
