@@ -1,0 +1,130 @@
+{
+ "spec": "config/prereg/n3-spec.yaml",
+ "frozen_sha": "9a50ad45e7de25f22b2b36305333f30f04df5ee7d82af2f70e7ab11106b57008",
+ "seasons": [
+  2023,
+  2024,
+  2025
+ ],
+ "draws": 4000,
+ "seed": 20261019,
+ "verdicts": {
+  "receptions": {
+   "n": 5686,
+   "games": 672,
+   "gain_mean": 0.03100237425255012,
+   "lb95_one_sided": 0.019973002247949935,
+   "p_one_sided": 0.0,
+   "crps_n3": 1.1815551354203306,
+   "crps_b1": 1.2125575096728807,
+   "absence_n": 4101,
+   "absence_gain": 0.02877395757132407,
+   "no_absence_gain": 0.03676813880126182,
+   "qb_out_n": 430,
+   "qb_out_gain": 0.003649999999999999,
+   "headline_gain": 0.004801881993896232,
+   "secondary_gain": 0.03805674157303372,
+   "pit_mean": 0.5136287592332044,
+   "coverage80": 0.8862117481533591,
+   "by_season": {
+    "2023": 0.0319,
+    "2024": 0.0305,
+    "2025": 0.0307
+   },
+   "holm": {
+    "p": 0.0,
+    "threshold": 0.0125,
+    "reject": true
+   },
+   "pass": true
+  },
+  "receiving_yards": {
+   "n": 5686,
+   "games": 672,
+   "gain_mean": 0.7837082904329982,
+   "lb95_one_sided": 0.6391485877222094,
+   "p_one_sided": 0.0,
+   "crps_n3": 16.60091275157243,
+   "crps_b1": 17.38462104200543,
+   "absence_n": 4101,
+   "absence_gain": 0.7968246301835195,
+   "no_absence_gain": 0.7497713129460031,
+   "qb_out_n": 430,
+   "qb_out_gain": 0.8151965844899816,
+   "headline_gain": 0.6513116629409575,
+   "secondary_gain": 0.7925289956187899,
+   "pit_mean": 0.5061540626099191,
+   "coverage80": 0.8476960956735843,
+   "by_season": {
+    "2023": 0.7993,
+    "2024": 0.6823,
+    "2025": 0.8724
+   },
+   "holm": {
+    "p": 0.0,
+    "threshold": 0.016666666666666666,
+    "reject": true
+   },
+   "pass": true
+  },
+  "rushing_yards_RB": {
+   "n": 1992,
+   "games": 672,
+   "gain_mean": 1.034947659661977,
+   "lb95_one_sided": 0.7496591735976192,
+   "p_one_sided": 0.0,
+   "crps_n3": 17.712436862020763,
+   "crps_b1": 18.74738452168274,
+   "absence_n": 1454,
+   "absence_gain": 1.2421613140178724,
+   "no_absence_gain": 0.47493157521314394,
+   "qb_out_n": 157,
+   "qb_out_gain": 1.7571118013084268,
+   "headline_gain": 1.2049315893098784,
+   "secondary_gain": 1.3401326815046748,
+   "pit_mean": 0.5212372615461849,
+   "coverage80": 0.786144578313253,
+   "by_season": {
+    "2023": 1.218,
+    "2024": 0.8204,
+    "2025": 1.0702
+   },
+   "holm": {
+    "p": 0.0,
+    "threshold": 0.025,
+    "reject": true
+   },
+   "pass": true
+  },
+  "rushing_yards_QB": {
+   "n": 784,
+   "games": 544,
+   "gain_mean": 0.11566075091872166,
+   "lb95_one_sided": -0.23118953883922697,
+   "p_one_sided": 0.31,
+   "crps_n3": 10.271216914072065,
+   "crps_b1": 10.386877664990788,
+   "absence_n": 526,
+   "absence_gain": 0.12075096488034223,
+   "no_absence_gain": 0.10528302788068918,
+   "qb_out_n": 0,
+   "qb_out_gain": null,
+   "headline_gain": null,
+   "secondary_gain": -0.23198643759688525,
+   "pit_mean": 0.5777233737244898,
+   "coverage80": 0.7448979591836735,
+   "by_season": {
+    "2023": 0.0539,
+    "2024": 0.2281,
+    "2025": 0.0552
+   },
+   "holm": {
+    "p": 0.31,
+    "threshold": 0.05,
+    "reject": false
+   },
+   "pass": false
+  }
+ },
+ "program": "continue for passing stats"
+}
