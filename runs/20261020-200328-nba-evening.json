@@ -1,0 +1,19 @@
+{
+ "at": "2026-10-20T20:03:28.521421+00:00",
+ "bet": 0,
+ "config_version": "2026-10-19.v4.1",
+ "credits_est": 3,
+ "credits_month_before": 7649,
+ "engine_version": "4.0.0",
+ "events": 2,
+ "mode": "scan",
+ "paper": true,
+ "quotes": 120,
+ "rejected": 22,
+ "report_md": "**NBA scan \u00b7 20261020-200328-nba-evening** \u00b7 PAPER \u2014 not validated, do not bet\n\nNo bet-tier plays.\n\nResearch candidates logged: 0 \u00b7 rejected: 22 \u00b7 credits: 3",
+ "research": 0,
+ "run_id": "20261020-200328-nba-evening",
+ "scan": "nba-evening",
+ "sport": "NBA",
+ "window": "today_et"
+}
