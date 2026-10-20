@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-19T18:21:30.360503+00:00",
+ "generated_at": "2026-10-20T13:23:31.673719+00:00",
  "paper_only": true,
  "health": {
   "monitor_last_night": {
@@ -13,11 +13,11 @@
   "status": "green",
   "problems": [],
   "errors": {},
-  "injury_archive_snapshots_24h": 43
+  "injury_archive_snapshots_24h": 101
  },
  "credits": {
-  "remaining": 12380,
-  "used_last_7_days": 7585,
+  "remaining": 12367,
+  "used_last_7_days": 7598,
   "floor": 9000,
   "reset": "Nov 18"
  },
@@ -25,7 +25,7 @@
   "gate_a": {
    "title": "Does the points model beat the market?",
    "state": "collecting",
-   "logged": 0,
+   "logged": 81,
    "eligible": 0,
    "resolved": 0,
    "game_dates": 0,
