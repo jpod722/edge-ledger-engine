@@ -96,3 +96,16 @@ credits:
   reset_path_rule: "no N3 pull unless remaining - pull - 287 * days_to_reset >= 3,000 (287 = high-case daily burn after the NBA scan trim)"
   tranche2: not approved
 real_money: "separate sign-off after Gate B, and only if w is off zero"
+
+amendments_2026-10-19:   # implementation details fixed while coding, before Gate 0 runs and before any 2023-2025 outcome is computed
+  freshness: "an absentee's vacated volume is added to player i times f_i = share of i's EW weight from games where the absentee was active (no double count when i's history already reflects the absence)"
+  theta: "fit separately for targets (theta_t) and carries (theta_c); phi likewise (phi_t, phi_c)"
+  vacuum_pools: {targets: [WR, TE, RB], carries: [RB, QB, WR]}
+  pairwise: "p_i = positive part of (i's mean share without a - with a), this and last season, normalized over candidates; n_pair = games without a in which i was active"
+  ratio_estimators: "rates are ratio-of-sums EW with n0 pseudo-games of league-average size (targets per dropback-snap, catch rate, yards per catch, aDOT, carry shares, scramble rate, rush ypc)"
+  pass_rate_clip: [0.30, 0.80]
+  qb_carries: "QB carries = designed carries + scrambles; outcome rushing yards = official stats (kneels included)"
+  bootstrap_p: "one-sided p = share of cluster-bootstrap means <= 0 (2,000 reps, seed 31); Holm at alpha 0.05 across the 4 tests"
+  gate0_draws: {n: 4000, seed: 20261019}
+  rank_report: "headline = rank 1 by EW snap x targets-per-dropback-snap (receiving) or carry share (rushing) among active teammates; secondary = ranks 2-3"
+  opponent_sensitivity: "deferred to the Gate 0 report addendum; not part of pass/fail"
