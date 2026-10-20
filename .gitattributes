@@ -1,0 +1,2 @@
+# concurrent jobs append to the same logs (monitor, archive, manifest): keep both sides
+*.jsonl merge=union
