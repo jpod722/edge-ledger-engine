@@ -125,7 +125,7 @@ def load(cache: str, seasons):
     for y in seasons:
         tg, pg, ca, cr = load_season(cache, y, games, pfr2gsis, pos_of)
         T.append(tg); P.append(pg); C.append(ca.assign(season=y)); R.append(cr.assign(season=y))
-    return pd.concat(T, ignore_index=True), pd.concat(P, ignore_index=True), pd.concat(C), pd.concat(R)
+    return pd.concat(T, ignore_index=True), pd.concat(P, ignore_index=True), pd.concat(C, ignore_index=True), pd.concat(R, ignore_index=True)
 
 
 # ---------------------------------------------------------------- features
@@ -489,8 +489,16 @@ def fit(cache: str):
     K = {"c_T": c_T, "a": float(a_), "b": float(b_), "k": float(k_), "h_D": 1.0, "h_C": 1.0, "h_Y": 1.0,
          "phi_t": 0.0, "phi_c": 0.0, "theta_t": 1.0, "theta_c": 1.0}
     # 2) share n0 (targets SSE, no-absence games), 3) efficiency n0 (yards given volume)
+    import pickle
+    ck = Path(cache) / "n3_fit_runs"
+    ck.mkdir(exist_ok=True)
+
     def run(n0s, n0e):
+        f = ck / f"run_{n0['team']}_{n0s}_{n0e}.pkl"
+        if f.exists():
+            return pickle.loads(f.read_bytes())
         tm, pl = Features(tg, pg, {"team": n0["team"], "share": n0s, "eff": n0e}, pri).run(TRAIN)
+        f.write_bytes(pickle.dumps((tm, pl)))
         return tm, pl
     cache_runs = {}
     best = None
