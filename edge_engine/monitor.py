@@ -209,6 +209,12 @@ class Monitor:
         if not games:
             self.log("done", reason="no games")
             return
+        # a scheduled run GitHub fires hours late (e.g. the 10:20 PM job at 3:43 AM) must not poll all day
+        # or set the night's decision snapshot before the window
+        first_tip = min(parse_ts(e["commence_time"]) for e in games)
+        if first_tip - start > timedelta(hours=self.m.get("max_lead_hours", 6)):
+            self.log("done", reason="too_early", first_tip=first_tip.isoformat())
+            return
         by_team = {}
         for e in games:
             by_team.setdefault(e["home_team"], []).append(e)

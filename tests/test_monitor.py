@@ -115,3 +115,17 @@ def test_stop_at_caps_runtime(tmp_path):
     assert all(p <= stop for p in s.polls)
     assert not any(x["kind"] == "poll" and "close" in x["reason"] for x in log)
     assert "kalshi_trades" in [x["kind"] for x in log]                # still collects trades on the way out
+
+
+def test_too_early_run_exits_without_polling(tmp_path):
+    """A run fired 8 hours before the first tip polls nothing and spends no credits."""
+    cfg = load_cfg()
+    clock = Clock()
+    clock.t = TIP - timedelta(hours=8)
+    s = S(clock)
+    monitor.api_key = lambda: "k"
+    RawStore(tmp_path).manifest.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep).run()
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    assert log[-1]["kind"] == "done" and log[-1]["reason"] == "too_early"
+    assert s.polls == []
