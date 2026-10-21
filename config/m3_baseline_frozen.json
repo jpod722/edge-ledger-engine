@@ -1,0 +1,69 @@
+{
+ "model": "M3 Baseline B",
+ "spec": "config/prereg/m3-spec.yaml",
+ "code_commit": "ce0c808",
+ "train_seasons": [
+  "2023-24",
+  "2024-25"
+ ],
+ "data_cutoff": "2025-04-13 19:30:00+00:00",
+ "inputs_sha256_16": {
+  "2023-24": "b1cb9190c0f36325",
+  "2024-25": "25ce70455baa3a22",
+  "report_rows.csv": "8586e3b255c0b0ee",
+  "report_by_game.csv": "f82c4adfbe911050"
+ },
+ "sample": {
+  "player_games_fit": 46982,
+  "players": 647,
+  "excluded_listed_out_played": 13
+ },
+ "constants": {
+  "h": 3,
+  "n0_minutes": 1,
+  "n0_rate": 1,
+  "sigma": {
+   "bench": 6.922645079087142,
+   "starter": 5.849894779074073
+  },
+  "k": 7.200549694967338
+ },
+ "priors": {
+  "min": {
+   "bench": 15.49679452741664,
+   "starter": 30.708558430480522
+  },
+  "rate": {
+   "bench": 0.3978728223238099,
+   "starter": 0.5148290904665787
+  },
+  "mbar": 22.62466692044157
+ },
+ "fit_log_mse": {
+  "minutes_h3_n01": 41.962545756466724,
+  "minutes_h3_n02": 44.033918952103896,
+  "minutes_h3_n04": 48.46048237840604,
+  "minutes_h3_n08": 54.77237490049305,
+  "minutes_h5_n01": 42.36928932877773,
+  "minutes_h5_n02": 43.273527552451654,
+  "minutes_h5_n04": 45.904635566341135,
+  "minutes_h5_n08": 50.839493009602165,
+  "minutes_h8_n01": 43.4931646276239,
+  "minutes_h8_n02": 43.79637206222467,
+  "minutes_h8_n04": 45.21395083968986,
+  "minutes_h8_n08": 48.641345895265,
+  "minutes_h12_n01": 44.682350910175956,
+  "minutes_h12_n02": 44.710069179540405,
+  "minutes_h12_n04": 45.47669272216631,
+  "minutes_h12_n08": 47.84745748570792,
+  "rate_n01": 26.455274683514244,
+  "rate_n02": 26.59485980223085,
+  "rate_n04": 27.485161556645856,
+  "rate_n08": 29.283195491536784
+ },
+ "fit_diagnostics_train_only": {
+  "minutes_rmse": 6.477850396270874,
+  "points_given_minutes_rmse": 5.143469129246743
+ },
+ "held_out_scored": false
+}
