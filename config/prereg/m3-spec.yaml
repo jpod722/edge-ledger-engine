@@ -73,3 +73,19 @@ promotion:
 
 deferred: [defensive matchup data, paid NFL coverage charting, referee crews, confirmed starters]
 not_authorized: [real-money bets, paid data, additional Odds API spending]
+
+amendments_2026-10-21:   # before Baseline B is fitted; pre-fit checks passed (doc "Pre-fit checks (Oct 21)")
+  report_rows: "only rows whose printed game date equals the forecast game's date are used (reports also list the next day)"
+  not_yet_submitted: "a team marked NOT YET SUBMITTED has unknown statuses for that game: vacated-usage features off for that team-game; none of its players treated as Out; own-eligibility not filtered by status"
+  rate_prior: "box scores carry no positions: the scoring-rate prior is by role (starter/bench), league mean points per minute on the training seasons"
+  baseline_fit:
+    seasons: [2023-24, 2024-25]
+    sample: "regular-season played games (minutes > 0) with >= 5 prior played games this season; exhibitions excluded; players listed Out on the selected report excluded"
+    h_grid: [3, 5, 8, 12]
+    n0_grid: [1, 2, 4, 8]
+    criterion_minutes: "mean squared error of m_hat vs actual minutes"
+    criterion_rate: "n0 for the rate chosen by mean squared error of r_hat x actual minutes vs actual points"
+    sigma: "residual SD of minutes by role"
+    k: "maximum likelihood of NegBin(points; mean r_hat x actual minutes, size k)"
+    held_out: "nothing is scored on 2025-26 at this step"
+  pre_fit_checks: {reports_parsed: "786/786", printed_date_mismatch: 0, hand_check: "20 reports, 293 rows, 0 errors", out_listed_played_pct: 1.6, injury_dnps_on_report_pct: 92.7}
