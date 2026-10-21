@@ -1,0 +1,1 @@
+M3 historical inputs, Oct 21 2026: ESPN play-by-play 2023-24..2025-26 (m3_pbp.tar) and the official injury report chosen for each game by the printed-time rule in config/prereg/m3-spec.yaml (m3_selected_reports.tar, report_by_game.csv). Kept off the data branch so nightly jobs don't clone it.
