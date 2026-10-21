@@ -41,7 +41,8 @@ def load(data: str, cache: str, seasons):
         b["gdate"] = b.tip.dt.tz_convert("America/New_York").dt.strftime("%m/%d/%Y")
         b = b.merge(sel, on="game_id", how="left")
         b["listed_out"] = [(n, d, a, norm_name(str(p))) in out_keys for n, d, a, p in zip(b.name, b.gdate, b.abbr, b.player)]
-        b["played"] = (b.dnp != True) & (b.minutes.fillna(0) > 0)  # noqa: E712
+        b["starter"] = b.starter.fillna(0).astype(int).astype(bool)
+        b["played"] = (b.dnp.fillna(0).astype(int) == 0) & (b.minutes.fillna(0) > 0)
         frames.append(b)
     return pd.concat(frames, ignore_index=True)
 
