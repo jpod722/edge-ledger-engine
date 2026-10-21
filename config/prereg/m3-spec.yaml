@@ -1,0 +1,74 @@
+# M3 — NBA minutes-first points model. Pre-registration v1.1, 2026-10-20.
+# Reviewer: conditional approval of v1 (doc "M3 Pre-Registration v1 (after review)"); this file resolves the four
+# conditions. Committed BEFORE any M3 parameter is fitted and before any 2025-26 outcome is scored by M3.
+# No Odds API credits. Paper only. No paid data.
+
+target: "player points in game g, conditional on playing (DNP = void, as the contract settles)"
+decision_time: "min(17:30 ET, tip - 90 min)"
+universe: "not listed Out on the selected report; >= 5 prior played games this season; projected minutes >= 12; forward: an exact-contract Pinnacle quote"
+
+injury_report:
+  source: "official NBA injury report PDFs, ak-static.cms.nba.com/referee/injury/Injury-Report_<date>_<time>.pdf"
+  selection: "the latest report whose file-name timestamp is <= decision_time - 15 min (posting-lag buffer). Never a later report."
+  missing: "no qualifying report that day -> every player treated as 'not listed'; flagged; never filled from a later report or from who played"
+  audit_trail: "every forecast logs the chosen report's URL, its file-name timestamp and the parsed status used"
+  content_check: "each parsed PDF must contain a report date matching its file name; mismatches are dropped and listed. 20 reports hand-checked against box-score DNPs before fitting"
+  own_status: "no effect on the conditional points projection (Questionable/Doubtful do not lower points). Out -> not eligible. Status enters only through teammates' absence"
+  teammate_absence: "only status Out counts as absent for vacated minutes/usage"
+
+baseline_B:
+  minutes: "m_hat = EW_h(minutes; n0, role prior); M ~ Normal(m_hat, sigma_role^2) truncated [0, 48]"
+  rate: "r = EW(points)/EW(minutes), ratio-of-sums, shrunk to position prior"
+  points: "points | M ~ NegBin(mean r*M, size k)"
+  role_prior: "starter if >= 3 of last 5 played games started, else bench"
+  constants: [h, n0, sigma_starter, sigma_bench, k]
+  usage_definition: "usage events = FGA + 0.44*FTA + TOV (additions 2+)"
+
+additions_in_order:
+  1_vacated_minutes: "Out teammates' m_hat freed; fraction phi_m disappears; rest shared by position-weighted current minutes with freshness (N3 rule)"
+  2_vacated_usage: "absent players' usage events redistributed the same way; rate = points per usage event x usage events per minute"
+  3_blowout_minutes: "starters' minutes x (1 - b * max(|spread| - s0, 0)); b, s0 fitted"
+  4_pace: "usage events per minute x (game total / league mean total)^c; c fitted"
+  5_rest: "back-to-back and 3-in-4 indicators on minutes and rate; coefficients fitted"
+  6_shot_profile_vs_opponent: "rate x shrunk opponent allowed efficiency in player's zone mix (rim, mid, three)"
+
+feature_selection:   # condition A: no adaptive selection on the final evaluation season
+  screening_fit: "all constants of baseline B and of each addition fitted on 2023-24 only"
+  screening_eval: "2024-25, chronological (features from prior games only); additions tested in the order above, cumulatively"
+  screening_rule: "keep an addition if its CRPS gain over the current model has a one-sided cluster-bootstrap (by game date) lower bound > 0 at Holm-adjusted alpha across the 6 tests (alpha 0.05); screening results are exploratory"
+  final_fit: "the selected structure's constants refitted on 2023-24 + 2024-25"
+  final_eval: "2025-26, untouched until this point, scored ONCE: selected model vs baseline B and vs M1.1, CRPS gain lower bound > 0 by game date"
+  training_only: "every fitted parameter (phi, theta, slopes, shrinkage n0, dispersions, cut points) uses only the permitted training seasons; nothing is tuned on 2024-25 during the final fit's use of it beyond refitting the same frozen structure, and nothing ever on 2025-26"
+
+scoring:
+  crps: "historical ablations only: sample CRPS on the integer points distribution, E|X-y| - 0.5 E|X-X'|, 4,000 draws, seed fixed"
+  gate_a_log_loss: "natural-log loss on the exact quoted contract: y = 1 if points > line, 0 if < line"
+  pushes: "integer line and points == line -> contract excluded from scoring; model and market probabilities both conditional on no push: p_model = P(X > L) / (1 - P(X = L)); p_market = no-vig over probability (two-way devig already excludes the push)"
+  clustering: "by game date"
+
+blend:
+  form: "logit p = logit m + w (logit model - logit m)"
+  estimation: "w = argmin over w of [ sum of log loss of blended p over the training block ] + w^2 / (2 * 0.5^2)"
+  range: "unconstrained in principle; searched on [-3, 3]; a solution at a bound is reported as such"
+  procedure: "expanding window on dates before each 7-night block, frozen for that block; first 20 dates burn-in"
+  reported: [market-only, raw model, blend, path of w]
+
+gates:
+  A_forecast:
+    formal: ">= 2,000 resolved forecasts AND >= 100 game dates; lower bound of (market LL - blend LL) > 0"
+    interim: "one pre-specified look at 60 game dates: reported as interim; it can only say 'interim, inconclusive' or 'interim, negative' — never a pass"
+  B_selection: ">= 250 picks over >= 40 game dates; Pinnacle no-vig close CLV lower bound > 0; scored only after A passes"
+  E_execution:
+    rule: "CLV recomputed at the next snapshot's price (~20 min) keeps a lower bound > 0; scored only after B"
+    descriptive: [share of picks still available at the next snapshot, distribution of price change, share with a missing next-snapshot quote]
+    note: "research gate only; never a real-money authorization"
+  pick_rule: "blend EV >= 4% at the book's posted price (devig/push rules above); one pick per player per game; threshold fixed for the whole test"
+  sensitivity: "model-only EV >= 4% filter, reported only"
+
+promotion:
+  forecast: ">= 300 shared forecasts across >= 30 dates; challenger vs champion log-loss gain lower bound > 0"
+  clv_non_inferiority: "challenger mean CLV minus champion mean CLV, each on its own qualifying picks, in percentage points of no-vig implied probability; lower bound > -0.5 pp; >= 100 picks each; otherwise inconclusive -> no promotion"
+  repeated_testing: "config/registry.yaml lists every challenger (hash, cutoff, result), rejected ones included; k-th challenger in a season tested at alpha = 0.05 / 2^k"
+
+deferred: [defensive matchup data, paid NFL coverage charting, referee crews, confirmed starters]
+not_authorized: [real-money bets, paid data, additional Odds API spending]
