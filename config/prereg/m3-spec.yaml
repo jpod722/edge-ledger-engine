@@ -9,9 +9,10 @@ universe: "not listed Out on the selected report; >= 5 prior played games this s
 
 injury_report:
   source: "official NBA injury report PDFs, ak-static.cms.nba.com/referee/injury/Injury-Report_<date>_<time>.pdf"
-  selection: "the latest report whose file-name timestamp is <= decision_time - 15 min (posting-lag buffer). Never a later report."
+  selection: "the latest report whose PRINTED header time ('Injury Report: MM/DD/YY HH:MM PM') is <= decision_time - 15 min (posting-lag buffer). Never a later report. File names are only used to find files: audit 2026-10-21 found 2023-24/2024-25 files named '05PM' print '05:30 PM'"
   missing: "no qualifying report that day -> every player treated as 'not listed'; flagged; never filled from a later report or from who played"
   audit_trail: "every forecast logs the chosen report's URL, its file-name timestamp and the parsed status used"
+  name_vs_header: "every file's name time and printed time are logged; mismatches are expected (hourly files print :30) and are not errors"
   content_check: "each parsed PDF must contain a report date matching its file name; mismatches are dropped and listed. 20 reports hand-checked against box-score DNPs before fitting"
   own_status: "no effect on the conditional points projection (Questionable/Doubtful do not lower points). Out -> not eligible. Status enters only through teammates' absence"
   teammate_absence: "only status Out counts as absent for vacated minutes/usage"
