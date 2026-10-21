@@ -247,3 +247,16 @@
 {"at": "2026-10-21T01:35:40.337133+00:00", "kind": "kalshi_snapshot", "markets": 436}
 {"at": "2026-10-21T01:52:26.589800+00:00", "kind": "kalshi_trades", "markets": 468}
 {"at": "2026-10-21T01:52:26.589930+00:00", "kind": "done", "reason": "finished", "credits": 24, "remaining": 12274}
+{"at": "2026-10-21T01:52:53.466802+00:00", "kind": "games", "n": 1, "events": [{"id": "bccd283de56915e29af1788beb0abfc9", "home": "San Antonio Spurs", "away": "Oklahoma City Thunder", "commence_time": "2026-10-21T01:55:00Z"}], "ref": "raw/2026-10-21/015253_basketball_nba_events_79c59627.json.gz"}
+{"at": "2026-10-21T01:52:53.469443+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-10-19"}
+{"at": "2026-10-21T01:52:54.263169+00:00", "kind": "official_report", "first_seen": "2026-10-21T01:52:53.474971+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-20_09_45PM.pdf", "ref": "raw/2026-10-21/015254_nba_injury_report_pdf_2d60c6c3.json.gz"}
+{"at": "2026-10-21T01:52:57.405940+00:00", "kind": "kalshi_snapshot", "markets": 435}
+{"at": "2026-10-21T01:52:57.486623+00:00", "kind": "poll", "event_id": "bccd283de56915e29af1788beb0abfc9", "reason": "close", "retrieved_at": "2026-10-21T01:52:57.485923+00:00", "ref": "raw/2026-10-21/015257_basketball_nba_event_bccd283d_1a2976aa.json.gz", "minutes_to_tip": 2.04}
+{"at": "2026-10-21T01:52:59.218132+00:00", "kind": "forecasts", "n": 30, "eligible": 0, "file": "data/m1/forecasts/2026-10-20.jsonl", "frozen_at": "2026-10-19T16:44:17.515518Z"}
+{"at": "2026-10-21T01:53:00.552741+00:00", "kind": "k1_quotes", "n": 435, "eligible": 0, "file": "data/k1/quotes/2026-10-20.jsonl", "decision_at": "2026-10-21T01:52:57.405921+00:00"}
+{"at": "2026-10-21T01:53:20.553234+00:00", "kind": "poll_merged", "event_id": "bccd283de56915e29af1788beb0abfc9", "reason": "baseline"}
+{"at": "2026-10-21T02:01:07.290011+00:00", "kind": "injury_change", "first_seen": "2026-10-21T02:01:07.226615+00:00", "ref": "raw/2026-10-21/020107_nba_injuries_espn_b79be805.json.gz", "team": "Phoenix Suns", "player": "Luke Kennard", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-10-21T02:00Z"}
+{"at": "2026-10-21T02:01:07.290048+00:00", "kind": "injury_change", "first_seen": "2026-10-21T02:01:07.226615+00:00", "ref": "raw/2026-10-21/020107_nba_injuries_espn_b79be805.json.gz", "team": "Phoenix Suns", "player": "Luke Kennard", "status": "removed", "prev_status": "Day-To-Day", "espn_date": "2026-10-21T01:00Z"}
+{"at": "2026-10-21T02:03:08.320297+00:00", "kind": "official_report", "first_seen": "2026-10-21T02:03:07.523520+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-20_10_00PM.pdf", "ref": "raw/2026-10-21/020308_nba_injury_report_pdf_196b441a.json.gz"}
+{"at": "2026-10-21T02:16:15.519176+00:00", "kind": "kalshi_trades", "markets": 435}
+{"at": "2026-10-21T02:16:15.519313+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 12273}
