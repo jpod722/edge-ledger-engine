@@ -1,0 +1,100 @@
+{
+ "run_id": "20261024-214003-nfl-sun-preview",
+ "files": [
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261101-c93c421e-h2h-buffalo-bills-buffalo-bill-ml",
+   "file": "ledger/picks/nfl-20261101-c93c421e-h2h-buffalo-bills-buffalo-bill-ml.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-b1be064f-spreads-san-francisco-49ers-san-francisc-3p5",
+   "file": "ledger/picks/nfl-20261025-b1be064f-spreads-san-francisco-49ers-san-francisc-3p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-550ec529-spreads-baltimore-ravens-baltimore-ra-7p5",
+   "file": "ledger/picks/nfl-20261025-550ec529-spreads-baltimore-ravens-baltimore-ra-7p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-550ec529-team_totals-baltimore-ravens-over-27p5",
+   "file": "ledger/picks/nfl-20261025-550ec529-team_totals-baltimore-ravens-over-27p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-2823e986-totals-under-under-56",
+   "file": "ledger/picks/nfl-20261025-2823e986-totals-under-under-56.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261025-f3992ad4-spreads-indianapolis-colts-indianapolis-16p5",
+   "file": "ledger/picks/nfl-20261025-f3992ad4-spreads-indianapolis-colts-indianapolis-16p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m13p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m13p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m12p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m12p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m11p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m11p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m10p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m10p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m8p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m8p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m6p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m6p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m3p5",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m3p5.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m8",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m8.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m6",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m6.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m14",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m14.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m13",
+   "file": "ledger/picks/nfl-20261026-176d474e-spreads-kansas-city-chiefs-kansas-city--m13.json"
+  },
+  {
+   "collection": "picks",
+   "doc_id": "nfl-20261027-4853610e-spreads-philadelphia-eagles-philadelphia-10p5",
+   "file": "ledger/picks/nfl-20261027-4853610e-spreads-philadelphia-eagles-philadelphia-10p5.json"
+  },
+  {
+   "collection": "runs",
+   "doc_id": "20261024-214003-nfl-sun-preview",
+   "file": "runs/20261024-214003-nfl-sun-preview.json"
+  }
+ ]
+}
