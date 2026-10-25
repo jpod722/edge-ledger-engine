@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-24T16:32:56.624280+00:00",
+ "generated_at": "2026-10-25T17:02:34.700328+00:00",
  "paper_only": true,
  "health": {
   "monitor_last_night": {
-   "date": "2026-10-24",
-   "games": 8,
+   "date": "2026-10-25",
+   "games": 7,
    "polls": 0,
    "injury_changes": 0,
    "kalshi_snapshots": 0,
@@ -13,11 +13,11 @@
   "status": "green",
   "problems": [],
   "errors": {},
-  "injury_archive_snapshots_24h": 316
+  "injury_archive_snapshots_24h": 809
  },
  "credits": {
-  "remaining": 12131,
-  "used_last_7_days": 7822,
+  "remaining": 4003,
+  "used_last_7_days": 15950,
   "floor": 9000,
   "reset": "Nov 18"
  },
@@ -25,7 +25,7 @@
   "gate_a": {
    "title": "Does the points model beat the market?",
    "state": "collecting",
-   "logged": 480,
+   "logged": 667,
    "eligible": 0,
    "resolved": 0,
    "game_dates": 0,
@@ -48,8 +48,8 @@
   "n1": {
    "title": "Are books slow after injury news?",
    "state": "collecting",
-   "injury_changes": 200,
-   "reaction_polls": 78,
+   "injury_changes": 334,
+   "reaction_polls": 154,
    "note": "collecting; the analysis plan is written and frozen before any of this data is analysed"
   }
  },
