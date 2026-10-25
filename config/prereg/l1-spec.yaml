@@ -30,7 +30,7 @@ revision_2026-10-24b:   # reviewer: timing fix approved, spread arm dropped, 202
   sample: "pooled 2024-25 + 2025-26 regular seasons, excluding 2025-10-21..2025-11-30 (pilot); one confirmatory test; per-season results reported as diagnostics only"
   universe_from_free_data: {triggers: 438, trigger_dates: 220, control_pool: 614, file: config/prereg/l1-universe.csv}
   projected_scored: {triggers: 326, controls_if_equal: 302, basis: "in-window 0.907 (pilot grid simulation) x scored-in-window 0.82 trigger / 0.76 control (pilot)"}
-  controls: "seeded sample (seed 20261026) from the control pool; size set by the reviewer's cap decision"
-  credits: {line_item: "one 10-credit moneyline pull per distinct request; equal-size controls -> 809 requests = 8,090 credits; triggers alone 426 requests = 4,260", reviewer_cap: 6100, status: "pending reviewer decision: raise cap to 8,100 or cut controls to ~220"}
+  controls: "seeded order (seed 20261026) over the control pool; controls added while the 6,100-credit cap allows (riders on trigger pulls cost 0): 246 controls"
+  credits: {line_item: "one 10-credit moneyline pull per distinct request; equal-size controls -> 809 requests = 8,090 credits; triggers alone 426 requests = 4,260", reviewer_cap: 6100, status: "decided 2026-10-24: keep the 6,100 hard cap with the smaller control group; plan = 438 triggers, 246 controls, 610 requests, 6,100 credits (config/prereg/l1-confirmatory-plan.json)"}
   primary_test: unchanged
   stop_rule: "if the pooled sample cannot reach 150 scored triggers under these rules, stop; do not loosen eligibility"
