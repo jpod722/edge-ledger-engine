@@ -1,0 +1,24 @@
+# L1 live favorite-dip study. Pre-registered 2026-10-24 (reviewer: hypothesis approved, timing rule revised, capped
+# data-quality pilot approved). Committed before any historical live price is analyzed.
+hypothesis: "DraftKings' live moneyline on a pregame favorite (>= 6.5) that underperforms by halftime is better than Pinnacle's no-vig live price at the same moment (a price opportunity during the halftime break)"
+season: 2025-26 regular season
+favorite: "ESPN's first non-live recorded line (details 'ABR -x'); |spread| >= 6.5"
+trigger: "favorite margin at end of Q2 <= 0.25 x spread"
+control: "favorite margin at end of Q2 >= 0.5 x spread"
+entry: "first Odds API historical snapshot at or after the Q2 End Period wall clock and before the first Q3 play; verified per game by snapshot >= end AND previous_timestamp < end AND snapshot < Q3 start. Never a later snapshot."
+freshness: "DraftKings and Pinnacle h2h market last_update both >= end of Q2 and >= snapshot - 2 min; else unscored"
+benchmark: "Pinnacle no-vig live price on the exact contract"
+primary: "halftime moneyline: mean E = p_pinnacle_novig x d_draftkings - 1 over triggers, one-sided 95% cluster-bootstrap (by date) lower bound > 0, AND mean E(trigger) - mean E(control) lower bound > 0; >= 150 scored triggers over >= 60 dates"
+secondary: [Q1 checkpoint (exploratory, run if credits allow regardless of halftime), live spread where DK and Pinnacle share the exact line, realized ROI, market calibration (Pinnacle and Kalshi vs results), dose-response by dip depth and spread band, Kalshi arm with taker fee]
+pilot:
+  approved: 2026-10-24
+  sample: "triggers and controls from 2025-10-21 to 2025-11-30 (seed 20261024): 50 triggers, controls up to the cap"
+  pulls: "moneyline on every pull; spreads on 20 seeded trigger pulls; controls moneyline only; games sharing a first-after-halftime grid point share one pull"
+  cap_credits: 1000
+  outputs_allowed: [coverage, first-after-end verification, entry delay, book presence, quote freshness, spread exact-line match, control selection]
+  sealed: [price edges, ROI, outcomes, any DraftKings-vs-Pinnacle comparison]
+  excluded_from_confirmatory: "all games 2025-10-21 to 2025-11-30"
+  after: {pass: "freeze rules, run confirmatory after the Nov 18 reset", fail: "stop and document; revise only before opening efficacy", mixed: "no automatic expansion; assess achievable scored triggers"}
+season_counts_from_free_data: {trigger: 233, control: 351, neither: 67, excluded: 585}
+confirmatory_pool_after_pilot_exclusion: "about 183 triggers (233 - 50)"
+real_money: not authorized

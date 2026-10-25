@@ -225,6 +225,7 @@ def main(argv=None):
     sub.add_parser("s1-report")
     l1 = sub.add_parser("l1-check")
     l1.add_argument("--date", required=True)
+    sub.add_parser("l1-pilot")
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -267,6 +268,12 @@ def main(argv=None):
         store = RawStore(a.data)
         api = OddsAPI(api_key(), store, 25, min_remaining=9000, remaining=last_remaining_from_manifest(store))
         l1_run(api, a.data, a.date, cfg["odds_api"]["event_bookmakers"])
+    elif a.cmd == "l1-pilot":
+        from .l1_pilot import run as l1p
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        store = RawStore(a.data)
+        api = OddsAPI(api_key(), store, 1000, min_remaining=9000, remaining=last_remaining_from_manifest(store))
+        l1p(api, a.data, cfg["odds_api"]["event_bookmakers"])
     elif a.cmd == "probe":
         from .probe import run as probe_run
         probe_run(a, cfg)
