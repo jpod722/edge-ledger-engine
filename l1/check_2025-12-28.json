@@ -1,0 +1,900 @@
+{
+ "requested": "2025-12-28T02:09:00Z",
+ "snapshot": "2025-12-28T02:05:37Z",
+ "previous": "2025-12-28T02:00:37Z",
+ "next": "2025-12-28T02:10:37Z",
+ "ref": "raw/2026-10-25/021732_basketball_nba_hist_a4a12845.json.gz",
+ "events": [
+  {
+   "id": "c24173f63b65a07191959a05eef00aad",
+   "home": "Orlando Magic",
+   "away": "Denver Nuggets",
+   "commence_time": "2025-12-28T00:11:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "8f14dde1ee9ee3f5703f21a48c187d74",
+   "home": "New Orleans Pelicans",
+   "away": "Phoenix Suns",
+   "commence_time": "2025-12-28T00:11:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "781a4b595d7dce2589c2d20ad3f93222",
+   "home": "Atlanta Hawks",
+   "away": "New York Knicks",
+   "commence_time": "2025-12-28T01:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "6e8faa07f534f883f8220102afedc201",
+   "home": "Minnesota Timberwolves",
+   "away": "Brooklyn Nets",
+   "commence_time": "2025-12-28T01:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "18b40fafdb66c2d3d1b5ae5bd910a1a3",
+   "home": "Chicago Bulls",
+   "away": "Milwaukee Bucks",
+   "commence_time": "2025-12-28T01:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "e9bd179429d4c3321c19a8b2b11a0e3e",
+   "home": "San Antonio Spurs",
+   "away": "Utah Jazz",
+   "commence_time": "2025-12-28T01:11:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "6dad04e30835da7a486dc973ef4ea667",
+   "home": "Houston Rockets",
+   "away": "Cleveland Cavaliers",
+   "commence_time": "2025-12-28T01:12:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "4060c9a5793867b41fa1d9376502cbd5",
+   "home": "Miami Heat",
+   "away": "Indiana Pacers",
+   "commence_time": "2025-12-28T01:13:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z",
+      "spreads": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:31Z",
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "pinnacle": {
+     "last_update": "2025-12-28T02:05:19Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:19Z",
+      "spreads": "2025-12-28T02:05:19Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "espnbet": {
+     "last_update": "2025-12-28T02:04:55Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:55Z",
+      "spreads": "2025-12-28T02:04:55Z"
+     }
+    },
+    "betmgm": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:54Z",
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "d8f2315d3e872709e62642ca705a0f0d",
+   "home": "Toronto Raptors",
+   "away": "Golden State Warriors",
+   "commence_time": "2025-12-28T20:40:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:21Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:21Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "85acdbb2f540114ab00c144da019d360",
+   "home": "Oklahoma City Thunder",
+   "away": "Philadelphia 76ers",
+   "commence_time": "2025-12-28T20:40:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "8dc9891348a0160cc12730e8cc27102e",
+   "home": "Portland Trail Blazers",
+   "away": "Boston Celtics",
+   "commence_time": "2025-12-28T23:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:21Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:21Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "bec3a10efd1bdc48af2a9352c3c68f8d",
+   "home": "Washington Wizards",
+   "away": "Memphis Grizzlies",
+   "commence_time": "2025-12-28T23:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "81f37d4274076247e0a49787f852af4d",
+   "home": "Los Angeles Clippers",
+   "away": "Detroit Pistons",
+   "commence_time": "2025-12-29T02:10:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "acc8dfaa22df3823017412f5b8f16239",
+   "home": "Los Angeles Lakers",
+   "away": "Sacramento Kings",
+   "commence_time": "2025-12-29T02:40:00Z",
+   "books": {
+    "fanduel": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "kalshi": {
+     "last_update": "2025-12-28T02:04:51Z",
+     "markets": {
+      "h2h": "2025-12-28T02:04:51Z"
+     }
+    },
+    "lowvig": {
+     "last_update": "2025-12-28T02:04:54Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:54Z"
+     }
+    },
+    "draftkings": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    },
+    "williamhill_us": {
+     "last_update": "2025-12-28T02:04:31Z",
+     "markets": {
+      "spreads": "2025-12-28T02:04:31Z"
+     }
+    },
+    "betrivers": {
+     "last_update": "2025-12-28T02:05:32Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:32Z",
+      "spreads": "2025-12-28T02:05:32Z"
+     }
+    },
+    "fanatics": {
+     "last_update": "2025-12-28T02:05:07Z",
+     "markets": {
+      "h2h": "2025-12-28T02:05:07Z",
+      "spreads": "2025-12-28T02:05:07Z"
+     }
+    }
+   }
+  }
+ ]
+}
