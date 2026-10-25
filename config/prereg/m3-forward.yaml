@@ -1,0 +1,39 @@
+# M3 prospective paper test + under hypothesis H-U1. Registered 2026-10-24 ~23:10 ET, BEFORE any qualifying observation
+# (no 2026-27 player has >= 5 prior current-season games before ~Oct 29). Reviewer approval 2026-10-24 (three-decision memo).
+# Paper only. No new credits: uses the DK player_points lines the nightly monitor already captures.
+
+exploratory_record:   # NOT part of any gate; never counted, never used to set parameters below
+  run: "2026-10-24, frozen Baseline B on 2026-27 Oct 20-23 DK points props, history seeded with 2025-26 (deviation)"
+  result: {props: 207, dates: 4, ll_model: 0.693, ll_dk: 0.695, picks_ev4: 156, roi_all: 0.090, over_picks: [72, -0.031], under_picks: [84, 0.194], unpicked_unders: [123, -0.014], blind_unders: [207, 0.070]}
+  caveat: "under/over split found after looking; one date (Oct 21) carries most of it"
+
+model: "Baseline B exactly as config/m3_baseline_frozen.json (h 3, n0 1/1, sigma 5.85/6.92, k 7.2); history = 2026-27 games only, tip < decision time"
+universe:
+  - ">= 5 prior played games in 2026-27 (no seeded history)"
+  - "projected minutes m_hat >= 12"
+  - "not listed Out on the selected official report (m3-spec selection rule: printed time <= decision - 15 min)"
+  - "DraftKings main player_points line, two-sided, latest capture at or before the decision time; venue last_update <= 30 min old"
+decision_time: "min(17:30 ET, tip - 90 min), per m3-spec"
+logging: "every eligible prop logged (picks and non-picks): model probability, DK prices, timestamps, outcome, exclusion reason for every captured prop that fails eligibility"
+settlement: "DNP = void (dropped from both portfolios); integer-line push = void; flat 1-unit stakes at the recorded DK price"
+
+hypothesis_H_U1:
+  statement: "model-selected unders outperform blind unders in net realized ROI"
+  pick: "Baseline B raw-model EV on the under >= 4% at the recorded DK under price: (1 - p_over) * d_under - 1 >= 0.04, push mass excluded"
+  comparator: "all eligible unders in the same prospective universe (overlapping portfolio, declared)"
+  statistic: "ROI(model unders) - ROI(blind unders), ROI = sum(return) / number of bets in that portfolio"
+  inference: "date-cluster bootstrap: resample whole ET dates with replacement (10,000 reps, seed 20261024), recompute both portfolios' ROI on each resample and their difference; one-sided 95% lower bound = 5th percentile"
+  pass: "lower bound > 0"
+  minimums: "evaluated once, at the first date on which >= 150 model-selected unders over >= 30 distinct dates are settled"
+  no_early_stop: true
+  incomplete: "if the minimums are not met by the end of the 2026-27 regular season or when line capture stops for good -> inconclusive"
+  diagnostics_only: [distinct players, games, dates, ROI by date and concentration, result excluding the single most profitable date, over-side analogue, calibration of p_model]
+  not_authorized: [threshold changes, model changes, real-money bets]
+
+gate_A_counting: "prospective eligible props from this file count toward m3-spec Gate A; the 207 seeded props never do"
+
+screening_2024_25:   # reviewer: approved as exploratory only
+  protocol: "exactly m3-spec feature_selection (fit 2023-24, evaluate 2024-25 chronologically, cumulative in the listed order, CRPS gain, date-cluster one-sided LB, Holm across 6)"
+  status: exploratory
+  report: "all six additions with gain, LB, Holm decision — failures included"
+  consequence: "a retained addition changes nothing in production or Gate A until it passes a later, untouched prospective evaluation"
