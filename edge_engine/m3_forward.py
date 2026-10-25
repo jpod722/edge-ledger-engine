@@ -1,4 +1,4 @@
-"""M3 prospective paper log + H-U1 progress (config/prereg/m3-forward.yaml). Free: reads what the monitor captured.
+"""Undercurrent — M3 prospective paper log + H-U1 progress (config/prereg/m3-forward.yaml). Free: reads what the monitor captured.
 
     python -m edge_engine.m3_forward --data data
 
