@@ -1,0 +1,27 @@
+# N3 Tranche 1 — Final Disposition (reviewer, 2026-10-24). CLOSED — NO DEMONSTRATED MARKET EDGE.
+code_commit: 5b19c18
+results_commit: 87af90a   # data branch: n3/tranche1_score.json, n3/tranche1_score.rows.csv
+credits_used: 735
+remaining_credits: 4005
+coverage: {games: "73/73", pinnacle_contracts: 715, matched_n3_universe: 536, excluded_lambda_lt_3: 167, excluded_name_or_inactive: 12, scored_weeks_11_14: 436}
+primary:
+  ll_market: 0.6847
+  ll_blend: 0.6844
+  ll_model_raw: 0.6975
+  blend_gain: 0.0003
+  blend_gain_lb95_one_sided_game_cluster: -0.0032
+  w_path: {11: 0.15, 12: 0.27, 13: 0.08, 14: 0.18}
+  absence_subset: {n: 306, gain: -0.0016}
+calibration_raw_model:   # predicted p bin: [n, mean predicted, hit rate]
+  "0.0-0.3": [38, 0.262, 0.421]
+  "0.3-0.4": [139, 0.354, 0.388]
+  "0.4-0.5": [155, 0.449, 0.477]
+  "0.5-0.6": [69, 0.539, 0.406]
+  "0.6-0.7": [29, 0.641, 0.448]
+  "0.7-1.0": [6, 0.738, 0.667]
+dk_paper_diagnostic: {picks: 37, roi: -0.145, over: [11, -0.248], under: [26, -0.101], clv: "not evaluated (no close pulled)"}
+futility_rule: "preserved unchanged; it technically PERMITS continuation (point estimate > 0). The study is NOT recorded as having crossed the futility boundary."
+decision: "close the N3 receptions market path as a negative research outcome — a research-allocation decision, not a futility trigger. Receiving yards unbought. Zero additional N3 credits."
+gate0_note: "Gate 0 CRPS findings are a separate forecasting result and must not be represented as market-beating evidence"
+no_rescue: "no tuning or re-evaluation on this sample; any future receptions-market hypothesis needs a new, independently justified protocol and fresh validation"
+resources: "preserve 4,005 for the lean M3 monitor; 3,000 reserve floor"
