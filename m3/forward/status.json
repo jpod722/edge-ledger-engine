@@ -1,0 +1,24 @@
+{
+ "generated_at": "2026-10-25T00:06:52.179595-04:00",
+ "captured_dk_props": 305,
+ "eligible": 0,
+ "exclusions": {
+  "captured_after_decision": 191,
+  "stale_quote": 114
+ },
+ "settled_eligible": 0,
+ "model_under_picks_settled": 0,
+ "pick_dates": 0,
+ "minimums": {
+  "picks": 150,
+  "dates": 30
+ },
+ "result": null,
+ "kx": {
+  "eligible_settled": 0,
+  "picks_settled": 0,
+  "pick_dates": 0,
+  "exclusions": {},
+  "result": null
+ }
+}
