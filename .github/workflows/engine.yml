@@ -44,7 +44,7 @@ jobs:
         run: |
           set -e
           case "$TASK" in
-            scan|close|grade|backtest-report|probe|d1-report|l1-check|l1-pilot) python -m edge_engine.cli --data data $TASK $ARGS ;;
+            scan|close|grade|backtest-report|probe|d1-report|l1-check|l1-pilot|l1-confirm-pull) python -m edge_engine.cli --data data $TASK $ARGS ;;
             s1)
               python -m edge_engine.cli --data data s1-run
               python -m edge_engine.cli --data data s1-report ;;

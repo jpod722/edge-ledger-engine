@@ -226,6 +226,7 @@ def main(argv=None):
     l1 = sub.add_parser("l1-check")
     l1.add_argument("--date", required=True)
     sub.add_parser("l1-pilot")
+    sub.add_parser("l1-confirm-pull")
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -268,6 +269,13 @@ def main(argv=None):
         store = RawStore(a.data)
         api = OddsAPI(api_key(), store, 25, min_remaining=9000, remaining=last_remaining_from_manifest(store))
         l1_run(api, a.data, a.date, cfg["odds_api"]["event_bookmakers"])
+    elif a.cmd == "l1-confirm-pull":
+        from .l1_confirm import pull as l1c
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        store = RawStore(a.data)
+        # Justin's decision 2026-10-24: run before the reset; research floor lowered for this run only (cap 6,100 kept)
+        api = OddsAPI(api_key(), store, 6100, min_remaining=4000, remaining=last_remaining_from_manifest(store))
+        l1c(api, a.data, cfg["odds_api"]["event_bookmakers"])
     elif a.cmd == "l1-pilot":
         from .l1_pilot import run as l1p
         from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
