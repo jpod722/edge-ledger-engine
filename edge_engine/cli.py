@@ -223,6 +223,8 @@ def main(argv=None):
     sub.add_parser("m1-gate0")
     sub.add_parser("s1-run")
     sub.add_parser("s1-report")
+    l1 = sub.add_parser("l1-check")
+    l1.add_argument("--date", required=True)
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -259,6 +261,12 @@ def main(argv=None):
     elif a.cmd == "s1-report":
         from .s1 import report as s1_report
         s1_report(a, cfg)
+    elif a.cmd == "l1-check":
+        from .l1_check import run as l1_run
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        store = RawStore(a.data)
+        api = OddsAPI(api_key(), store, 25, min_remaining=9000, remaining=last_remaining_from_manifest(store))
+        l1_run(api, a.data, a.date, cfg["odds_api"]["event_bookmakers"])
     elif a.cmd == "probe":
         from .probe import run as probe_run
         probe_run(a, cfg)
