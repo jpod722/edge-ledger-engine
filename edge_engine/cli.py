@@ -228,6 +228,8 @@ def main(argv=None):
     sub.add_parser("l1-pilot")
     sub.add_parser("l1-confirm-pull")
     sub.add_parser("n3-tranche1-pull")
+    ls = sub.add_parser("lineshop")
+    ls.add_argument("--sport", default="NFL")
     pr = sub.add_parser("probe")
     pr.add_argument("--date", default="2025-11-09")
     pr.add_argument("--delays", type=int, nargs="*", default=[2, 10, 30])
@@ -277,6 +279,18 @@ def main(argv=None):
         # Justin's decision 2026-10-24: run before the reset; research floor lowered for this run only (cap 6,100 kept)
         api = OddsAPI(api_key(), store, 6100, min_remaining=4000, remaining=last_remaining_from_manifest(store))
         l1c(api, a.data, cfg["odds_api"]["event_bookmakers"])
+    elif a.cmd == "lineshop":
+        # one-off price check for bets Justin is considering: DK vs Pinnacle main spreads/totals (2 credits)
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        from pathlib import Path as _P
+        store = RawStore(a.data)
+        sk = {"NFL": "americanfootball_nfl", "NBA": "basketball_nba"}[a.sport]
+        api = OddsAPI(api_key(), store, 4, min_remaining=3000, remaining=last_remaining_from_manifest(store))
+        evs, retrieved, ref = api.odds(sk, "spreads,totals", "pinnacle,draftkings")
+        out = _P(a.data) / "lineshop" / f"{retrieved[:19].replace(':', '')}_{a.sport}.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({"retrieved_at": retrieved, "ref": ref, "credits": api.used, "events": evs}, indent=1))
+        print(out)
     elif a.cmd == "n3-tranche1-pull":
         from .n3_pull import pull as n3p
         from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
