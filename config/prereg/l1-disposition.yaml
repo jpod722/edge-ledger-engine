@@ -1,0 +1,21 @@
+# L1 Live Favorite-Dip Study — final disposition (reviewer, 2026-10-24). CLOSED — NEGATIVE.
+status: "closed_negative; confirmatory result invalid for decision-making"
+primary_frozen_output:   # formal output of the prespecified test, recorded as-is, not accepted as evidence of an edge
+  scored_triggers: 306
+  trigger_dates: 182
+  scored_controls: 108
+  mean_E_trigger: 0.038
+  lb95_E_trigger: 0.010
+  diff_trigger_minus_control: 0.127
+  lb95_diff: 0.098
+  formal_pass: true
+exploratory_diagnostics:   # run after the primary; exploratory only; do not modify the frozen test
+  logit_slope_on_half_margin: {pinnacle: 0.074, draftkings: 0.107}
+  corr_with_half_margin: {pinnacle: 0.80, draftkings: 0.94}
+  share_abs_novig_gap_gt_5pts: 0.50
+  trigger_log_loss: {pinnacle: 0.649, draftkings: 0.614, crossfit_margin_spread_logit: 0.625}
+  realized_roi_at_dk: {trigger: -0.078, control: -0.076}
+  trigger_E_vs_independent_model: -0.080
+interpretation: "trigger/control split consistent with a lagging benchmark; cause not conclusively established; benchmark validity not established -> no edge claim, no model promotion, no betting-policy change"
+lesson: "historical Pinnacle live quotes must not anchor in-game studies unless score-state freshness and quote validity are independently verified at the decision timestamp; any benchmark validation is a separate prespecified question with its own freshness criteria and credit budget"
+resources: "zero additional Odds API credits for L1; no reruns, tuning or follow-ups"
