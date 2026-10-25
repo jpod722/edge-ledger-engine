@@ -109,3 +109,15 @@ amendments_2026-10-19:   # implementation details fixed while coding, before Gat
   gate0_draws: {n: 4000, seed: 20261019}
   rank_report: "headline = rank 1 by EW snap x targets-per-dropback-snap (receiving) or carry share (rushing) among active teammates; secondary = ranks 2-3"
   opponent_sensitivity: "deferred to the Gate 0 report addendum; not part of pass/fail"
+
+amendments_2026-10-24:   # reviewer, "two conflicts" memo; resource guardrail only — hypotheses, eligibility and gates unchanged
+  reset_path_exception: "ONE-TIME exception to credits.reset_path_rule for tranche 1 only. Reason: live scans are disabled and the
+                         nightly monitor is trimmed to lean mode (commit 11da06d: decision + close per game, cap 32/night), so the
+                         287/day high-case burn no longer describes the plan. Reserve objective kept: projected Nov 18 balance
+                         = remaining - planned N3 credits still to spend - 32 x days_to_reset must stay >= 3,000 before every stage"
+  budget: "config/prereg/n3-tranche1-plan.json: 5 historical event lists (1 each) + 73 games x 10 = 735; hard cap 750; account floor 3,000"
+  staging: "week by week (10..14); projection checked before each week; no retries; an unmatched or errored game is recorded, never re-pulled"
+  coverage_fail_closed: "after Week 10: matched games < 90% or games with a Pinnacle player_receptions quote < 50% -> stop"
+  decision_snapshot: "kickoff - 90 min (historical inactive-list post times unavailable); latest snapshot <= that time"
+  receiving_yards: deferred
+  scoring: "unchanged gateA rules; tranche 1 supports only the pre-registered futility look; exact player/line/side contracts only"

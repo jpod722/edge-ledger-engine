@@ -1,0 +1,554 @@
+{
+ "study": "N3 tranche 1, receptions only",
+ "market": "player_receptions",
+ "weeks": [
+  {
+   "week": 10,
+   "events_at": "2025-11-06T23:15:00Z",
+   "games": [
+    {
+     "game_id": "2025_10_LV_DEN",
+     "home": "Denver Broncos",
+     "away": "Las Vegas Raiders",
+     "kickoff": "2025-11-07T01:15:00Z",
+     "decision_at": "2025-11-06T23:45:00Z"
+    },
+    {
+     "game_id": "2025_10_ATL_IND",
+     "home": "Indianapolis Colts",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-09T14:30:00Z",
+     "decision_at": "2025-11-09T13:00:00Z"
+    },
+    {
+     "game_id": "2025_10_NO_CAR",
+     "home": "Carolina Panthers",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_NYG_CHI",
+     "home": "Chicago Bears",
+     "away": "New York Giants",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_JAX_HOU",
+     "home": "Houston Texans",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_BUF_MIA",
+     "home": "Miami Dolphins",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_BAL_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Baltimore Ravens",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_CLE_NYJ",
+     "home": "New York Jets",
+     "away": "Cleveland Browns",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_NE_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "New England Patriots",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z"
+    },
+    {
+     "game_id": "2025_10_ARI_SEA",
+     "home": "Seattle Seahawks",
+     "away": "Arizona Cardinals",
+     "kickoff": "2025-11-09T21:05:00Z",
+     "decision_at": "2025-11-09T19:35:00Z"
+    },
+    {
+     "game_id": "2025_10_LA_SF",
+     "home": "San Francisco 49ers",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-11-09T21:25:00Z",
+     "decision_at": "2025-11-09T19:55:00Z"
+    },
+    {
+     "game_id": "2025_10_DET_WAS",
+     "home": "Washington Commanders",
+     "away": "Detroit Lions",
+     "kickoff": "2025-11-09T21:25:00Z",
+     "decision_at": "2025-11-09T19:55:00Z"
+    },
+    {
+     "game_id": "2025_10_PIT_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-11-10T01:20:00Z",
+     "decision_at": "2025-11-09T23:50:00Z"
+    },
+    {
+     "game_id": "2025_10_PHI_GB",
+     "home": "Green Bay Packers",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-11-11T01:15:00Z",
+     "decision_at": "2025-11-10T23:45:00Z"
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "events_at": "2025-11-13T23:15:00Z",
+   "games": [
+    {
+     "game_id": "2025_11_NYJ_NE",
+     "home": "New England Patriots",
+     "away": "New York Jets",
+     "kickoff": "2025-11-14T01:15:00Z",
+     "decision_at": "2025-11-13T23:45:00Z"
+    },
+    {
+     "game_id": "2025_11_WAS_MIA",
+     "home": "Miami Dolphins",
+     "away": "Washington Commanders",
+     "kickoff": "2025-11-16T14:30:00Z",
+     "decision_at": "2025-11-16T13:00:00Z"
+    },
+    {
+     "game_id": "2025_11_CAR_ATL",
+     "home": "Atlanta Falcons",
+     "away": "Carolina Panthers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_TB_BUF",
+     "home": "Buffalo Bills",
+     "away": "Tampa Bay Buccaneers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_LAC_JAX",
+     "home": "Jacksonville Jaguars",
+     "away": "Los Angeles Chargers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_CHI_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Chicago Bears",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_GB_NYG",
+     "home": "New York Giants",
+     "away": "Green Bay Packers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_CIN_PIT",
+     "home": "Pittsburgh Steelers",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_HOU_TEN",
+     "home": "Tennessee Titans",
+     "away": "Houston Texans",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z"
+    },
+    {
+     "game_id": "2025_11_SF_ARI",
+     "home": "Arizona Cardinals",
+     "away": "San Francisco 49ers",
+     "kickoff": "2025-11-16T21:05:00Z",
+     "decision_at": "2025-11-16T19:35:00Z"
+    },
+    {
+     "game_id": "2025_11_SEA_LA",
+     "home": "Los Angeles Rams",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-11-16T21:05:00Z",
+     "decision_at": "2025-11-16T19:35:00Z"
+    },
+    {
+     "game_id": "2025_11_BAL_CLE",
+     "home": "Cleveland Browns",
+     "away": "Baltimore Ravens",
+     "kickoff": "2025-11-16T21:25:00Z",
+     "decision_at": "2025-11-16T19:55:00Z"
+    },
+    {
+     "game_id": "2025_11_KC_DEN",
+     "home": "Denver Broncos",
+     "away": "Kansas City Chiefs",
+     "kickoff": "2025-11-16T21:25:00Z",
+     "decision_at": "2025-11-16T19:55:00Z"
+    },
+    {
+     "game_id": "2025_11_DET_PHI",
+     "home": "Philadelphia Eagles",
+     "away": "Detroit Lions",
+     "kickoff": "2025-11-17T01:20:00Z",
+     "decision_at": "2025-11-16T23:50:00Z"
+    },
+    {
+     "game_id": "2025_11_DAL_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Dallas Cowboys",
+     "kickoff": "2025-11-18T01:15:00Z",
+     "decision_at": "2025-11-17T23:45:00Z"
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "events_at": "2025-11-20T23:15:00Z",
+   "games": [
+    {
+     "game_id": "2025_12_BUF_HOU",
+     "home": "Houston Texans",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-21T01:15:00Z",
+     "decision_at": "2025-11-20T23:45:00Z"
+    },
+    {
+     "game_id": "2025_12_NYJ_BAL",
+     "home": "Baltimore Ravens",
+     "away": "New York Jets",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_PIT_CHI",
+     "home": "Chicago Bears",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_NE_CIN",
+     "home": "Cincinnati Bengals",
+     "away": "New England Patriots",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_NYG_DET",
+     "home": "Detroit Lions",
+     "away": "New York Giants",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_MIN_GB",
+     "home": "Green Bay Packers",
+     "away": "Minnesota Vikings",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_IND_KC",
+     "home": "Kansas City Chiefs",
+     "away": "Indianapolis Colts",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_SEA_TEN",
+     "home": "Tennessee Titans",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z"
+    },
+    {
+     "game_id": "2025_12_JAX_ARI",
+     "home": "Arizona Cardinals",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-23T21:05:00Z",
+     "decision_at": "2025-11-23T19:35:00Z"
+    },
+    {
+     "game_id": "2025_12_CLE_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Cleveland Browns",
+     "kickoff": "2025-11-23T21:05:00Z",
+     "decision_at": "2025-11-23T19:35:00Z"
+    },
+    {
+     "game_id": "2025_12_PHI_DAL",
+     "home": "Dallas Cowboys",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-11-23T21:25:00Z",
+     "decision_at": "2025-11-23T19:55:00Z"
+    },
+    {
+     "game_id": "2025_12_ATL_NO",
+     "home": "New Orleans Saints",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-23T21:25:00Z",
+     "decision_at": "2025-11-23T19:55:00Z"
+    },
+    {
+     "game_id": "2025_12_TB_LA",
+     "home": "Los Angeles Rams",
+     "away": "Tampa Bay Buccaneers",
+     "kickoff": "2025-11-24T01:20:00Z",
+     "decision_at": "2025-11-23T23:50:00Z"
+    },
+    {
+     "game_id": "2025_12_CAR_SF",
+     "home": "San Francisco 49ers",
+     "away": "Carolina Panthers",
+     "kickoff": "2025-11-25T01:15:00Z",
+     "decision_at": "2025-11-24T23:45:00Z"
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "events_at": "2025-11-27T16:00:00Z",
+   "games": [
+    {
+     "game_id": "2025_13_GB_DET",
+     "home": "Detroit Lions",
+     "away": "Green Bay Packers",
+     "kickoff": "2025-11-27T18:00:00Z",
+     "decision_at": "2025-11-27T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_KC_DAL",
+     "home": "Dallas Cowboys",
+     "away": "Kansas City Chiefs",
+     "kickoff": "2025-11-27T21:30:00Z",
+     "decision_at": "2025-11-27T20:00:00Z"
+    },
+    {
+     "game_id": "2025_13_CIN_BAL",
+     "home": "Baltimore Ravens",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-11-28T01:20:00Z",
+     "decision_at": "2025-11-27T23:50:00Z"
+    },
+    {
+     "game_id": "2025_13_CHI_PHI",
+     "home": "Philadelphia Eagles",
+     "away": "Chicago Bears",
+     "kickoff": "2025-11-28T20:00:00Z",
+     "decision_at": "2025-11-28T18:30:00Z"
+    },
+    {
+     "game_id": "2025_13_LA_CAR",
+     "home": "Carolina Panthers",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_SF_CLE",
+     "home": "Cleveland Browns",
+     "away": "San Francisco 49ers",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_HOU_IND",
+     "home": "Indianapolis Colts",
+     "away": "Houston Texans",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_NO_MIA",
+     "home": "Miami Dolphins",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_ATL_NYJ",
+     "home": "New York Jets",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_ARI_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "Arizona Cardinals",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_JAX_TEN",
+     "home": "Tennessee Titans",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z"
+    },
+    {
+     "game_id": "2025_13_MIN_SEA",
+     "home": "Seattle Seahawks",
+     "away": "Minnesota Vikings",
+     "kickoff": "2025-11-30T21:05:00Z",
+     "decision_at": "2025-11-30T19:35:00Z"
+    },
+    {
+     "game_id": "2025_13_LV_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Las Vegas Raiders",
+     "kickoff": "2025-11-30T21:25:00Z",
+     "decision_at": "2025-11-30T19:55:00Z"
+    },
+    {
+     "game_id": "2025_13_BUF_PIT",
+     "home": "Pittsburgh Steelers",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-30T21:25:00Z",
+     "decision_at": "2025-11-30T19:55:00Z"
+    },
+    {
+     "game_id": "2025_13_DEN_WAS",
+     "home": "Washington Commanders",
+     "away": "Denver Broncos",
+     "kickoff": "2025-12-01T01:20:00Z",
+     "decision_at": "2025-11-30T23:50:00Z"
+    },
+    {
+     "game_id": "2025_13_NYG_NE",
+     "home": "New England Patriots",
+     "away": "New York Giants",
+     "kickoff": "2025-12-02T01:15:00Z",
+     "decision_at": "2025-12-01T23:45:00Z"
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "events_at": "2025-12-04T23:15:00Z",
+   "games": [
+    {
+     "game_id": "2025_14_DAL_DET",
+     "home": "Detroit Lions",
+     "away": "Dallas Cowboys",
+     "kickoff": "2025-12-05T01:15:00Z",
+     "decision_at": "2025-12-04T23:45:00Z"
+    },
+    {
+     "game_id": "2025_14_SEA_ATL",
+     "home": "Atlanta Falcons",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_PIT_BAL",
+     "home": "Baltimore Ravens",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_CIN_BUF",
+     "home": "Buffalo Bills",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_TEN_CLE",
+     "home": "Cleveland Browns",
+     "away": "Tennessee Titans",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_IND_JAX",
+     "home": "Jacksonville Jaguars",
+     "away": "Indianapolis Colts",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_WAS_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Washington Commanders",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_MIA_NYJ",
+     "home": "New York Jets",
+     "away": "Miami Dolphins",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_NO_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z"
+    },
+    {
+     "game_id": "2025_14_DEN_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Denver Broncos",
+     "kickoff": "2025-12-07T21:05:00Z",
+     "decision_at": "2025-12-07T19:35:00Z"
+    },
+    {
+     "game_id": "2025_14_LA_ARI",
+     "home": "Arizona Cardinals",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-12-07T21:25:00Z",
+     "decision_at": "2025-12-07T19:55:00Z"
+    },
+    {
+     "game_id": "2025_14_CHI_GB",
+     "home": "Green Bay Packers",
+     "away": "Chicago Bears",
+     "kickoff": "2025-12-07T21:25:00Z",
+     "decision_at": "2025-12-07T19:55:00Z"
+    },
+    {
+     "game_id": "2025_14_HOU_KC",
+     "home": "Kansas City Chiefs",
+     "away": "Houston Texans",
+     "kickoff": "2025-12-08T01:20:00Z",
+     "decision_at": "2025-12-07T23:50:00Z"
+    },
+    {
+     "game_id": "2025_14_PHI_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-12-09T01:15:00Z",
+     "decision_at": "2025-12-08T23:45:00Z"
+    }
+   ]
+  }
+ ],
+ "credits": {
+  "event_lists": 5,
+  "event_odds": 730,
+  "total": 735,
+  "cap": 750
+ },
+ "decision_rule": "kickoff - 90 min (historical inactive-list times not available); snapshot = latest <= decision"
+}
