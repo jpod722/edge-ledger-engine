@@ -283,7 +283,8 @@ def h_u1(S: pd.DataFrame, pick_col="model_under_pick"):
 
 def run(data: str):
     D = build(data)
-    for c in ("eligible", "settle", "model_under_pick", "reason", "date"):
+    for c in ("eligible", "settle", "model_under_pick", "reason", "date", "over", "under_dec", "kx_eligible", "kx_pick",
+              "kx_cost", "kx_reason", "player", "event_id"):
         if c not in D:
             D[c] = None
     D["eligible"] = D.eligible.fillna(False).astype(bool)
