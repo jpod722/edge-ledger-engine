@@ -168,8 +168,10 @@ monitor:                         # nightly NBA points-prop monitor (prospective 
   loop_s: 20
   after_last_tip_min: 10
   max_runtime_min: 340           # GitHub job limit is 360
-  nightly_cap_credits: 150
+  nightly_cap_credits: 32        # lean mode: 2 polls/game, 15-game slate max + 2 (reviewer Oct 24)
   min_remaining_credits: 3000    # keeps the reserve
+  lean: true                     # reviewer Oct 24: one DK decision snapshot at min(17:30 ET, tip-90) - 5 min + one close per game;
+  lean_decision_lead_min: 5      #   baseline and reaction polls dropped; injury/official-report/Kalshi capture (free) unchanged
 
 learning:                        # frozen: monitoring only until the evaluation period ends
   frozen_until: "2027-01-05"

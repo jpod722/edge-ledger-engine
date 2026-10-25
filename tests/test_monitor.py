@@ -59,6 +59,7 @@ class S:
 
 def test_status_change_triggers_reaction_polls_and_close(tmp_path):
     cfg = load_cfg()
+    cfg["monitor"]["lean"] = False
     clock = Clock()
     s = S(clock)
     monitor.api_key = lambda: "k"
@@ -88,6 +89,7 @@ def test_diff_injuries():
 
 def test_budget_reserves_closes(tmp_path):
     cfg = load_cfg()
+    cfg["monitor"]["lean"] = False
     cfg["monitor"]["nightly_cap_credits"] = 3          # tiny cap: baseline polls must stop before the close
     clock = Clock()
     s = S(clock)
@@ -129,3 +131,37 @@ def test_too_early_run_exits_without_polling(tmp_path):
     log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
     assert log[-1]["kind"] == "done" and log[-1]["reason"] == "too_early"
     assert s.polls == []
+
+
+def run_lean(tmp_path, start):
+    cfg = load_cfg()
+    assert cfg["monitor"]["lean"] is True
+    clock = Clock()
+    clock.t = start
+    s = S(clock)
+    monitor.api_key = lambda: "k"
+    m = RawStore(tmp_path).manifest
+    if not m.exists():
+        m.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep).run()
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    return s, log
+
+
+def test_lean_one_decision_one_close_and_no_reaction(tmp_path):
+    """Lean mode (reviewer Oct 24): tip 7 PM ET -> decision 17:30 ET; one poll at ~17:25 and one close; injury
+    changes are logged but trigger no polls."""
+    start = T0 - timedelta(hours=1, minutes=30)                         # 4:30 PM ET
+    s, log = run_lean(tmp_path, start)
+    polls = [x for x in log if x["kind"] == "poll"]
+    assert [p["reason"] for p in polls] == ["decision", "close"]
+    dec = s.polls[0].astimezone(monitor.ET)
+    assert (dec.hour, dec.minute) == (17, 25)
+    assert any(x["kind"] == "injury_change" for x in log)               # still archived, no reaction poll
+
+
+def test_lean_second_run_same_day_does_not_repeat(tmp_path):
+    s1, _ = run_lean(tmp_path, T0 - timedelta(hours=1, minutes=30))
+    s2, log = run_lean(tmp_path, T0 - timedelta(minutes=30))           # a late duplicate run before tip
+    assert len(s1.polls) == 2 and s2.polls == []
+    assert not any(x["kind"] == "late_decision" for x in log[-20:] if x["at"] >= (T0 - timedelta(minutes=30)).isoformat())

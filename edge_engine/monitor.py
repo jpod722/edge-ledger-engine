@@ -220,8 +220,32 @@ class Monitor:
             by_team.setdefault(e["home_team"], []).append(e)
             by_team.setdefault(e["away_team"], []).append(e)
         last_tip = max(parse_ts(e["commence_time"]) for e in games)
-        next_base = {e["id"]: start for e in games}
-        closed, queue, last_poll = set(), [], {}
+        lean = self.m.get("lean", False)
+        if lean:   # reviewer Oct 24: one decision snapshot + one close per game; no baseline or reaction polls
+            def decision(e):
+                tip = parse_ts(e["commence_time"])
+                d530 = tip.astimezone(ET).replace(hour=17, minute=30, second=0, microsecond=0)
+                return min(d530, tip - timedelta(minutes=90))
+            lead = timedelta(minutes=self.m.get("lean_decision_lead_min", 5))
+            next_base = {e["id"]: max(start, decision(e) - lead) for e in games}
+            # earlier runs today (the workflow runs serially) already took some snapshots: never repeat them
+            done_dec, done_close = set(), set()
+            if self.log_p.exists():
+                for line in open(self.log_p):
+                    r = json.loads(line)
+                    if r.get("kind") == "poll":
+                        rs = r.get("reason", "")
+                        (done_close if "close" in rs else done_dec).add(r["event_id"])
+            far = datetime.max.replace(tzinfo=timezone.utc)
+            for eid in done_dec:
+                if eid in next_base:
+                    next_base[eid] = far
+            for e in games:
+                if start > decision(e) and e["id"] not in done_dec:
+                    self.log("late_decision", event_id=e["id"], decision=decision(e).isoformat(), start=start.isoformat())
+        else:
+            next_base = {e["id"]: start for e in games}
+        closed, queue, last_poll = (set(done_close) if lean else set()), [], {}
         inj_state, next_inj, next_pdf, next_kalshi = None, start, start, start
         have_pdfs = stored_paths(self.store)
         stop_credits = False
@@ -234,7 +258,7 @@ class Monitor:
                     if inj_state is not None:
                         for ch in diff_injuries(inj_state, st):
                             self.log("injury_change", first_seen=now.isoformat(), ref=ref, **ch)
-                            for e in by_team.get(ch["team"], []):
+                            for e in ([] if lean else by_team.get(ch["team"], [])):
                                 if parse_ts(e["commence_time"]) > now:
                                     for dm in self.m["reaction_polls_min"]:
                                         queue.append((now + timedelta(minutes=dm), e, f"inj+{dm}:{ch['player']}:{ch['status']}"))
@@ -262,8 +286,9 @@ class Monitor:
                     due.append((e, "close"))
                     closed.add(e["id"])
                 elif now >= next_base[e["id"]]:
-                    due.append((e, "baseline"))
-                    next_base[e["id"]] = now + timedelta(minutes=self.m["baseline_min"])
+                    due.append((e, "decision" if lean else "baseline"))
+                    next_base[e["id"]] = (datetime.max.replace(tzinfo=timezone.utc) if lean
+                                          else now + timedelta(minutes=self.m["baseline_min"]))
             keep = []
             for t, e, why in queue:
                 if t <= now:
