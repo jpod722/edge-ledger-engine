@@ -212,7 +212,12 @@ class Monitor:
         # a scheduled run GitHub fires hours late (e.g. the 10:20 PM job at 3:43 AM) must not poll all day
         # or set the night's decision snapshot before the window
         first_tip = min(parse_ts(e["commence_time"]) for e in games)
-        if first_tip - start > timedelta(hours=self.m.get("max_lead_hours", 6)):
+        # lean mode waits for the first decision snapshot (min(17:30 ET, tip - 90)), so the lead is measured to it
+        lead_to = first_tip
+        if self.m.get("lean"):
+            t = first_tip.astimezone(ET)
+            lead_to = min(t.replace(hour=17, minute=30, second=0, microsecond=0), t - timedelta(minutes=90))
+        if lead_to - start > timedelta(hours=self.m.get("max_lead_hours", 6)):
             self.log("done", reason="too_early", first_tip=first_tip.isoformat())
             return
         by_team = {}

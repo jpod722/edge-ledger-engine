@@ -37,3 +37,10 @@ screening_2024_25:   # reviewer: approved as exploratory only
   status: exploratory
   report: "all six additions with gain, LB, Holm decision — failures included"
   consequence: "a retained addition changes nothing in production or Gate A until it passes a later, untouched prospective evaluation"
+
+implementation_2026-10-24:   # before any qualifying observation; no rule above changed
+  code: "edge_engine/m3_forward.py; runs after every nightly monitor job (free) and writes data/m3/forward/{props.csv,status.json}"
+  reports: "official PDFs captured by the monitor; selection by printed header time <= decision - 15 min; Out matched by normalized name on the game date"
+  evaluation_cut: "H-U1 uses data through the first date on which both minimums hold, even if the job runs later; result file written once, never recomputed"
+  interim: "status.json shows counts only (picks, dates, exclusions); no ROI before the evaluation"
+  timing: "monitor gets 1 PM and 3 PM ET starts so the decision snapshot is taken despite late GitHub cron; captures after the decision are excluded, never substituted"
