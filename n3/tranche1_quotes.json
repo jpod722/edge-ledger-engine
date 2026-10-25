@@ -1,0 +1,3278 @@
+{
+ "plan": "config/prereg/n3-tranche1-plan.json",
+ "weeks": [
+  {
+   "week": 10,
+   "games": [
+    {
+     "game_id": "2025_10_LV_DEN",
+     "home": "Denver Broncos",
+     "away": "Las Vegas Raiders",
+     "kickoff": "2025-11-07T01:15:00Z",
+     "decision_at": "2025-11-06T23:45:00Z",
+     "event_id": "13bdffda97e8fb13179fe3f2f69d66f8",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031025_americanfootball_nfl_hist_event_13bdffda_0297d06f.json.gz",
+     "snapshot": "2025-11-06T23:40:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-06T23:40:06Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-06T23:40:55Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-06T23:40:56Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-06T23:41:01Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-06T23:40:30Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-06T23:41:03Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-06T23:40:42Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-06T23:40:13Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_ATL_IND",
+     "home": "Indianapolis Colts",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-09T14:30:00Z",
+     "decision_at": "2025-11-09T13:00:00Z",
+     "event_id": "42473c1ddf8f424069ff3f264dd8dca4",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031025_americanfootball_nfl_hist_event_42473c1d_addd05c0.json.gz",
+     "snapshot": "2025-11-09T12:55:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T12:55:06Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T12:55:49Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T12:55:05Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T12:48:34Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T12:55:38Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T12:55:35Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T12:55:33Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T12:55:07Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_NO_CAR",
+     "home": "Carolina Panthers",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "21f47a328fb2ab65c01360a7a2bd9571",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031026_americanfootball_nfl_hist_event_21f47a32_6a771d5c.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:24:54Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:35Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:25:35Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:34Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:46Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:25:15Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:25:22Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_NYG_CHI",
+     "home": "Chicago Bears",
+     "away": "New York Giants",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "3b1a97366685a96e6e1940ae56cc4d31",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031027_americanfootball_nfl_hist_event_3b1a9736_c9243a03.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:25:23Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:07Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:25:22Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:19Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:33Z",
+       "n_outcomes": 16
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:25:28Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:25:43Z",
+       "n_outcomes": 16
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T16:24:06Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_JAX_HOU",
+     "home": "Houston Texans",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "9dbf94f23521c7cae7fd89b2d33fc3bd",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031028_americanfootball_nfl_hist_event_9dbf94f2_9c497c85.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:24:54Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T16:18:40Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:38Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:25:00Z",
+       "n_outcomes": 16
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:49Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:39Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:25:17Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:25:42Z",
+       "n_outcomes": 14
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_BUF_MIA",
+     "home": "Miami Dolphins",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "3c10bc18680995136017c3bfd3152334",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031029_americanfootball_nfl_hist_event_3c10bc18_b0978e20.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:25:43Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:49Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:24:53Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:31Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:22Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:24:54Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:25:21Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_BAL_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Baltimore Ravens",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "9900b89c4776c5b47dd26ca4c755edf9",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031029_americanfootball_nfl_hist_event_9900b89c_86f427e7.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:25:40Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:47Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:24:50Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:25Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:46Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:24:46Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T16:24:57Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:24:58Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_CLE_NYJ",
+     "home": "New York Jets",
+     "away": "Cleveland Browns",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "844b89333f293f055f8e0c147fb9fec5",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031030_americanfootball_nfl_hist_event_844b8933_5bea0a19.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:24:08Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:25:29Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:25:03Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:42Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:43Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:25:05Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T16:25:22Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:25:42Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_NE_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "New England Patriots",
+     "kickoff": "2025-11-09T18:00:00Z",
+     "decision_at": "2025-11-09T16:30:00Z",
+     "event_id": "39e7c1f6e36d5bc4d2613ebf7bb83c10",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031031_americanfootball_nfl_hist_event_39e7c1f6_a4947634.json.gz",
+     "snapshot": "2025-11-09T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T16:25:32Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T16:24:39Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T16:25:05Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T16:25:08Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T16:25:04Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T16:25:18Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T16:24:56Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_ARI_SEA",
+     "home": "Seattle Seahawks",
+     "away": "Arizona Cardinals",
+     "kickoff": "2025-11-09T21:05:00Z",
+     "decision_at": "2025-11-09T19:35:00Z",
+     "event_id": "740b843794cc89176c4ffe38b66d30d9",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031032_americanfootball_nfl_hist_event_740b8437_8f07e690.json.gz",
+     "snapshot": "2025-11-09T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T19:29:05Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T19:30:49Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T19:30:24Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T19:30:51Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T19:30:48Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T19:30:50Z",
+       "n_outcomes": 12
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T19:30:09Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T19:30:03Z",
+       "n_outcomes": 8
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_LA_SF",
+     "home": "San Francisco 49ers",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-11-09T21:25:00Z",
+     "decision_at": "2025-11-09T19:55:00Z",
+     "event_id": "2710103fe4fb0170ae03b4e34bde8132",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031033_americanfootball_nfl_hist_event_2710103f_09d324ec.json.gz",
+     "snapshot": "2025-11-09T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T19:50:24Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T19:50:40Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T19:49:55Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T19:45:58Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T19:50:21Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T19:50:09Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T19:50:23Z",
+       "n_outcomes": 16
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T19:50:24Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_DET_WAS",
+     "home": "Washington Commanders",
+     "away": "Detroit Lions",
+     "kickoff": "2025-11-09T21:25:00Z",
+     "decision_at": "2025-11-09T19:55:00Z",
+     "event_id": "93365f943b3aa23705bc9e1c7b47d7f8",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031033_americanfootball_nfl_hist_event_93365f94_0c66e161.json.gz",
+     "snapshot": "2025-11-09T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T19:50:37Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T19:50:37Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T19:45:49Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T19:50:11Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T19:50:08Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T19:50:26Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T19:49:04Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T19:50:39Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_PIT_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-11-10T01:20:00Z",
+     "decision_at": "2025-11-09T23:50:00Z",
+     "event_id": "349d53a4f89591312ea528e81b786474",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031034_americanfootball_nfl_hist_event_349d53a4_28594ded.json.gz",
+     "snapshot": "2025-11-09T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-09T23:44:45Z",
+       "n_outcomes": 28
+      },
+      "espnbet": {
+       "last_update": "2025-11-09T23:45:35Z",
+       "n_outcomes": 28
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-09T23:45:45Z",
+       "n_outcomes": 28
+      },
+      "fanduel": {
+       "last_update": "2025-11-09T23:45:11Z",
+       "n_outcomes": 28
+      },
+      "betrivers": {
+       "last_update": "2025-11-09T23:44:46Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-09T23:45:43Z",
+       "n_outcomes": 28
+      },
+      "betmgm": {
+       "last_update": "2025-11-09T23:45:45Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-09T23:45:07Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_10_PHI_GB",
+     "home": "Green Bay Packers",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-11-11T01:15:00Z",
+     "decision_at": "2025-11-10T23:45:00Z",
+     "event_id": "438868ff90501a1fe9a0fbecbee9dc12",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031035_americanfootball_nfl_hist_event_438868ff_fe55a592.json.gz",
+     "snapshot": "2025-11-10T23:40:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-10T23:39:56Z",
+       "n_outcomes": 16
+      },
+      "espnbet": {
+       "last_update": "2025-11-10T23:40:09Z",
+       "n_outcomes": 16
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-10T23:40:43Z",
+       "n_outcomes": 16
+      },
+      "fanduel": {
+       "last_update": "2025-11-10T23:40:20Z",
+       "n_outcomes": 16
+      },
+      "betrivers": {
+       "last_update": "2025-11-10T23:39:57Z",
+       "n_outcomes": 14
+      },
+      "pinnacle": {
+       "last_update": "2025-11-10T23:40:42Z",
+       "n_outcomes": 16
+      },
+      "betmgm": {
+       "last_update": "2025-11-10T23:39:40Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-11-10T23:40:56Z",
+       "n_outcomes": 16
+      }
+     }
+    }
+   ],
+   "events_ref": "raw/2026-10-25/031024_americanfootball_nfl_hist_events_18a8ae78.json.gz",
+   "matched_share": 1.0,
+   "pinnacle_share": 1.0,
+   "dk_share": 1.0
+  },
+  {
+   "week": 11,
+   "games": [
+    {
+     "game_id": "2025_11_NYJ_NE",
+     "home": "New England Patriots",
+     "away": "New York Jets",
+     "kickoff": "2025-11-14T01:15:00Z",
+     "decision_at": "2025-11-13T23:45:00Z",
+     "event_id": "32ec2bd4ac9e4c40f9f5cbed7e67f837",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031036_americanfootball_nfl_hist_event_32ec2bd4_08a15242.json.gz",
+     "snapshot": "2025-11-13T23:40:39Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-13T23:41:01Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-13T23:41:06Z",
+       "n_outcomes": 28
+      },
+      "espnbet": {
+       "last_update": "2025-11-13T23:40:52Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-13T23:40:32Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-13T23:41:05Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-13T23:41:07Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-13T23:40:28Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-11-13T23:40:43Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_WAS_MIA",
+     "home": "Miami Dolphins",
+     "away": "Washington Commanders",
+     "kickoff": "2025-11-16T14:30:00Z",
+     "decision_at": "2025-11-16T13:00:00Z",
+     "event_id": "265f0188945bb81ec64751571eb724cb",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031037_americanfootball_nfl_hist_event_265f0188_921ff645.json.gz",
+     "snapshot": "2025-11-16T12:55:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T12:55:32Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T12:55:53Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T12:55:25Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-16T12:55:31Z",
+       "n_outcomes": 28
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T12:50:25Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T12:55:39Z",
+       "n_outcomes": 16
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T12:55:15Z",
+       "n_outcomes": 16
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T12:55:32Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_CAR_ATL",
+     "home": "Atlanta Falcons",
+     "away": "Carolina Panthers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "0ae85bbc3711ad0cb94475a40e2364f0",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031038_americanfootball_nfl_hist_event_0ae85bbc_7aa63607.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:21Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:25:27Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:24:55Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:42Z",
+       "n_outcomes": 16
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:06Z",
+       "n_outcomes": 18
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:25:21Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:32Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_TB_BUF",
+     "home": "Buffalo Bills",
+     "away": "Tampa Bay Buccaneers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "96377d2fb55e3cef733cecccdecaed5f",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031039_americanfootball_nfl_hist_event_96377d2f_259eb212.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:05Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:24:42Z",
+       "n_outcomes": 16
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:25:36Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:38Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:45Z",
+       "n_outcomes": 16
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:24:49Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:24:51Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_LAC_JAX",
+     "home": "Jacksonville Jaguars",
+     "away": "Los Angeles Chargers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "591fd7cff37201a14cbdfbd457592445",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031040_americanfootball_nfl_hist_event_591fd7cf_5d4ac46a.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:23Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:25:14Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:25:31Z",
+       "n_outcomes": 16
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:31Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:11Z",
+       "n_outcomes": 16
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:32Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:25:31Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_CHI_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Chicago Bears",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "229a5e9ce60dcb344a8cc3c97121154e",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031040_americanfootball_nfl_hist_event_229a5e9c_9d275549.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:38Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:24:39Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:24:50Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:12Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:18Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:13Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:25:10Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_GB_NYG",
+     "home": "New York Giants",
+     "away": "Green Bay Packers",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "5c06e82838fcfade9adf1e89b8bd3081",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031041_americanfootball_nfl_hist_event_5c06e828_31ca6fca.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:12Z",
+       "n_outcomes": 16
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:24:41Z",
+       "n_outcomes": 16
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:25:37Z",
+       "n_outcomes": 16
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:42Z",
+       "n_outcomes": 16
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:18Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:32Z",
+       "n_outcomes": 16
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:25:26Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_CIN_PIT",
+     "home": "Pittsburgh Steelers",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "7147476b5d96c0ee874b838de3910ee3",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031042_americanfootball_nfl_hist_event_7147476b_97915049.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:25:32Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:25:27Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:25:08Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:28Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:28Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:09Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:24:55Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_HOU_TEN",
+     "home": "Tennessee Titans",
+     "away": "Houston Texans",
+     "kickoff": "2025-11-16T18:00:00Z",
+     "decision_at": "2025-11-16T16:30:00Z",
+     "event_id": "fd2f29289d6437a7c07d4780c5f04936",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031043_americanfootball_nfl_hist_event_fd2f2928_86bc95df.json.gz",
+     "snapshot": "2025-11-16T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T16:24:53Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T16:24:49Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T16:25:04Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T16:25:28Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T16:25:51Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T16:25:41Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T16:25:06Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_SF_ARI",
+     "home": "Arizona Cardinals",
+     "away": "San Francisco 49ers",
+     "kickoff": "2025-11-16T21:05:00Z",
+     "decision_at": "2025-11-16T19:35:00Z",
+     "event_id": "91630b9c62640117918fa30d2a62d2db",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031043_americanfootball_nfl_hist_event_91630b9c_f28a46b6.json.gz",
+     "snapshot": "2025-11-16T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T19:30:24Z",
+       "n_outcomes": 14
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T19:30:28Z",
+       "n_outcomes": 14
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T19:30:27Z",
+       "n_outcomes": 14
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T19:30:52Z",
+       "n_outcomes": 14
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T19:30:05Z",
+       "n_outcomes": 14
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T19:29:50Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T19:30:12Z",
+       "n_outcomes": 14
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_SEA_LA",
+     "home": "Los Angeles Rams",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-11-16T21:05:00Z",
+     "decision_at": "2025-11-16T19:35:00Z",
+     "event_id": "e926e654cedeb65fcfcc389a5158ef4e",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031044_americanfootball_nfl_hist_event_e926e654_a0544589.json.gz",
+     "snapshot": "2025-11-16T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T19:30:43Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T19:30:01Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T19:30:02Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T19:30:38Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T19:29:59Z",
+       "n_outcomes": 16
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T19:30:28Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T19:30:34Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_BAL_CLE",
+     "home": "Cleveland Browns",
+     "away": "Baltimore Ravens",
+     "kickoff": "2025-11-16T21:25:00Z",
+     "decision_at": "2025-11-16T19:55:00Z",
+     "event_id": "cc60225b5a907bd9ba7c27c23131fc5c",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031045_americanfootball_nfl_hist_event_cc60225b_98222be7.json.gz",
+     "snapshot": "2025-11-16T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T19:50:16Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T19:50:27Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T19:40:43Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T19:50:43Z",
+       "n_outcomes": 16
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T19:50:14Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T19:50:27Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T19:50:21Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_KC_DEN",
+     "home": "Denver Broncos",
+     "away": "Kansas City Chiefs",
+     "kickoff": "2025-11-16T21:25:00Z",
+     "decision_at": "2025-11-16T19:55:00Z",
+     "event_id": "96ce7785b0980b03282c7e10d4c58d4a",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031046_americanfootball_nfl_hist_event_96ce7785_9b68258d.json.gz",
+     "snapshot": "2025-11-16T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T19:50:17Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T19:50:34Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T19:40:57Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T19:50:37Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T19:50:28Z",
+       "n_outcomes": 16
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T19:50:48Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T19:50:35Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_DET_PHI",
+     "home": "Philadelphia Eagles",
+     "away": "Detroit Lions",
+     "kickoff": "2025-11-17T01:20:00Z",
+     "decision_at": "2025-11-16T23:50:00Z",
+     "event_id": "6d209e0e637f3b116ec958e0634f2a02",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031047_americanfootball_nfl_hist_event_6d209e0e_a9254b25.json.gz",
+     "snapshot": "2025-11-16T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-16T23:45:01Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-16T23:44:36Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-16T23:45:42Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-16T23:45:44Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-16T23:45:33Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-16T23:44:51Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-16T23:45:10Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-16T23:45:46Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_11_DAL_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Dallas Cowboys",
+     "kickoff": "2025-11-18T01:15:00Z",
+     "decision_at": "2025-11-17T23:45:00Z",
+     "event_id": "80d04ba917883a6438580ebae9fb0f22",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031048_americanfootball_nfl_hist_event_80d04ba9_00033685.json.gz",
+     "snapshot": "2025-11-17T23:40:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-17T23:40:51Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-17T23:41:00Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-17T23:40:49Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-17T23:40:57Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-17T23:40:06Z",
+       "n_outcomes": 18
+      },
+      "pinnacle": {
+       "last_update": "2025-11-17T23:40:18Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-17T23:40:51Z",
+       "n_outcomes": 28
+      },
+      "fanatics": {
+       "last_update": "2025-11-17T23:40:42Z",
+       "n_outcomes": 22
+      }
+     }
+    }
+   ],
+   "events_ref": "raw/2026-10-25/031036_americanfootball_nfl_hist_events_5a81d364.json.gz",
+   "matched_share": 1.0,
+   "pinnacle_share": 1.0,
+   "dk_share": 1.0
+  },
+  {
+   "week": 12,
+   "games": [
+    {
+     "game_id": "2025_12_BUF_HOU",
+     "home": "Houston Texans",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-21T01:15:00Z",
+     "decision_at": "2025-11-20T23:45:00Z",
+     "event_id": "cd2e0964817c30ad3f5144ea49b55f2b",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031049_americanfootball_nfl_hist_event_cd2e0964_ef5db972.json.gz",
+     "snapshot": "2025-11-20T23:40:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-20T23:40:39Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-20T23:40:50Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-20T23:40:25Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-20T23:40:01Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-20T23:40:14Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-20T23:40:31Z",
+       "n_outcomes": 36
+      },
+      "fanatics": {
+       "last_update": "2025-11-20T23:40:32Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-20T23:40:43Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_NYJ_BAL",
+     "home": "Baltimore Ravens",
+     "away": "New York Jets",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "7159d60c7a31c7d593167637723d7663",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031050_americanfootball_nfl_hist_event_7159d60c_9a530ddc.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:45Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:26:06Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:49Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:54Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:23Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:25:38Z",
+       "n_outcomes": 30
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:26:04Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:25:47Z",
+       "n_outcomes": 16
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_PIT_CHI",
+     "home": "Chicago Bears",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "c8913b70b63ae247f23a4e1dec08c668",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031051_americanfootball_nfl_hist_event_c8913b70_4f337116.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:50Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:25:08Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:24Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:42Z",
+       "n_outcomes": 26
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:28Z",
+       "n_outcomes": 26
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:25:57Z",
+       "n_outcomes": 32
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:54Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:25:10Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_NE_CIN",
+     "home": "Cincinnati Bengals",
+     "away": "New England Patriots",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "1a8f3d70399a5cad83c95196795ed77b",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031052_americanfootball_nfl_hist_event_1a8f3d70_b6adba01.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:01Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:25:56Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:54Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:26:07Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:11Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:18Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:25:32Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_NYG_DET",
+     "home": "Detroit Lions",
+     "away": "New York Giants",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "535bbe97d4e56494b039ade88459c338",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031052_americanfootball_nfl_hist_event_535bbe97_3a3bdc81.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:40Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:25:39Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:51Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:07Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:35Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:53Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:25:15Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:26:04Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_MIN_GB",
+     "home": "Green Bay Packers",
+     "away": "Minnesota Vikings",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "91019a528f43cd28965fdc68a3f3ef85",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031053_americanfootball_nfl_hist_event_91019a52_c0f62a77.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:08Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:25:45Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:54Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:26:08Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:29Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:28Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:12Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:25:45Z",
+       "n_outcomes": 10
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_IND_KC",
+     "home": "Kansas City Chiefs",
+     "away": "Indianapolis Colts",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "8b39d8dc550ced94f9faa91878ebf6b6",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031054_americanfootball_nfl_hist_event_8b39d8dc_697ba04e.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:30Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:26:03Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:25:50Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:55Z",
+       "n_outcomes": 26
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:25:22Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:39Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:25:59Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:26:01Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_SEA_TEN",
+     "home": "Tennessee Titans",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-11-23T18:00:00Z",
+     "decision_at": "2025-11-23T16:30:00Z",
+     "event_id": "0ff4e68cf39cc57ca7cf1276e4a44d2f",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031055_americanfootball_nfl_hist_event_0ff4e68c_d00dbbde.json.gz",
+     "snapshot": "2025-11-23T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T16:25:57Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T16:26:03Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T16:26:08Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T16:25:51Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T16:26:05Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T16:25:12Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T16:25:25Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T16:25:55Z",
+       "n_outcomes": 14
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_JAX_ARI",
+     "home": "Arizona Cardinals",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-23T21:05:00Z",
+     "decision_at": "2025-11-23T19:35:00Z",
+     "event_id": "e32e0030899c06fdf2c74745ca27d85a",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031056_americanfootball_nfl_hist_event_e32e0030_e40ddb99.json.gz",
+     "snapshot": "2025-11-23T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T19:30:09Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T19:30:03Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T19:30:17Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T19:30:45Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T19:30:49Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T19:30:16Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T19:30:26Z",
+       "n_outcomes": 30
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T19:30:52Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_CLE_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Cleveland Browns",
+     "kickoff": "2025-11-23T21:05:00Z",
+     "decision_at": "2025-11-23T19:35:00Z",
+     "event_id": "27f50ddbc4c3fbad10398c5187a28dc7",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031057_americanfootball_nfl_hist_event_27f50ddb_7d664111.json.gz",
+     "snapshot": "2025-11-23T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T19:30:14Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T19:30:56Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T19:29:54Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T19:30:28Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T19:30:39Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T19:30:32Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T19:30:16Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T19:30:16Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_PHI_DAL",
+     "home": "Dallas Cowboys",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-11-23T21:25:00Z",
+     "decision_at": "2025-11-23T19:55:00Z",
+     "event_id": "4553ba763cb3cfcfc33fd62672a2057f",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031057_americanfootball_nfl_hist_event_4553ba76_4d8c8fe7.json.gz",
+     "snapshot": "2025-11-23T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T19:50:29Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T19:49:54Z",
+       "n_outcomes": 16
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T19:50:20Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T19:50:19Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T19:50:19Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T19:50:02Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T19:50:49Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T19:50:07Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_ATL_NO",
+     "home": "New Orleans Saints",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-23T21:25:00Z",
+     "decision_at": "2025-11-23T19:55:00Z",
+     "event_id": "8c2d6a56aa63f42227f18a18fc3d2146",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031058_americanfootball_nfl_hist_event_8c2d6a56_a647aec4.json.gz",
+     "snapshot": "2025-11-23T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T19:49:57Z",
+       "n_outcomes": 14
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T19:50:21Z",
+       "n_outcomes": 14
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T19:50:17Z",
+       "n_outcomes": 14
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T19:50:21Z",
+       "n_outcomes": 14
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T19:49:04Z",
+       "n_outcomes": 14
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T19:49:56Z",
+       "n_outcomes": 14
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T19:50:45Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T19:50:33Z",
+       "n_outcomes": 14
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_TB_LA",
+     "home": "Los Angeles Rams",
+     "away": "Tampa Bay Buccaneers",
+     "kickoff": "2025-11-24T01:20:00Z",
+     "decision_at": "2025-11-23T23:50:00Z",
+     "event_id": "9e7119f5a24471c39145663b84f100b2",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031059_americanfootball_nfl_hist_event_9e7119f5_36745b77.json.gz",
+     "snapshot": "2025-11-23T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-23T23:45:50Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-11-23T23:45:02Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-23T23:45:33Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-23T23:45:15Z",
+       "n_outcomes": 26
+      },
+      "betrivers": {
+       "last_update": "2025-11-23T23:45:37Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-23T23:44:56Z",
+       "n_outcomes": 26
+      },
+      "betmgm": {
+       "last_update": "2025-11-23T23:45:48Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-11-23T23:45:21Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_12_CAR_SF",
+     "home": "San Francisco 49ers",
+     "away": "Carolina Panthers",
+     "kickoff": "2025-11-25T01:15:00Z",
+     "decision_at": "2025-11-24T23:45:00Z",
+     "event_id": "90391be251d876bb41d36978a43c7ac2",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031100_americanfootball_nfl_hist_event_90391be2_d23a5665.json.gz",
+     "snapshot": "2025-11-24T23:40:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-24T23:40:19Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-24T23:40:41Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-24T23:40:11Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-11-24T23:40:42Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-24T23:40:36Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-24T23:40:23Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-24T23:40:16Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-11-24T23:40:40Z",
+       "n_outcomes": 18
+      }
+     }
+    }
+   ],
+   "events_ref": "raw/2026-10-25/031048_americanfootball_nfl_hist_events_12655876.json.gz",
+   "matched_share": 1.0,
+   "pinnacle_share": 1.0,
+   "dk_share": 1.0
+  },
+  {
+   "week": 13,
+   "games": [
+    {
+     "game_id": "2025_13_GB_DET",
+     "home": "Detroit Lions",
+     "away": "Green Bay Packers",
+     "kickoff": "2025-11-27T18:00:00Z",
+     "decision_at": "2025-11-27T16:30:00Z",
+     "event_id": "fe2eb07797580740af78037ab498198e",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031101_americanfootball_nfl_hist_event_fe2eb077_6689b2e2.json.gz",
+     "snapshot": "2025-11-27T16:25:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-27T16:25:00Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-27T16:25:49Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-27T16:25:22Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-27T16:25:57Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-27T16:25:47Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-27T16:25:03Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-27T16:25:23Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-27T16:25:01Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_KC_DAL",
+     "home": "Dallas Cowboys",
+     "away": "Kansas City Chiefs",
+     "kickoff": "2025-11-27T21:30:00Z",
+     "decision_at": "2025-11-27T20:00:00Z",
+     "event_id": "de53b8a594fe830c5fd56484705cd756",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031102_americanfootball_nfl_hist_event_de53b8a5_878a0e99.json.gz",
+     "snapshot": "2025-11-27T19:55:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-27T19:54:57Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-27T19:55:25Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-27T19:54:53Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-27T19:55:12Z",
+       "n_outcomes": 18
+      },
+      "betmgm": {
+       "last_update": "2025-11-27T19:55:25Z",
+       "n_outcomes": 34
+      },
+      "betrivers": {
+       "last_update": "2025-11-27T19:55:06Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-27T19:54:53Z",
+       "n_outcomes": 18
+      },
+      "pinnacle": {
+       "last_update": "2025-11-27T19:55:32Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_CIN_BAL",
+     "home": "Baltimore Ravens",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-11-28T01:20:00Z",
+     "decision_at": "2025-11-27T23:50:00Z",
+     "event_id": "883a79a306b312fad75ebf04b441b4da",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031103_americanfootball_nfl_hist_event_883a79a3_6e202f72.json.gz",
+     "snapshot": "2025-11-27T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-27T23:45:52Z",
+       "n_outcomes": 28
+      },
+      "espnbet": {
+       "last_update": "2025-11-27T23:45:04Z",
+       "n_outcomes": 28
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-27T23:45:18Z",
+       "n_outcomes": 28
+      },
+      "betmgm": {
+       "last_update": "2025-11-27T23:45:26Z",
+       "n_outcomes": 28
+      },
+      "fanduel": {
+       "last_update": "2025-11-27T23:45:13Z",
+       "n_outcomes": 28
+      },
+      "betrivers": {
+       "last_update": "2025-11-27T23:45:34Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-27T23:45:02Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-11-27T23:45:27Z",
+       "n_outcomes": 28
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_CHI_PHI",
+     "home": "Philadelphia Eagles",
+     "away": "Chicago Bears",
+     "kickoff": "2025-11-28T20:00:00Z",
+     "decision_at": "2025-11-28T18:30:00Z",
+     "event_id": "52f539d9d080618aa8830a0b03846a80",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031104_americanfootball_nfl_hist_event_52f539d9_bd69ce61.json.gz",
+     "snapshot": "2025-11-28T18:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-28T18:26:21Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-28T18:25:48Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-28T18:25:49Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-28T18:21:27Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-28T18:25:34Z",
+       "n_outcomes": 28
+      },
+      "betrivers": {
+       "last_update": "2025-11-28T18:25:38Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-28T18:26:05Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-28T18:25:44Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_LA_CAR",
+     "home": "Carolina Panthers",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "67e51d17848485bed8737bd7043a275a",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031105_americanfootball_nfl_hist_event_67e51d17_46ed9f37.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:25:45Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:25:19Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:20Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:58Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:23Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:26:07Z",
+       "n_outcomes": 30
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:42Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:25:11Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_SF_CLE",
+     "home": "Cleveland Browns",
+     "away": "San Francisco 49ers",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "36fcf5ca155a5dcd2f7a87fd2a985b02",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031106_americanfootball_nfl_hist_event_36fcf5ca_ae4982b0.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:26:09Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:25:52Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:14Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:26:01Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:58Z",
+       "n_outcomes": 16
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:57Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:34Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:25:27Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_HOU_IND",
+     "home": "Indianapolis Colts",
+     "away": "Houston Texans",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "fa46c661007f5f0cbbf6abf939ac9d51",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031106_americanfootball_nfl_hist_event_fa46c661_dfb4d2b1.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:26:10Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:25:36Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:12Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:34Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:42Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:28Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:52Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:26:12Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_NO_MIA",
+     "home": "Miami Dolphins",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "e3c9bfba57bbe784481d881ea3b4519d",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031107_americanfootball_nfl_hist_event_e3c9bfba_192cdfb1.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:25:29Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:24:59Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:29Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:42Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:34Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:35Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:42Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:25:09Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_ATL_NYJ",
+     "home": "New York Jets",
+     "away": "Atlanta Falcons",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "9da608f5bdae527b280abd61e47a110b",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031108_americanfootball_nfl_hist_event_9da608f5_5db68d18.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:26:07Z",
+       "n_outcomes": 16
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:26:09Z",
+       "n_outcomes": 16
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:35Z",
+       "n_outcomes": 16
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:54Z",
+       "n_outcomes": 16
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:41Z",
+       "n_outcomes": 14
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:17Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:42Z",
+       "n_outcomes": 20
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:25:46Z",
+       "n_outcomes": 12
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_ARI_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "Arizona Cardinals",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "c0d324e29ce58b36bdc77564f7aae56f",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031109_americanfootball_nfl_hist_event_c0d324e2_8ea518fc.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:26:02Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:25:57Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:37Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:53Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:04Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:25:44Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:12Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:26:11Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_JAX_TEN",
+     "home": "Tennessee Titans",
+     "away": "Jacksonville Jaguars",
+     "kickoff": "2025-11-30T18:00:00Z",
+     "decision_at": "2025-11-30T16:30:00Z",
+     "event_id": "61e1e459b2ddafd43e8808d4f40c01d9",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031110_americanfootball_nfl_hist_event_61e1e459_4f877bed.json.gz",
+     "snapshot": "2025-11-30T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T16:25:43Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T16:25:21Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T16:23:14Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T16:25:40Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T16:25:25Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T16:26:06Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T16:25:12Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T16:25:21Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_MIN_SEA",
+     "home": "Seattle Seahawks",
+     "away": "Minnesota Vikings",
+     "kickoff": "2025-11-30T21:05:00Z",
+     "decision_at": "2025-11-30T19:35:00Z",
+     "event_id": "6f956074c4df48e7b07a3286a6c6ed2a",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031110_americanfootball_nfl_hist_event_6f956074_433afee1.json.gz",
+     "snapshot": "2025-11-30T19:30:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T19:30:05Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T19:29:49Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T19:30:08Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T19:30:47Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T19:30:40Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T19:30:36Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T19:30:29Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T19:30:47Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_LV_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Las Vegas Raiders",
+     "kickoff": "2025-11-30T21:25:00Z",
+     "decision_at": "2025-11-30T19:55:00Z",
+     "event_id": "76ac5a8d2c8679ae6ea8861114791bd8",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031111_americanfootball_nfl_hist_event_76ac5a8d_6ebee413.json.gz",
+     "snapshot": "2025-11-30T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T19:50:07Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T19:50:45Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T19:49:57Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T19:50:02Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T19:49:48Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T19:50:41Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T19:49:51Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T19:50:33Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_BUF_PIT",
+     "home": "Pittsburgh Steelers",
+     "away": "Buffalo Bills",
+     "kickoff": "2025-11-30T21:25:00Z",
+     "decision_at": "2025-11-30T19:55:00Z",
+     "event_id": "365a766a3862bc47a5455dc3b097421e",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031112_americanfootball_nfl_hist_event_365a766a_0d824e51.json.gz",
+     "snapshot": "2025-11-30T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T19:50:13Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T19:50:04Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T19:50:41Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T19:50:26Z",
+       "n_outcomes": 26
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T19:50:29Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T19:50:29Z",
+       "n_outcomes": 30
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T19:50:27Z",
+       "n_outcomes": 30
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T19:50:26Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_DEN_WAS",
+     "home": "Washington Commanders",
+     "away": "Denver Broncos",
+     "kickoff": "2025-12-01T01:20:00Z",
+     "decision_at": "2025-11-30T23:50:00Z",
+     "event_id": "9c040de8f1dfc3ddee20e0d65c9402de",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031113_americanfootball_nfl_hist_event_9c040de8_5d2983b4.json.gz",
+     "snapshot": "2025-11-30T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-11-30T23:45:10Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-11-30T23:45:43Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-11-30T23:45:07Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-11-30T23:45:13Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-11-30T23:45:44Z",
+       "n_outcomes": 20
+      },
+      "betmgm": {
+       "last_update": "2025-11-30T23:45:04Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-11-30T23:44:48Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-11-30T23:44:56Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_13_NYG_NE",
+     "home": "New England Patriots",
+     "away": "New York Giants",
+     "kickoff": "2025-12-02T01:15:00Z",
+     "decision_at": "2025-12-01T23:45:00Z",
+     "event_id": "3e65786eddd4c7aee9e7f2504f6fdedc",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031114_americanfootball_nfl_hist_event_3e65786e_11c06808.json.gz",
+     "snapshot": "2025-12-01T23:40:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-01T23:40:57Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-12-01T23:39:51Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-01T23:40:18Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-12-01T23:40:25Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-12-01T23:40:47Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-12-01T23:40:55Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-12-01T23:40:49Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-12-01T23:40:10Z",
+       "n_outcomes": 22
+      }
+     }
+    }
+   ],
+   "events_ref": "raw/2026-10-25/031100_americanfootball_nfl_hist_events_788b5104.json.gz",
+   "matched_share": 1.0,
+   "pinnacle_share": 1.0,
+   "dk_share": 1.0
+  },
+  {
+   "week": 14,
+   "games": [
+    {
+     "game_id": "2025_14_DAL_DET",
+     "home": "Detroit Lions",
+     "away": "Dallas Cowboys",
+     "kickoff": "2025-12-05T01:15:00Z",
+     "decision_at": "2025-12-04T23:45:00Z",
+     "event_id": "81db991c5b34169eeeff8d734d8836d9",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031116_americanfootball_nfl_hist_event_81db991c_45e48544.json.gz",
+     "snapshot": "2025-12-04T23:40:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-04T23:40:55Z",
+       "n_outcomes": 12
+      },
+      "espnbet": {
+       "last_update": "2025-12-04T23:39:49Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-04T23:40:20Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-12-04T23:40:40Z",
+       "n_outcomes": 12
+      },
+      "betrivers": {
+       "last_update": "2025-12-04T23:40:23Z",
+       "n_outcomes": 12
+      },
+      "pinnacle": {
+       "last_update": "2025-12-04T23:40:37Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-12-04T23:40:43Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-12-04T23:40:32Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_SEA_ATL",
+     "home": "Atlanta Falcons",
+     "away": "Seattle Seahawks",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "f0bdd27bbed46dfc3d0657500c95a96c",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031117_americanfootball_nfl_hist_event_f0bdd27b_3f86a7a1.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:46Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:12Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:54Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:25:51Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:15Z",
+       "n_outcomes": 9
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:25:47Z",
+       "n_outcomes": 28
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:25:59Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:25:46Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_PIT_BAL",
+     "home": "Baltimore Ravens",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "4fead7bd0592ec121cc3baf72e3e21e0",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031118_americanfootball_nfl_hist_event_4fead7bd_5d26a551.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:23Z",
+       "n_outcomes": 26
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:38Z",
+       "n_outcomes": 26
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:50Z",
+       "n_outcomes": 26
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:26:09Z",
+       "n_outcomes": 28
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:25:43Z",
+       "n_outcomes": 26
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:47Z",
+       "n_outcomes": 13
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:25:11Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_CIN_BUF",
+     "home": "Buffalo Bills",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "c67c327076a98a3a1c4a5eb32e5a80c2",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031118_americanfootball_nfl_hist_event_c67c3270_b42cff75.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:57Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:04Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:47Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:26:12Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:26:01Z",
+       "n_outcomes": 10
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:26:10Z",
+       "n_outcomes": 32
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:23:34Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_TEN_CLE",
+     "home": "Cleveland Browns",
+     "away": "Tennessee Titans",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "f95be6b9bd8ce1208f766cbaae8a4822",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031119_americanfootball_nfl_hist_event_f95be6b9_78e930dc.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:14Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:26:07Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:14Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:26:04Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:48Z",
+       "n_outcomes": 12
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:26:13Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:25:41Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_IND_JAX",
+     "home": "Jacksonville Jaguars",
+     "away": "Indianapolis Colts",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "4e289ac7d9b5663fd5a06881f2b1424d",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031120_americanfootball_nfl_hist_event_4e289ac7_40188c94.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:52Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:46Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:46Z",
+       "n_outcomes": 18
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:25:44Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:26Z",
+       "n_outcomes": 9
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:25:19Z",
+       "n_outcomes": 26
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:25:21Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:25:53Z",
+       "n_outcomes": 22
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_WAS_MIN",
+     "home": "Minnesota Vikings",
+     "away": "Washington Commanders",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "58b16c4033587f5662ff365bce2dbb92",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031121_americanfootball_nfl_hist_event_58b16c40_3aaafcad.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:20Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:26:03Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:26:05Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:31Z",
+       "n_outcomes": 11
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 30
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:25:39Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:25:44Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_MIA_NYJ",
+     "home": "New York Jets",
+     "away": "Miami Dolphins",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "c86a0783216d21040c87fce3aadd3336",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031121_americanfootball_nfl_hist_event_c86a0783_1ca7b169.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:15Z",
+       "n_outcomes": 18
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:33Z",
+       "n_outcomes": 18
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:39Z",
+       "n_outcomes": 16
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:26:13Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:25:41Z",
+       "n_outcomes": 18
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:44Z",
+       "n_outcomes": 9
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:26:09Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:26:01Z",
+       "n_outcomes": 18
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_NO_TB",
+     "home": "Tampa Bay Buccaneers",
+     "away": "New Orleans Saints",
+     "kickoff": "2025-12-07T18:00:00Z",
+     "decision_at": "2025-12-07T16:30:00Z",
+     "event_id": "15555b4c7283dc6553e011dd6c8aea8d",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031122_americanfootball_nfl_hist_event_15555b4c_2982f314.json.gz",
+     "snapshot": "2025-12-07T16:25:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T16:25:24Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T16:25:14Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T16:25:36Z",
+       "n_outcomes": 24
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T16:25:39Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T16:25:43Z",
+       "n_outcomes": 12
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T16:25:54Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T16:26:02Z",
+       "n_outcomes": 24
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T16:25:25Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_DEN_LV",
+     "home": "Las Vegas Raiders",
+     "away": "Denver Broncos",
+     "kickoff": "2025-12-07T21:05:00Z",
+     "decision_at": "2025-12-07T19:35:00Z",
+     "event_id": "d5fd126cbfea2ccd79962a17f0ef4463",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031123_americanfootball_nfl_hist_event_d5fd126c_3f2de0f6.json.gz",
+     "snapshot": "2025-12-07T19:30:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T19:30:36Z",
+       "n_outcomes": 20
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T19:30:19Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T19:30:31Z",
+       "n_outcomes": 20
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T19:30:31Z",
+       "n_outcomes": 20
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T19:30:21Z",
+       "n_outcomes": 9
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T19:30:32Z",
+       "n_outcomes": 26
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T19:30:23Z",
+       "n_outcomes": 24
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T19:30:40Z",
+       "n_outcomes": 20
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_LA_ARI",
+     "home": "Arizona Cardinals",
+     "away": "Los Angeles Rams",
+     "kickoff": "2025-12-07T21:25:00Z",
+     "decision_at": "2025-12-07T19:55:00Z",
+     "event_id": "12bbffdcd65d53436b56c68a811ca610",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031124_americanfootball_nfl_hist_event_12bbffdc_d18098d3.json.gz",
+     "snapshot": "2025-12-07T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T19:49:57Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T19:49:52Z",
+       "n_outcomes": 20
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T19:49:53Z",
+       "n_outcomes": 22
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T19:50:19Z",
+       "n_outcomes": 26
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T19:50:31Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T19:50:24Z",
+       "n_outcomes": 11
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T19:50:51Z",
+       "n_outcomes": 18
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T19:50:45Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_CHI_GB",
+     "home": "Green Bay Packers",
+     "away": "Chicago Bears",
+     "kickoff": "2025-12-07T21:25:00Z",
+     "decision_at": "2025-12-07T19:55:00Z",
+     "event_id": "5b1211b476d0afa2b57133c9603583b6",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031125_americanfootball_nfl_hist_event_5b1211b4_3c17f3fe.json.gz",
+     "snapshot": "2025-12-07T19:50:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T19:49:51Z",
+       "n_outcomes": 24
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T19:50:34Z",
+       "n_outcomes": 24
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T19:50:18Z",
+       "n_outcomes": 24
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T19:50:02Z",
+       "n_outcomes": 32
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T19:49:45Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T19:50:25Z",
+       "n_outcomes": 11
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T19:50:40Z",
+       "n_outcomes": 20
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T19:50:46Z",
+       "n_outcomes": 26
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_HOU_KC",
+     "home": "Kansas City Chiefs",
+     "away": "Houston Texans",
+     "kickoff": "2025-12-08T01:20:00Z",
+     "decision_at": "2025-12-07T23:50:00Z",
+     "event_id": "4727a6cfcd3d604dbfcb898c5a4d40a6",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031126_americanfootball_nfl_hist_event_4727a6cf_e952c4db.json.gz",
+     "snapshot": "2025-12-07T23:45:37Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-07T23:45:34Z",
+       "n_outcomes": 28
+      },
+      "espnbet": {
+       "last_update": "2025-12-07T23:45:27Z",
+       "n_outcomes": 28
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-07T23:45:08Z",
+       "n_outcomes": 28
+      },
+      "fanduel": {
+       "last_update": "2025-12-07T23:45:46Z",
+       "n_outcomes": 24
+      },
+      "betrivers": {
+       "last_update": "2025-12-07T23:45:18Z",
+       "n_outcomes": 13
+      },
+      "pinnacle": {
+       "last_update": "2025-12-07T23:45:10Z",
+       "n_outcomes": 26
+      },
+      "betmgm": {
+       "last_update": "2025-12-07T23:45:18Z",
+       "n_outcomes": 28
+      },
+      "fanatics": {
+       "last_update": "2025-12-07T23:45:29Z",
+       "n_outcomes": 24
+      }
+     }
+    },
+    {
+     "game_id": "2025_14_PHI_LAC",
+     "home": "Los Angeles Chargers",
+     "away": "Philadelphia Eagles",
+     "kickoff": "2025-12-09T01:15:00Z",
+     "decision_at": "2025-12-08T23:45:00Z",
+     "event_id": "5d7b12c34454df4ff2c59a15ca58e63f",
+     "status": "ok",
+     "ref": "raw/2026-10-25/031126_americanfootball_nfl_hist_event_5d7b12c3_d6a786ed.json.gz",
+     "snapshot": "2025-12-08T23:40:38Z",
+     "books": {
+      "draftkings": {
+       "last_update": "2025-12-08T23:40:19Z",
+       "n_outcomes": 22
+      },
+      "espnbet": {
+       "last_update": "2025-12-08T23:40:29Z",
+       "n_outcomes": 22
+      },
+      "williamhill_us": {
+       "last_update": "2025-12-08T23:40:50Z",
+       "n_outcomes": 22
+      },
+      "fanduel": {
+       "last_update": "2025-12-08T23:40:28Z",
+       "n_outcomes": 22
+      },
+      "betrivers": {
+       "last_update": "2025-12-08T23:40:14Z",
+       "n_outcomes": 10
+      },
+      "betmgm": {
+       "last_update": "2025-12-08T23:40:24Z",
+       "n_outcomes": 22
+      },
+      "pinnacle": {
+       "last_update": "2025-12-08T23:40:51Z",
+       "n_outcomes": 22
+      },
+      "fanatics": {
+       "last_update": "2025-12-08T23:40:44Z",
+       "n_outcomes": 22
+      }
+     }
+    }
+   ],
+   "events_ref": "raw/2026-10-25/031115_americanfootball_nfl_hist_events_0ce3706a.json.gz",
+   "matched_share": 1.0,
+   "pinnacle_share": 1.0,
+   "dk_share": 1.0
+  }
+ ],
+ "stopped": null,
+ "credits_used": 735,
+ "remaining_after": 4005
+}
