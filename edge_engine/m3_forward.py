@@ -125,6 +125,13 @@ class Kalshi:
                 name = sub.rsplit(":", 1)[0]
                 day = ts(m["occurrence_datetime"]).astimezone(ET).date()
                 self.idx.setdefault((norm_name(name), day, float(m["floor_strike"])), []).append((at, m))
+        self.by_pd = {}
+        for (k, d, st), v in self.idx.items():
+            self.by_pd.setdefault((k, d), {})[(k, d, st)] = v
+
+    def rungs(self, key, day, dec):
+        """Thresholds listed for this player-game in any capture at or before the decision."""
+        return sorted(st for (k, d, st), v in self.by_pd.get((key, day), {}).items() if any(at <= dec for at, _ in v))
 
     def quote(self, key, day, strike, dec):
         """Last captured quote at or before the decision; (age_min, market) or (None, reason)."""
@@ -141,15 +148,18 @@ class Kalshi:
         return age, m
 
 
-def kx_arm(row: dict, kx: Kalshi, key: str, day, dec):
-    """H-U1-KX fields for one eligible DK prop: rung = floor_strike equal to the DK main line (Under L.5 -> NO on L+1+),
-    fixed from the DK line before any Kalshi price is read."""
+def kx_arm(row: dict, kx: Kalshi, key: str, day, dec, p_over_at):
+    """H-U1-KX fields for one eligible DK prop (amendment 2026-10-24b, before any qualifying observation): the rung is
+    the listed Kalshi threshold (floor_strike) numerically nearest the DK main line, ties to the lower rung, chosen from
+    the rungs listed at or before the decision and before any Kalshi price is read. The model prices that exact
+    threshold: p_no = 1 - P(points > strike). A missing/stale/one-sided selected rung is excluded, never substituted."""
     L = float(row["line"])
-    out = {"kx_strike": L}
-    if not (L % 1 == 0.5):
-        out["kx_reason"] = "kx_integer_dk_line"
-        return out
-    age, m = kx.quote(key, day, L, dec)
+    rungs = kx.rungs(key, day, dec)
+    if not rungs:
+        return {"kx_reason": "kx_no_ladder"}
+    strike = min(rungs, key=lambda x: (abs(x - L), x))
+    out = {"kx_strike": strike, "kx_strike_gap": strike - L}
+    age, m = kx.quote(key, day, strike, dec)
     if age is None:
         out["kx_reason"] = m
         return out
@@ -157,10 +167,10 @@ def kx_arm(row: dict, kx: Kalshi, key: str, day, dec):
     depth = float(m.get("yes_bid_size_fp") or 0)          # top-of-book NO size = YES bid size
     fee = kx_fee(no_ask)
     cost = KX_C * no_ask + fee                            # 10-contract paper order at the NO ask, fee on the order
-    p_no = 1 - row["p_over"]
+    p_no = 1 - p_over_at(strike)
     out.update(kx_eligible=True, kx_ticker=m.get("ticker"), kx_quote_age_min=round(age, 2), kx_no_ask=no_ask,
                kx_no_bid=round(1 - float(m["yes_ask_dollars"]), 4), kx_depth_no=depth, kx_fee_order=fee,
-               kx_cost=cost, kx_ev=p_no * KX_C / cost - 1)
+               kx_cost=cost, kx_p_no=p_no, kx_ev=p_no * KX_C / cost - 1)
     out["kx_pick"] = out["kx_ev"] >= EV_MIN
     return out
 
@@ -239,7 +249,8 @@ def build(data: str):
                 row.update(eligible=True, m_hat=m_hat, r_hat=r_hat, p_over=p_over_np,
                            ev_under=(1 - p_over_np) * q["under_dec"] - 1, ev_over=p_over_np * q["over_dec"] - 1)
                 row["model_under_pick"] = row["ev_under"] >= EV_MIN
-                row.update(kx_arm(row, kx, key, day, dec))
+                p_at = lambda S_, pm=pm, mu=mu, k=k: float(pm @ nbinom.sf(np.floor(S_), k, k / (k + mu)))  # noqa: E731
+                row.update(kx_arm(row, kx, key, day, dec, p_at))
                 act = box_day.get((key, str(day)))
                 if act is not None and len(act):
                     a = act.iloc[0]

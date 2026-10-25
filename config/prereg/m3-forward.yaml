@@ -63,3 +63,15 @@ hypothesis_H_U1_KX:   # secondary replication; reviewer approval 2026-10-24; reg
   k1: "unchanged; H-U1-KX is taker-only paper. No Kalshi account or API keys"
   code: "edge_engine/m3_forward.py (Kalshi, kx_arm, kx_fee)"
   coverage_note: "Kalshi KXNBAPTS rungs are 5 points apart (x4.5 / x9.5 strikes), so only DK main lines ending in 4.5 or 9.5 have a corresponding rung (~1 in 5 props in the Oct 24 capture)"
+
+amendment_H_U1_KX_2026-10-24b:   # reviewer-approved, BEFORE any qualifying observation; supersedes hypothesis_H_U1_KX.rung only
+  reason: "exact-rung rule covered ~10% of eligible props in the Oct 20-24 capture (Kalshi strikes are x4.5/x9.5 only); 150 picks unlikely"
+  superseded: "hypothesis_H_U1_KX.rung (exact floor_strike == DK line) — kept above for the audit trail; never evaluated; the two versions are never combined"
+  rung: "the listed Kalshi threshold numerically nearest the DK main-line threshold (|floor_strike - DK line|), ties to the lower rung; listed = appearing in any captured KXNBAPTS page at or before the decision; chosen mechanically before any Kalshi price is read"
+  example: "DK 22.5 with Kalshi 21.5 / 26.5 -> 21.5"
+  model_price: "Baseline B priced at the selected threshold: p_no = 1 - P(points > floor_strike); never the DK probability"
+  no_substitution: "selected rung missing at the decision, stale (> 30 min), or not two-sided -> excluded; never a different rung"
+  description: "nearest-rung cross-market replication, not an exact-contract replication; kx_strike_gap (Kalshi threshold - DK line) logged for every contract"
+  unchanged: "everything else in hypothesis_H_U1_KX: fees, 10-contract order, pick EV >= 4%, comparator, bootstrap, 150 picks / 30 dates, one-time evaluation, incomplete if never met, Track A/B, DK primary"
+  no_further_widening: "the mapping is not widened again after any prospective outcome is seen"
+  coverage_check_pre_registration: "Oct 20-24 capture with eligibility relaxed (counts only, no outcomes or prices examined): ~50% of eligible props have a Kalshi ladder for that player-game; the rest have no ladder listed"
