@@ -87,6 +87,84 @@ class Reports:
         return ref, outs
 
 
+KX_FEE_RATE, KX_MULT, KX_C = 0.07, 1.0, 10      # KXNBAPTS fee_type quadratic, fee_multiplier 1 (series API, 2026-10-24)
+
+
+def kx_fee(price: float, contracts: int = KX_C) -> float:
+    """Kalshi taker fee for one order: round up to the next cent of M x 0.07 x C x P x (1 - P)."""
+    import math
+    return math.ceil(round(KX_MULT * KX_FEE_RATE * contracts * price * (1 - price) * 100, 6)) / 100
+
+
+class Kalshi:
+    """KXNBAPTS market pages the monitor captured (free). Index: (player key, ET game date, floor_strike) ->
+    list of (retrieved_at, market)."""
+    def __init__(self, data):
+        self.idx = {}
+        man = Path(data) / "raw" / "manifest.jsonl"
+        if not man.exists():
+            return
+        for line in open(man):
+            if "series_ticker=KXNBAPTS&status=open" not in line:
+                continue
+            r = json.loads(line)
+            if r.get("status") != 200 or not r.get("file"):
+                continue
+            fp = Path(data) / r["file"]
+            if not fp.exists():
+                continue
+            at = ts(r["retrieved_at"])
+            try:
+                mk = json.load(gzip.open(fp)).get("markets", [])
+            except Exception:  # noqa: BLE001
+                continue
+            for m in mk:
+                sub = m.get("yes_sub_title") or ""
+                if ":" not in sub or m.get("floor_strike") is None or not m.get("occurrence_datetime"):
+                    continue
+                name = sub.rsplit(":", 1)[0]
+                day = ts(m["occurrence_datetime"]).astimezone(ET).date()
+                self.idx.setdefault((norm_name(name), day, float(m["floor_strike"])), []).append((at, m))
+
+    def quote(self, key, day, strike, dec):
+        """Last captured quote at or before the decision; (age_min, market) or (None, reason)."""
+        c = [x for x in self.idx.get((key, day, strike), []) if x[0] <= dec]
+        if not c:
+            return None, "kx_no_rung"
+        at, m = max(c, key=lambda x: x[0])
+        age = (dec - at).total_seconds() / 60
+        if age > 30:
+            return None, "kx_stale"
+        yb, ya = float(m.get("yes_bid_dollars") or 0), float(m.get("yes_ask_dollars") or 0)
+        if not (0 < yb < ya < 1):
+            return None, "kx_not_two_sided"
+        return age, m
+
+
+def kx_arm(row: dict, kx: Kalshi, key: str, day, dec):
+    """H-U1-KX fields for one eligible DK prop: rung = floor_strike equal to the DK main line (Under L.5 -> NO on L+1+),
+    fixed from the DK line before any Kalshi price is read."""
+    L = float(row["line"])
+    out = {"kx_strike": L}
+    if not (L % 1 == 0.5):
+        out["kx_reason"] = "kx_integer_dk_line"
+        return out
+    age, m = kx.quote(key, day, L, dec)
+    if age is None:
+        out["kx_reason"] = m
+        return out
+    no_ask = round(1 - float(m["yes_bid_dollars"]), 4)
+    depth = float(m.get("yes_bid_size_fp") or 0)          # top-of-book NO size = YES bid size
+    fee = kx_fee(no_ask)
+    cost = KX_C * no_ask + fee                            # 10-contract paper order at the NO ask, fee on the order
+    p_no = 1 - row["p_over"]
+    out.update(kx_eligible=True, kx_ticker=m.get("ticker"), kx_quote_age_min=round(age, 2), kx_no_ask=no_ask,
+               kx_no_bid=round(1 - float(m["yes_ask_dollars"]), 4), kx_depth_no=depth, kx_fee_order=fee,
+               kx_cost=cost, kx_ev=p_no * KX_C / cost - 1)
+    out["kx_pick"] = out["kx_ev"] >= EV_MIN
+    return out
+
+
 def build(data: str):
     fz = json.loads(FROZEN.read_text())
     C, P = fz["constants"], fz["priors"]
@@ -102,6 +180,7 @@ def build(data: str):
     by_key = {k: g for k, g in pl.groupby("key")}
     box_day = {(k, d): g for (k, d), g in B.groupby(["key", "d"])}
     rep = Reports(data)
+    kx = Kalshi(data)
     rows, seen = [], set()
     grid = np.arange(0, 49)
     for f in sorted(glob.glob(str(Path(data) / "m1" / "forecasts" / "2026-*.jsonl"))):
@@ -160,6 +239,7 @@ def build(data: str):
                 row.update(eligible=True, m_hat=m_hat, r_hat=r_hat, p_over=p_over_np,
                            ev_under=(1 - p_over_np) * q["under_dec"] - 1, ev_over=p_over_np * q["over_dec"] - 1)
                 row["model_under_pick"] = row["ev_under"] >= EV_MIN
+                row.update(kx_arm(row, kx, key, day, dec))
                 act = box_day.get((key, str(day)))
                 if act is not None and len(act):
                     a = act.iloc[0]
@@ -175,10 +255,10 @@ def build(data: str):
     return pd.DataFrame(rows)
 
 
-def h_u1(S: pd.DataFrame):
-    """Date-cluster bootstrap of ROI(model unders) - ROI(all eligible unders). Called only once minimums hold."""
+def h_u1(S: pd.DataFrame, pick_col="model_under_pick"):
+    """Date-cluster bootstrap of ROI(model picks) - ROI(all eligible). Called only once minimums hold. Expects ret_u."""
     S = S.copy()
-    S["ret_u"] = (1 - S.over) * S.under_dec - 1
+    S["model_under_pick"] = S[pick_col]
     dates = np.array(sorted(S.date.unique()))
     g = {d: x for d, x in S.groupby("date")}
     rng = np.random.default_rng(SEED)
@@ -211,7 +291,8 @@ def run(data: str):
     out = Path(data) / "m3" / "forward"
     out.mkdir(parents=True, exist_ok=True)
     D.to_csv(out / "props.csv", index=False)
-    S = D[D.eligible & (D.settle == "settled")]
+    S = D[D.eligible & (D.settle == "settled")].copy()
+    S["ret_u"] = (1 - S.over) * S.under_dec - 1
     picks = S[S.model_under_pick]
     n, nd = int(len(picks)), int(picks.date.nunique()) if len(picks) else 0
     status = {"generated_at": datetime.now(ET).isoformat(), "captured_dk_props": int(len(D)),
@@ -236,6 +317,41 @@ def run(data: str):
         r["evaluated_on"] = str(S.date.max())
         res_p.write_text(json.dumps(r, indent=1, default=float))
         status["result"] = r
+    # ---- H-U1-KX (secondary replication; reviewer Oct 24). Kalshi DNP = "fair price" settlement -> excluded like a void
+    for c in ("kx_eligible", "kx_pick"):
+        if c not in D:
+            D[c] = False
+        D[c] = D[c].fillna(False).astype(bool)
+    K = S[S.get("kx_eligible", False) == True].copy() if "kx_eligible" in S else S.iloc[0:0].copy()  # noqa: E712
+    if len(K):
+        K["kx_pick"] = K.kx_pick.fillna(False).astype(bool)
+        K["ret_u"] = (1 - K.over) * KX_C / K.kx_cost - 1
+    kp = K[K.kx_pick] if len(K) else K
+    kn, knd = int(len(kp)), int(kp.date.nunique()) if len(kp) else 0
+    status["kx"] = {"eligible_settled": int(len(K)), "picks_settled": kn, "pick_dates": knd,
+                    "exclusions": D[D.eligible].get("kx_reason", pd.Series(dtype=str)).value_counts().to_dict(), "result": None}
+    kres = out / "h_u1_kx_result.json"
+    if kres.exists():
+        status["kx"]["result"] = json.loads(kres.read_text())
+    elif kn >= MIN_PICKS and knd >= MIN_DATES:
+        c = kp.groupby("date").size().sort_index()
+        cum, first = 0, None
+        for i, (d, k) in enumerate(c.items()):
+            cum += k
+            if cum >= MIN_PICKS and i + 1 >= MIN_DATES:
+                first = d
+                break
+        Kc = K[K.date <= first]
+        r = h_u1(Kc, "kx_pick")
+        kpk = Kc[Kc.kx_pick]
+        r["track_b_liquidity_proxy"] = {"share_depth_lt_10": float((kpk.kx_depth_no < KX_C).mean()),
+                                        "median_spread": float((kpk.kx_no_ask - kpk.kx_no_bid).median()),
+                                        "roi_depth_ge_10_only": float(kpk[kpk.kx_depth_no >= KX_C].ret_u.mean()) if (kpk.kx_depth_no >= KX_C).any() else None,
+                                        "overlap_with_dk_picks": float(kpk.model_under_pick.mean()),
+                                        "note": "top-of-book only; not a full executable simulation"}
+        r["evaluated_on"] = str(first)
+        kres.write_text(json.dumps(r, indent=1, default=float))
+        status["kx"]["result"] = r
     (out / "status.json").write_text(json.dumps(status, indent=1, default=str))
     return status
 
