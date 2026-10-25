@@ -1,0 +1,85 @@
+{
+ "spec": "config/prereg/n3-spec.yaml gateA (tranche 1 futility look)",
+ "frozen_sha": "9a50ad45e7de25f22b2b36305333f30f04df5ee7d82af2f70e7ab11106b57008",
+ "seed": 20261025,
+ "draws": 4000,
+ "quote_log": {},
+ "contracts_unmatched_to_model": {
+  "ineligible_n3_universe": 167,
+  "name_or_inactive": 12
+ },
+ "contracts_all_weeks": 536,
+ "scored_weeks_11_14": 436,
+ "games": 59,
+ "w_path": {
+  "11": 0.1481406022285408,
+  "12": 0.2661847353300808,
+  "13": 0.07746955710687856,
+  "14": 0.17797150716121535
+ },
+ "ll_market": 0.6847042109781927,
+ "ll_blend": 0.6844412364657773,
+ "ll_model_raw": 0.6975492898438482,
+ "gain_blend_mean": 0.0002629745124154352,
+ "gain_blend_lb95_one_sided": -0.003211628026249045,
+ "gain_raw_mean": -0.012845078865655396,
+ "absence_subset": {
+  "n": 306,
+  "gain_blend": -0.0015998695914683195
+ },
+ "futility": "pass (continue)",
+ "calibration_model": [
+  {
+   "p_mod": "(0.0, 0.3]",
+   "n": "38",
+   "p": "0.262",
+   "hit": "0.421"
+  },
+  {
+   "p_mod": "(0.3, 0.4]",
+   "n": "139",
+   "p": "0.354",
+   "hit": "0.388"
+  },
+  {
+   "p_mod": "(0.4, 0.5]",
+   "n": "155",
+   "p": "0.449",
+   "hit": "0.477"
+  },
+  {
+   "p_mod": "(0.5, 0.6]",
+   "n": "69",
+   "p": "0.539",
+   "hit": "0.406"
+  },
+  {
+   "p_mod": "(0.6, 0.7]",
+   "n": "29",
+   "p": "0.641",
+   "hit": "0.448"
+  },
+  {
+   "p_mod": "(0.7, 1.0]",
+   "n": "6",
+   "p": "0.738",
+   "hit": "0.667"
+  }
+ ],
+ "mean_abs_model_minus_market": 0.092892538275763,
+ "dk_paper_picks_diagnostic": {
+  "n": 37,
+  "roi": -0.14486486486486488,
+  "by_side": {
+   "count": {
+    "over": 11,
+    "under": 26
+   },
+   "mean": {
+    "over": -0.248,
+    "under": -0.101
+   }
+  },
+  "note": "no close pulled; CLV unavailable; not a gate"
+ }
+}
