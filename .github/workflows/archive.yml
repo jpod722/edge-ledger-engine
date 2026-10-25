@@ -1,9 +1,8 @@
 name: availability-archive
 # Timestamped NBA injury/availability snapshots for the M1 points model. No Odds API credits.
 on:
-  schedule:
-    - cron: "11 14-23,0-4 * * *"     # hourly, 10 AM - midnight ET (EDT)
-    - cron: "41 21-23 * * *"         # extra half-hour snapshots 5:41-7:41 PM ET, before most tip-offs
+  # schedule removed 2026-10-24 (Justin: run only what's needed). The nightly monitor polls ESPN injuries every 60 s
+  # and the official report index every 2 min from ~1 PM ET, which is what M3 uses. Manual dispatch still works.
   workflow_dispatch: {}
 concurrency:
   group: availability-archive

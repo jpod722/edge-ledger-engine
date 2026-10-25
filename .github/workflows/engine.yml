@@ -9,8 +9,7 @@ on:
         description: "extra CLI args, e.g. --sport NBA --scan nba-evening --window today_et --derivatives --props"
         required: false
         default: ""
-  schedule:
-    - cron: "17 9 * * *"     # nightly grade, 5:17 AM ET
+  # nightly grade schedule removed 2026-10-24: no scans run, so there is nothing to grade. Manual dispatch only.
 concurrency:
   group: data-branch
   cancel-in-progress: false

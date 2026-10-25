@@ -8,7 +8,6 @@ on:
     - cron: "30 21 * * *"          # 5:30 PM EDT / 4:30 PM EST
     - cron: "20 2 * * *"           # continues for late games (queues behind the first run)
     - cron: "0 16 * * 0,6"         # weekend afternoon games
-    - cron: "45 17 20 10 *"        # opening day 2026-10-20: 1:45 PM ET start for the 3:00 PM tip (cron often runs late)
   workflow_dispatch:
     inputs:
       stop_at_et: {description: "optional HH:MM ET hard stop (one-off early runs)", required: false, default: ""}
