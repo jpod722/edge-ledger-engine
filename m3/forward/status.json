@@ -1,10 +1,14 @@
 {
- "generated_at": "2026-10-25T03:39:53.223278-04:00",
- "captured_dk_props": 305,
+ "generated_at": "2026-10-25T20:29:08.305026-04:00",
+ "captured_dk_props": 393,
  "eligible": 0,
  "exclusions": {
   "captured_after_decision": 191,
-  "stale_quote": 114
+  "stale_quote": 114,
+  "prior_games_2_lt_5": 81,
+  "prior_games_3_lt_5": 4,
+  "prior_games_1_lt_5": 2,
+  "prior_games_0_lt_5": 1
  },
  "settled_eligible": 0,
  "model_under_picks_settled": 0,
