@@ -210,3 +210,15 @@
 {"at": "2026-10-28T02:35:49.610836+00:00", "kind": "official_report", "first_seen": "2026-10-28T02:35:49.326321+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-27_10_30PM.pdf", "ref": "raw/2026-10-28/023549_nba_injury_report_pdf_2ab76b3b.json.gz"}
 {"at": "2026-10-28T02:50:12.808978+00:00", "kind": "kalshi_trades", "markets": 197}
 {"at": "2026-10-28T02:50:12.809136+00:00", "kind": "done", "reason": "finished", "credits": 7, "remaining": 3964}
+{"at": "2026-10-28T02:51:05.430503+00:00", "kind": "games", "n": 1, "events": [{"id": "82afe4e028b0fbbd9f6cf92697bec6fc", "home": "Los Angeles Lakers", "away": "Portland Trail Blazers", "commence_time": "2026-10-28T03:10:00Z"}], "ref": "raw/2026-10-28/025105_basketball_nba_events_b4834e33.json.gz"}
+{"at": "2026-10-28T02:51:05.820886+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-10-26"}
+{"at": "2026-10-28T02:51:06.562427+00:00", "kind": "official_report", "first_seen": "2026-10-28T02:51:05.851569+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-27_10_45PM.pdf", "ref": "raw/2026-10-28/025106_nba_injury_report_pdf_68e83f1c.json.gz"}
+{"at": "2026-10-28T02:51:06.682567+00:00", "kind": "kalshi_snapshot", "markets": 113}
+{"at": "2026-10-28T03:04:08.642942+00:00", "kind": "poll", "event_id": "82afe4e028b0fbbd9f6cf92697bec6fc", "reason": "close", "retrieved_at": "2026-10-28T03:04:08.642131+00:00", "ref": "raw/2026-10-28/030408_basketball_nba_event_82afe4e0_26d04dac.json.gz", "minutes_to_tip": 5.86}
+{"at": "2026-10-28T03:04:10.628870+00:00", "kind": "forecasts", "n": 32, "eligible": 0, "file": "data/m1/forecasts/2026-10-27.jsonl", "frozen_at": "2026-10-19T16:44:17.515518Z"}
+{"at": "2026-10-28T03:04:11.725159+00:00", "kind": "k1_quotes", "n": 113, "eligible": 0, "file": "data/k1/quotes/2026-10-27.jsonl", "decision_at": "2026-10-28T02:51:06.682525+00:00"}
+{"at": "2026-10-28T03:05:12.111554+00:00", "kind": "official_report", "first_seen": "2026-10-28T03:05:11.726259+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-27_11_00PM.pdf", "ref": "raw/2026-10-28/030512_nba_injury_report_pdf_831b7a0f.json.gz"}
+{"at": "2026-10-28T03:11:13.037412+00:00", "kind": "kalshi_snapshot", "markets": 75}
+{"at": "2026-10-28T03:17:14.315007+00:00", "kind": "official_report", "first_seen": "2026-10-28T03:17:13.750153+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-27_11_15PM.pdf", "ref": "raw/2026-10-28/031714_nba_injury_report_pdf_85175974.json.gz"}
+{"at": "2026-10-28T03:23:12.762888+00:00", "kind": "kalshi_trades", "markets": 116}
+{"at": "2026-10-28T03:23:12.763026+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 3963}
