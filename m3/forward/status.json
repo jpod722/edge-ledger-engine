@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-28T04:43:00.930910-04:00",
- "captured_dk_props": 562,
+ "generated_at": "2026-10-28T23:04:11.445733-04:00",
+ "captured_dk_props": 710,
  "eligible": 0,
  "exclusions": {
-  "captured_after_decision": 191,
+  "captured_after_decision": 339,
   "prior_games_3_lt_5": 128,
   "prior_games_2_lt_5": 125,
   "stale_quote": 114,
