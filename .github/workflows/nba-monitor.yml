@@ -2,10 +2,13 @@ name: nba-monitor
 # Nightly NBA points-prop monitor. Two windows so late tips are covered within the 6-hour job limit.
 on:
   schedule:
-    - cron: "0 17 * * *"           # 1:00 PM EDT: lean mode needs the 17:25 ET decision snapshot; cron runs 1-3 h late
-    - cron: "0 19 * * *"           # 3:00 PM EDT backup for the decision snapshot
-    - cron: "0 20 * * *"           # 4:00 PM EDT: GitHub fires this job 1-3 h late, so start earlier; the 6 h lead guard stops early exits from spending
-    - cron: "30 21 * * *"          # 5:30 PM EDT / 4:30 PM EST
+    # GitHub delays scheduled runs by hours and drops some (worst at :00/:30). Any one run before the decision
+    # snapshot is enough now: a run that cannot reach it waits and dispatches a fresh run that can (relay).
+    - cron: "41 13 * * *"          # 9:41 AM EDT: early anchor for the relay chain
+    - cron: "7 17 * * *"           # 1:07 PM EDT
+    - cron: "13 19 * * *"          # 3:13 PM EDT backup for the decision snapshot
+    - cron: "11 20 * * *"          # 4:11 PM EDT; the 6 h lead guard stops early exits from spending
+    - cron: "37 21 * * *"          # 5:37 PM EDT / 4:37 PM EST
     - cron: "20 2 * * *"           # continues for late games (queues behind the first run)
     - cron: "0 16 * * 0,6"         # weekend afternoon games
   workflow_dispatch:
@@ -16,6 +19,7 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+  actions: write                   # the monitor dispatches its own successor run (relay)
 jobs:
   monitor:
     runs-on: ubuntu-latest
@@ -23,6 +27,7 @@ jobs:
     env:
       ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
       GH_TOKEN: ${{ github.token }}
+      MONITOR_RELAY_WORKFLOW: nba-monitor.yml
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

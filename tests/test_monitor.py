@@ -165,3 +165,53 @@ def test_lean_second_run_same_day_does_not_repeat(tmp_path):
     s2, log = run_lean(tmp_path, T0 - timedelta(minutes=30))           # a late duplicate run before tip
     assert len(s1.polls) == 2 and s2.polls == []
     assert not any(x["kind"] == "late_decision" for x in log[-20:] if x["at"] >= (T0 - timedelta(minutes=30)).isoformat())
+
+
+def run_lean_relay(tmp_path, start, relays):
+    cfg = load_cfg()
+    clock = Clock()
+    clock.t = start
+    s = S(clock)
+    monitor.api_key = lambda: "k"
+    m = RawStore(tmp_path).manifest
+    if not m.exists():
+        m.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep,
+                    relay=lambda: relays.append(clock()) or True).run()
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    return s, clock, log
+
+
+def test_relay_chain_from_an_early_morning_run_takes_the_decision_on_time(tmp_path):
+    """Oct 28: the only run before the decision fired at 08:42 UTC and exited too_early; the next started after
+    17:30 ET. Now the early run waits and hands over, and the chain takes the snapshot at 17:25 ET."""
+    relays, t, polls = [], T0 - timedelta(hours=13, minutes=20), []      # 08:40 UTC
+    for _ in range(5):
+        n = len(relays)
+        s, clock, log = run_lean_relay(tmp_path, t, relays)
+        polls += s.polls
+        if len(relays) == n:
+            break
+        if log[-1]["reason"] == "relayed":
+            assert s.polls == []                                        # waiting runs spend nothing
+            assert clock() <= t + timedelta(minutes=330)                # hands over inside its own job limit
+        t = clock() + timedelta(minutes=3)                              # successor start-up delay
+    dec = polls[0].astimezone(monitor.ET)
+    assert (dec.hour, dec.minute) == (17, 25)
+    assert [x["reason"] for x in log if x["kind"] == "poll"] == ["decision", "close"]   # whole night's log
+    assert 1 <= len(relays) <= 4
+
+
+def test_relay_hands_over_pending_closes_at_the_job_limit(tmp_path):
+    relays = []
+    start = TIP - timedelta(minutes=350)                                # decision reachable, tip after the hard stop
+    _, _, log = run_lean_relay(tmp_path, start, relays)
+    assert [x["reason"] for x in log if x["kind"] == "poll"] == ["decision"]
+    assert [x["why"] for x in log if x["kind"] == "relay"] == ["pending_closes"] and len(relays) == 1
+
+
+def test_relays_are_capped_per_night(tmp_path):
+    relays = []
+    for i in range(8):
+        run_lean_relay(tmp_path, T0 - timedelta(hours=13, minutes=20), relays)
+    assert len(relays) == load_cfg()["monitor"].get("max_relays_per_day", 6)

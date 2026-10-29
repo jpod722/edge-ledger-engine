@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -31,6 +32,25 @@ from .archive import ESPN_INJ, INDEX_PAGES, PDF_RE, UA, stored_paths
 ET = ZoneInfo("America/New_York")
 SK = "basketball_nba"
 KALSHI = "https://api.elections.kalshi.com/trade-api/v2"
+RELAY_REACH_MARGIN_MIN = 15      # a run must be alive this long past the decision snapshot to take it itself
+RELAY_SUCCESSOR_SLACK_MIN = 45   # successor start-up delay + reach margin, taken off its runtime
+
+
+def github_dispatch():
+    """Relay via workflow_dispatch of this workflow (GITHUB_TOKEN may dispatch; needs `actions: write`)."""
+    tok, repo = os.environ.get("GH_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    wf = os.environ.get("MONITOR_RELAY_WORKFLOW")
+    if not (tok and repo and wf):
+        return None
+
+    def go():
+        r = requests.post(f"https://api.github.com/repos/{repo}/actions/workflows/{wf}/dispatches",
+                          json={"ref": os.environ.get("GITHUB_REF_NAME", "main")}, timeout=30,
+                          headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"})
+        if r.status_code != 204:
+            raise RuntimeError(f"dispatch {r.status_code}: {r.text[:150]}")
+        return True
+    return go
 
 
 def parse_ts(s):
@@ -61,8 +81,9 @@ def diff_injuries(old: dict, new: dict) -> list[dict]:
 
 
 class Monitor:
-    def __init__(self, data: str, cfg: dict, session=None, clock=None, sleep=None, stop_at=None):
+    def __init__(self, data: str, cfg: dict, session=None, clock=None, sleep=None, stop_at=None, relay=None):
         self.m = cfg["monitor"]
+        self.relay = relay                           # callable that starts a successor run; None disables relays
         self.stop_at = stop_at                       # optional hard stop (aware datetime) for a one-off early run
         self.store = RawStore(data)
         self.log_p = Path(data) / "monitor" / f"{utcnow().astimezone(ET):%Y-%m-%d}.jsonl"
@@ -80,6 +101,23 @@ class Monitor:
         self.kalshi_first_at = None
         self.kalshi_collecting = True
         self.forecasts_done = False
+
+    def handoff(self, why: str, **kw) -> bool:
+        """Dispatch a successor run (at most `max_relays_per_day` per night's log)."""
+        n = 0
+        if self.log_p.exists():
+            with open(self.log_p) as f:
+                n = sum(1 for line in f if json.loads(line).get("kind") == "relay")
+        if n >= self.m.get("max_relays_per_day", 6):
+            self.log("relay_skipped", why=why, relays=n)
+            return False
+        try:
+            ok = bool(self.relay())
+            detail = None
+        except Exception as err:  # noqa: BLE001
+            ok, detail = False, str(err)[:200]
+        self.log("relay", why=why, ok=ok, detail=detail, **kw)
+        return ok
 
     def log(self, kind: str, **kw):
         with open(self.log_p, "a") as f:
@@ -217,6 +255,20 @@ class Monitor:
         if self.m.get("lean"):
             t = first_tip.astimezone(ET)
             lead_to = min(t.replace(hour=17, minute=30, second=0, microsecond=0), t - timedelta(minutes=90))
+        # GitHub drops or delays scheduled runs by hours (Oct 28: nothing ran between 08:42 and 21:28 UTC, so the
+        # decision snapshot landed 31 s late). A run that cannot itself reach the first decision snapshot waits,
+        # then dispatches a fresh run that can, so the snapshot never depends on a cron firing on time.
+        snap = lead_to - timedelta(minutes=self.m.get("lean_decision_lead_min", 5))
+        if (self.m.get("lean") and self.relay and self.stop_at is None and start < snap
+                and snap > hard_stop - timedelta(minutes=RELAY_REACH_MARGIN_MIN)):
+            span = timedelta(minutes=self.m["max_runtime_min"] - RELAY_SUCCESSOR_SLACK_MIN)
+            relay_at = min(hard_stop - timedelta(minutes=10), snap - span)
+            wait = (relay_at - self.now()).total_seconds()
+            if wait > 0:
+                self.sleep(wait)
+            self.handoff("before_decision", decision=lead_to.isoformat())
+            self.log("done", reason="relayed", first_tip=first_tip.isoformat())
+            return
         if lead_to - start > timedelta(hours=self.m.get("max_lead_hours", 6)):
             self.log("done", reason="too_early", first_tip=first_tip.isoformat())
             return
@@ -325,6 +377,10 @@ class Monitor:
                                                    if parse_ts(e["commence_time"]) > now):
                 self.forecast(games)
             self.sleep(self.m["loop_s"])
+        # the job limit ended this run with closes still to take: hand over instead of waiting on the late cron
+        if (self.relay and self.stop_at is None and self.now() >= hard_stop
+                and any(e["id"] not in closed and parse_ts(e["commence_time"]) > self.now() for e in games)):
+            self.handoff("pending_closes")
         self.kalshi_trades()
         self.log("done", reason="finished", credits=self.api.used, remaining=self.api.remaining)
 
@@ -340,4 +396,4 @@ if __name__ == "__main__":
     if a.stop_at_et:
         hh, mm = map(int, a.stop_at_et.split(":"))
         stop = utcnow().astimezone(ET).replace(hour=hh, minute=mm, second=0, microsecond=0)
-    Monitor(a.data, cfg, stop_at=stop).run()
+    Monitor(a.data, cfg, stop_at=stop, relay=github_dispatch()).run()
