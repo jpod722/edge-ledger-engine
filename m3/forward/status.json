@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-10-31T14:29:17.142608-04:00",
- "captured_dk_props": 901,
- "eligible": 73,
+ "generated_at": "2026-10-31T20:18:31.653009-04:00",
+ "captured_dk_props": 993,
+ "eligible": 144,
  "exclusions": {
-  "captured_after_decision": 359,
-  "prior_games_3_lt_5": 150,
+  "captured_after_decision": 373,
+  "prior_games_3_lt_5": 151,
   "prior_games_2_lt_5": 126,
   "stale_quote": 114,
-  "prior_games_4_lt_5": 73,
+  "prior_games_4_lt_5": 78,
   "prior_games_1_lt_5": 5,
-  "prior_games_0_lt_5": 1
+  "prior_games_0_lt_5": 2
  },
  "settled_eligible": 72,
  "model_under_picks_settled": 42,
@@ -24,7 +24,7 @@
   "picks_settled": 28,
   "pick_dates": 2,
   "exclusions": {
-   "kx_no_ladder": 18
+   "kx_no_ladder": 27
   },
   "result": null
  }
