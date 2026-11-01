@@ -197,3 +197,19 @@
 {"at": "2026-11-01T00:10:10.900415+00:00", "kind": "relay", "why": "pending_closes", "ok": true, "detail": null}
 {"at": "2026-11-01T00:18:04.142536+00:00", "kind": "kalshi_trades", "markets": 308}
 {"at": "2026-11-01T00:18:04.142656+00:00", "kind": "done", "reason": "finished", "credits": 12, "remaining": 19997}
+{"at": "2026-11-01T00:19:08.320370+00:00", "kind": "games", "n": 1, "events": [{"id": "c30d3bdf126e98ced5b9389db8617926", "home": "Houston Rockets", "away": "Oklahoma City Thunder", "commence_time": "2026-11-01T00:40:00Z"}], "ref": "raw/2026-11-01/001908_basketball_nba_events_4fae08dd.json.gz"}
+{"at": "2026-11-01T00:19:08.517857+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-10-30"}
+{"at": "2026-11-01T00:19:09.092851+00:00", "kind": "official_report", "first_seen": "2026-11-01T00:19:08.559074+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-31_08_15PM.pdf", "ref": "raw/2026-11-01/001909_nba_injury_report_pdf_41420b05.json.gz"}
+{"at": "2026-11-01T00:19:10.753469+00:00", "kind": "kalshi_snapshot", "markets": 249}
+{"at": "2026-11-01T00:22:10.958817+00:00", "kind": "injury_change", "first_seen": "2026-11-01T00:22:10.904927+00:00", "ref": "raw/2026-11-01/002210_nba_injuries_espn_9e8a3b59.json.gz", "team": "Los Angeles Lakers", "player": "Ziaire Williams", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-11-01T00:04Z"}
+{"at": "2026-11-01T00:22:10.958869+00:00", "kind": "injury_change", "first_seen": "2026-11-01T00:22:10.904927+00:00", "ref": "raw/2026-11-01/002210_nba_injuries_espn_9e8a3b59.json.gz", "team": "Los Angeles Lakers", "player": "Ziaire Williams", "status": "removed", "prev_status": "Day-To-Day", "espn_date": "2026-10-31T04:52Z"}
+{"at": "2026-11-01T00:24:11.198087+00:00", "kind": "injury_change", "first_seen": "2026-11-01T00:24:11.118109+00:00", "ref": "raw/2026-11-01/002411_nba_injuries_espn_83d6a410.json.gz", "team": "Atlanta Hawks", "player": "Jock Landale", "status": "Out", "prev_status": null, "espn_date": "2026-11-01T00:05Z"}
+{"at": "2026-11-01T00:24:11.198135+00:00", "kind": "injury_change", "first_seen": "2026-11-01T00:24:11.118109+00:00", "ref": "raw/2026-11-01/002411_nba_injuries_espn_83d6a410.json.gz", "team": "Atlanta Hawks", "player": "Jock Landale", "status": "removed", "prev_status": "Out", "espn_date": "2026-11-01T00:06Z"}
+{"at": "2026-11-01T00:34:12.605032+00:00", "kind": "poll", "event_id": "c30d3bdf126e98ced5b9389db8617926", "reason": "close", "retrieved_at": "2026-11-01T00:34:12.604387+00:00", "ref": "raw/2026-11-01/003412_basketball_nba_event_c30d3bdf_1f8a20bd.json.gz", "minutes_to_tip": 5.79}
+{"at": "2026-11-01T00:34:16.672310+00:00", "kind": "forecasts", "n": 28, "eligible": 18, "file": "data/m1/forecasts/2026-10-31.jsonl", "frozen_at": "2026-10-19T16:44:17.515518Z"}
+{"at": "2026-11-01T00:34:18.311863+00:00", "kind": "k1_quotes", "n": 249, "eligible": 33, "file": "data/k1/quotes/2026-10-31.jsonl", "decision_at": "2026-11-01T00:19:10.753450+00:00"}
+{"at": "2026-11-01T00:35:18.641694+00:00", "kind": "official_report", "first_seen": "2026-11-01T00:35:18.312593+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-31_08_30PM.pdf", "ref": "raw/2026-11-01/003518_nba_injury_report_pdf_5e2b7983.json.gz"}
+{"at": "2026-11-01T00:39:20.652724+00:00", "kind": "kalshi_snapshot", "markets": 246}
+{"at": "2026-11-01T00:47:21.805837+00:00", "kind": "official_report", "first_seen": "2026-11-01T00:47:21.422848+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-31_08_45PM.pdf", "ref": "raw/2026-11-01/004721_nba_injury_report_pdf_beda51fd.json.gz"}
+{"at": "2026-11-01T00:56:25.746114+00:00", "kind": "kalshi_trades", "markets": 250}
+{"at": "2026-11-01T00:56:25.746252+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 19996}
