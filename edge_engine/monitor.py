@@ -213,8 +213,14 @@ class Monitor:
 
     def kalshi_trades(self):
         """Every trade on the markets seen tonight (fills, not just quotes)."""
-        n = 0
+        n, skipped = 0, 0
+        # Nov 2: a 23-minute trades pull ran past the 355-minute job timeout, the job was cancelled before its commit
+        # step, and the night's decision snapshots were lost. The pull now stops at a fixed point in the job budget.
+        deadline = getattr(self, "job_start", self.now()) + timedelta(minutes=self.m.get("job_budget_min", 335))
         for t in sorted(x for x in self.kalshi_tickers if x):
+            if self.now() >= deadline:
+                skipped += 1
+                continue
             url = f"{KALSHI}/markets/trades?ticker={t}&limit=1000"
             r, _ = self.fetch_free(url, "kalshi_trades", kind="kalshi")
             for wait in (5, 15):
@@ -224,7 +230,7 @@ class Monitor:
                 r, _ = self.fetch_free(url, "kalshi_trades", kind="kalshi")
             n += int(r is not None and r.status_code == 200)
             self.sleep(self.m["kalshi_pause_s"])
-        self.log("kalshi_trades", markets=n)
+        self.log("kalshi_trades", markets=n, skipped_for_job_budget=skipped)
 
     def fetch_free(self, url: str, label: str, kind: str = "availability"):
         try:
@@ -238,6 +244,7 @@ class Monitor:
 
     def run(self):
         start = self.now()
+        self.job_start = start
         hard_stop = start + timedelta(minutes=self.m["max_runtime_min"])
         if self.stop_at is not None:
             hard_stop = min(hard_stop, self.stop_at)
