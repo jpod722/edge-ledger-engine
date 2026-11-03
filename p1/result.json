@@ -1,0 +1,42 @@
+{
+ "spec": "config/prereg/p1-thesis.yaml",
+ "sample": "config/prereg/p1-sample.json",
+ "log": {
+  "dk_props": 4390,
+  "unmatched_to_box": 188,
+  "eligible": 3951,
+  "after_void_dnp": 3884,
+  "after_void_push": 3884
+ },
+ "n_props": 3884,
+ "n_games": 350,
+ "n_fresh": 840,
+ "n_stale": 1541,
+ "coef_margin": {
+  "intercept": 0.05881570944948184,
+  "fresh": 0.03474753108727616,
+  "stale": 0.03383204426597103,
+  "logit_dk": 0.785258908570985
+ },
+ "fresh_ci95": [
+  -0.03577218442060055,
+  0.10542465443948287
+ ],
+ "threshold": 0.094,
+ "decision": "stop",
+ "secondary_winloss": {
+  "fresh_coef": 0.0276005464074652,
+  "ci95": [
+   -0.007135275306069315,
+   0.06293759793618205
+  ]
+ },
+ "over_rate": {
+  "fresh": 0.5190476190476191,
+  "no_fresh": 0.49178712220762155
+ },
+ "dk_mean_p_over": {
+  "fresh": 0.4984214031300154,
+  "no_fresh": 0.499278747133031
+ }
+}
