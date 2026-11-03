@@ -32,3 +32,11 @@ step0_forecast_fixes:   # free; box scores only; fit 2023-24, check 2024-25; eac
 
 later_steps: "Steps 2-4 (full backfill ~8,500, 2025-26 scored once under M3, shadow + releases) need their own approval"
 pricing_books_later: "open question for the reviewer (Justin dropped FanDuel for Undercurrent's replication)"
+
+disposition_2026-11-03:   # Justin accepted the pre-registered stop
+  status: "CLOSED — NEGATIVE. Fresh-absence coefficient +0.035, 95% CI [-0.036, 0.105]; threshold 0.094 not met"
+  results_commit: "data branch 0201e5b0 (p1/result.json)"
+  credits_used: 3886
+  step0: "shelved (it only fed Step 2)"
+  no_retest: "this sample is not reused for the same question"
+  undercurrent: "unchanged; continues to its one-time verdict"
