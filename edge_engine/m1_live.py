@@ -204,7 +204,7 @@ def write_and_push(data: str, day: str, recs: list[dict]) -> str:
         for r in recs:
             f.write(json.dumps(r, default=float) + "\n")
     cmd = (f"cd {data} && git add m1/forecasts && (git commit -q -m 'M1/M1.1 forecasts {day}' || true) && "
-           "for i in 1 2 3 4 5; do git push -q origin data && break; git pull -q --rebase origin data; done")
+           "for i in 1 2 3 4 5; do git push -q origin data && break; git pull -q --rebase --autostash origin data; done")
     subprocess.run(cmd, shell=True, check=False)
     return str(p)
 

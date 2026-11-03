@@ -56,6 +56,15 @@ jobs:
         run: |
           cd data
           git config user.name "edge-engine"; git config user.email "edge-engine@users.noreply.github.com"
+          # Nov 2: the job timed out, the monitor kept writing as an orphan, the push was rejected and the rebase
+          # refused the dirty tree, which ended this step and lost the night's snapshots.
+          pkill -f edge_engine.monitor || true
+          sleep 2
           git add -A
-          git commit -q -m "nba monitor $(date -u +%FT%TZ)" || exit 0
-          for i in 1 2 3 4 5; do git push -q origin data && break; git pull -q --rebase origin data; done
+          git commit -q -m "nba monitor $(date -u +%FT%TZ)" || true   # still push any earlier local commit
+          for i in 1 2 3 4 5; do
+            git push -q origin data && exit 0
+            git pull -q --rebase --autostash origin data || git rebase --abort || true
+            sleep $((i * 5))
+          done
+          exit 1
