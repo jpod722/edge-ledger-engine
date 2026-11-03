@@ -228,6 +228,7 @@ def main(argv=None):
     sub.add_parser("l1-pilot")
     sub.add_parser("l1-confirm-pull")
     sub.add_parser("n3-tranche1-pull")
+    sub.add_parser("p1-pull")
     ls = sub.add_parser("lineshop")
     ls.add_argument("--sport", default="NFL")
     pr = sub.add_parser("probe")
@@ -279,6 +280,14 @@ def main(argv=None):
         # Justin's decision 2026-10-24: run before the reset; research floor lowered for this run only (cap 6,100 kept)
         api = OddsAPI(api_key(), store, 6100, min_remaining=4000, remaining=last_remaining_from_manifest(store))
         l1c(api, a.data, cfg["odds_api"]["event_bookmakers"])
+    elif a.cmd == "p1-pull":
+        from .p1 import pull as p1p, HARD_STOP
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        store = RawStore(a.data)
+        # Justin approved Step 1 (Nov 3): hard stop 3,900 credits; account floor 3,000 kept
+        api = OddsAPI(api_key(), store, HARD_STOP, min_remaining=3000, remaining=last_remaining_from_manifest(store))
+        r = p1p(api, a.data, cfg["odds_api"]["event_bookmakers"])
+        print(json.dumps({k: v for k, v in r.items() if k not in ("games", "lookups")}))
     elif a.cmd == "lineshop":
         # one-off price check for bets Justin is considering: DK vs Pinnacle main spreads/totals (2 credits)
         from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
