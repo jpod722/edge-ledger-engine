@@ -306,9 +306,9 @@ def analyze(data: str, cache: str, out: str):
     log = {"dk_props": int(len(D)), "unmatched_to_box": int(X.m_hat.isna().sum() + X.n_prior.isna().sum() * 0)}
     X = X[X.n_prior.fillna(0) >= 5]
     X = X[X.m_hat >= 12]
-    X = X[~X.listed_out.fillna(False)]
+    X = X[~X.listed_out.fillna(False).astype(bool)]
     log["eligible"] = int(len(X))
-    X = X[X.played.fillna(False)]
+    X = X[X.played.fillna(False).astype(bool)]
     log["after_void_dnp"] = int(len(X))
     X = X[~((X.line % 1 == 0) & (X.pts == X.line))]
     log["after_void_push"] = int(len(X))
