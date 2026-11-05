@@ -2,3 +2,7 @@
 {"at": "2026-11-05T09:37:19.112146+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 14, "through": "2026-11-04"}
 {"at": "2026-11-05T14:42:17.414048+00:00", "kind": "relay", "why": "before_decision", "ok": true, "detail": null, "decision": "2026-11-05T17:30:00-05:00"}
 {"at": "2026-11-05T14:42:17.414190+00:00", "kind": "done", "reason": "relayed", "first_tip": "2026-11-06T02:10:00+00:00"}
+{"at": "2026-11-05T14:44:12.959683+00:00", "kind": "games", "n": 2, "events": [{"id": "2a76b31e02d1416de069a995589515fc", "home": "Phoenix Suns", "away": "Orlando Magic", "commence_time": "2026-11-06T02:10:00Z"}, {"id": "ac38449dd3dfbe1c9b48164b6a41aa83", "home": "Golden State Warriors", "away": "Miami Heat", "commence_time": "2026-11-06T03:10:00Z"}], "ref": "raw/2026-11-05/144412_basketball_nba_events_a66ae670.json.gz"}
+{"at": "2026-11-05T14:44:13.291088+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-11-04"}
+{"at": "2026-11-05T17:55:01.434267+00:00", "kind": "relay", "why": "before_decision", "ok": true, "detail": null, "decision": "2026-11-05T17:30:00-05:00"}
+{"at": "2026-11-05T17:55:01.434404+00:00", "kind": "done", "reason": "relayed", "first_tip": "2026-11-06T02:10:00+00:00"}
