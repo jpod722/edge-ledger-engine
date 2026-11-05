@@ -276,3 +276,5 @@
 {"at": "2026-11-05T03:37:05.439164+00:00", "kind": "injury_change", "first_seen": "2026-11-05T03:37:05.388939+00:00", "ref": "raw/2026-11-05/033705_nba_injuries_espn_c7002dba.json.gz", "team": "Cleveland Cavaliers", "player": "Tyrese Proctor", "status": "removed", "prev_status": "Day-To-Day", "espn_date": "2026-11-05T03:18Z"}
 {"at": "2026-11-05T04:08:32.876786+00:00", "kind": "kalshi_trades", "markets": 724, "skipped_for_job_budget": 0}
 {"at": "2026-11-05T04:08:32.876971+00:00", "kind": "done", "reason": "finished", "credits": 14, "remaining": 16029}
+{"at": "2026-11-05T04:10:17.160517+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-05/041017_basketball_nba_events_459e75f2.json.gz"}
+{"at": "2026-11-05T04:10:17.160551+00:00", "kind": "done", "reason": "no games"}
