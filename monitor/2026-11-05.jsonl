@@ -209,3 +209,5 @@
 {"at": "2026-11-06T03:17:14.743502+00:00", "kind": "kalshi_snapshot", "markets": 97}
 {"at": "2026-11-06T03:22:46.621868+00:00", "kind": "kalshi_trades", "markets": 98, "skipped_for_job_budget": 0}
 {"at": "2026-11-06T03:22:46.622010+00:00", "kind": "done", "reason": "finished", "credits": 2, "remaining": 16025}
+{"at": "2026-11-06T03:24:31.199267+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-06/032431_basketball_nba_events_a6ec5fdc.json.gz"}
+{"at": "2026-11-06T03:24:31.199293+00:00", "kind": "done", "reason": "no games"}
