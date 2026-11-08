@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-07T16:31:29.541503-05:00",
- "captured_dk_props": 1613,
- "eligible": 503,
+ "generated_at": "2026-11-07T21:57:09.970155-05:00",
+ "captured_dk_props": 1703,
+ "eligible": 581,
  "exclusions": {
-  "captured_after_decision": 617,
+  "captured_after_decision": 629,
   "prior_games_3_lt_5": 155,
   "prior_games_2_lt_5": 127,
   "stale_quote": 114,
@@ -24,8 +24,8 @@
   "picks_settled": 170,
   "pick_dates": 6,
   "exclusions": {
-   "kx_no_ladder": 160,
-   "kx_stale": 13
+   "kx_no_ladder": 177,
+   "kx_stale": 27
   },
   "result": null
  }
