@@ -253,3 +253,13 @@
 {"at": "2026-11-08T02:47:33.259128+00:00", "kind": "relay", "why": "pending_closes", "ok": true, "detail": null}
 {"at": "2026-11-08T02:56:22.644538+00:00", "kind": "kalshi_trades", "markets": 344, "skipped_for_job_budget": 0}
 {"at": "2026-11-08T02:56:22.644605+00:00", "kind": "done", "reason": "finished", "credits": 12, "remaining": 15994}
+{"at": "2026-11-08T02:58:02.604882+00:00", "kind": "games", "n": 1, "events": [{"id": "08d47dd5e50e83839e395e49870d6a0d", "home": "Portland Trail Blazers", "away": "San Antonio Spurs", "commence_time": "2026-11-08T03:02:00Z"}], "ref": "raw/2026-11-08/025802_basketball_nba_events_9f392f81.json.gz"}
+{"at": "2026-11-08T02:58:02.865487+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-11-06"}
+{"at": "2026-11-08T02:58:03.170789+00:00", "kind": "official_report", "first_seen": "2026-11-08T02:58:02.986852+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-07_09_45PM.pdf", "ref": "raw/2026-11-08/025803_nba_injury_report_pdf_ba5d5c7a.json.gz"}
+{"at": "2026-11-08T02:58:04.756907+00:00", "kind": "kalshi_snapshot", "markets": 282}
+{"at": "2026-11-08T02:58:04.795324+00:00", "kind": "poll", "event_id": "08d47dd5e50e83839e395e49870d6a0d", "reason": "close", "retrieved_at": "2026-11-08T02:58:04.794432+00:00", "ref": "raw/2026-11-08/025804_basketball_nba_event_08d47dd5_bf0a0a84.json.gz", "minutes_to_tip": 3.92}
+{"at": "2026-11-08T02:58:11.342796+00:00", "kind": "forecasts", "n": 27, "eligible": 21, "file": "data/m1/forecasts/2026-11-07.jsonl", "frozen_at": "2026-10-19T16:44:17.515518Z"}
+{"at": "2026-11-08T02:58:14.775904+00:00", "kind": "k1_quotes", "n": 282, "eligible": 49, "file": "data/k1/quotes/2026-11-07.jsonl", "decision_at": "2026-11-08T02:58:04.756876+00:00"}
+{"at": "2026-11-08T03:02:15.161969+00:00", "kind": "official_report", "first_seen": "2026-11-08T03:02:15.051644+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-07_10_00PM.pdf", "ref": "raw/2026-11-08/030215_nba_injury_report_pdf_45889765.json.gz"}
+{"at": "2026-11-08T03:19:27.810144+00:00", "kind": "kalshi_trades", "markets": 282, "skipped_for_job_budget": 0}
+{"at": "2026-11-08T03:19:27.810295+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 15993}
