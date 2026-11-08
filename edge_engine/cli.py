@@ -229,6 +229,10 @@ def main(argv=None):
     sub.add_parser("l1-confirm-pull")
     sub.add_parser("n3-tranche1-pull")
     sub.add_parser("p1-pull")
+    pt = sub.add_parser("props-today")
+    pt.add_argument("--sport", default="NFL")
+    pt.add_argument("--markets", default="player_rush_yds,player_reception_yds,player_receptions,player_anytime_td")
+    pt.add_argument("--cap", type=int, default=80)
     ls = sub.add_parser("lineshop")
     ls.add_argument("--sport", default="NFL")
     pr = sub.add_parser("probe")
@@ -280,6 +284,28 @@ def main(argv=None):
         # Justin's decision 2026-10-24: run before the reset; research floor lowered for this run only (cap 6,100 kept)
         api = OddsAPI(api_key(), store, 6100, min_remaining=4000, remaining=last_remaining_from_manifest(store))
         l1c(api, a.data, cfg["odds_api"]["event_bookmakers"])
+    elif a.cmd == "props-today":
+        # one-off: today's (ET) player props for every game, for Justin's own decisions (no study; capped)
+        from datetime import datetime as _dt
+        from zoneinfo import ZoneInfo as _Z
+        from pathlib import Path as _P
+        from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
+        store = RawStore(a.data)
+        sk = {"NFL": "americanfootball_nfl", "NBA": "basketball_nba"}[a.sport]
+        api = OddsAPI(api_key(), store, a.cap, min_remaining=3000, remaining=last_remaining_from_manifest(store))
+        evs, _, _ = api._get(f"/sports/{sk}/events", {"dateFormat": "iso"}, f"{sk}_events", 0)
+        today = _dt.now(_Z("America/New_York")).date()
+        out = {"events": []}
+        for e in evs:
+            if _dt.fromisoformat(e["commence_time"].replace("Z", "+00:00")).astimezone(_Z("America/New_York")).date() != today:
+                continue
+            p, retrieved, ref = api.event_odds(sk, e["id"], a.markets, cfg["odds_api"]["event_bookmakers"])
+            out["events"].append({"retrieved_at": retrieved, "ref": ref, "data": p})
+        f = _P(a.data) / "props_today" / f"{today}_{a.sport}.json"
+        f.parent.mkdir(parents=True, exist_ok=True)
+        out["credits"] = api.used
+        f.write_text(json.dumps(out))
+        print(f, api.used)
     elif a.cmd == "p1-pull":
         from .p1 import pull as p1p, HARD_STOP
         from .client import OddsAPI, RawStore, api_key, last_remaining_from_manifest
