@@ -16,6 +16,7 @@ Run: python -m edge_engine.monitor --data data
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import os
 import time
@@ -147,6 +148,40 @@ class Monitor:
         except RuntimeError as err:
             self.log("poll_error", event_id=e["id"], reason=reason, detail=str(err)[:200])
             return True
+
+    def rehydrate_decisions(self) -> int:
+        """Reload decision snapshots an earlier run took today, before tonight's forecasts are written.
+
+        Nov 8 (also Oct 31, Nov 1, Nov 7): run A took the early game's decision poll on time, hit its job limit
+        before the evening games' decisions and handed over without writing forecasts. Run B started with an
+        empty first_payload, did not repeat the decision poll (done_dec) and built the early game's forecasts
+        from its close poll, so every prop in that game was excluded as captured_after_decision. Operational only:
+        the decision time, eligibility and the exclusion of late captures are unchanged; a snapshot is reused with
+        its original retrieved_at. Once any run has written forecasts today nothing is reloaded (behaviour as before).
+        """
+        if not self.log_p.exists():
+            return 0
+        rows = [json.loads(line) for line in open(self.log_p) if line.strip()]
+        if any(r.get("kind") == "forecasts" for r in rows):
+            return 0
+        n = 0
+        for r in rows:
+            if r.get("kind") != "poll" or "decision" not in str(r.get("reason", "")).split("|"):
+                continue
+            eid, ref = r.get("event_id"), r.get("ref")
+            if not eid or not ref or eid in self.first_payload:
+                continue
+            try:
+                with gzip.open(Path(self.data) / ref) as f:
+                    payload = json.load(f)
+            except (OSError, ValueError) as err:
+                self.log("rehydrate_error", event_id=eid, ref=ref, detail=str(err)[:200])
+                continue
+            self.first_payload[eid] = (payload, r["retrieved_at"])
+            n += 1
+        if n:
+            self.log("rehydrated", events=n)
+        return n
 
     def prepare_box(self):
         """Current-season box scores through yesterday (ET), free from ESPN. Failure never stops the monitor."""
@@ -304,6 +339,7 @@ class Monitor:
             for eid in done_dec:
                 if eid in next_base:
                     next_base[eid] = far
+            self.rehydrate_decisions()
             for e in games:
                 if start > decision(e) and e["id"] not in done_dec:
                     self.log("late_decision", event_id=e["id"], decision=decision(e).isoformat(), start=start.isoformat())

@@ -215,3 +215,69 @@ def test_relays_are_capped_per_night(tmp_path):
     for i in range(8):
         run_lean_relay(tmp_path, T0 - timedelta(hours=13, minutes=20), relays)
     assert len(relays) == load_cfg()["monitor"].get("max_relays_per_day", 6)
+
+
+EARLY_TIP = datetime(2026, 10, 20, 19, 40, tzinfo=timezone.utc)   # 3:40 PM ET -> decision 2:10 PM ET (18:10 UTC)
+LATE_TIP = datetime(2026, 10, 20, 23, 30, tzinfo=timezone.utc)    # 7:30 PM ET -> decision 5:30 PM ET
+
+
+class S2(S):
+    """An early-tip game plus an evening game; each odds response is tagged with the time it was taken."""
+    def get(self, url, params=None, timeout=None, headers=None):
+        if url.endswith("/events"):
+            return R([{"id": gid, "home_team": h, "away_team": a, "commence_time": t.isoformat().replace("+00:00", "Z")}
+                      for gid, h, a, t in (("e0", "Chicago Bulls", "Philadelphia 76ers", EARLY_TIP),
+                                           ("l1", "Detroit Pistons", "Los Angeles Lakers", LATE_TIP))])
+        for gid in ("e0", "l1"):
+            if f"/events/{gid}/odds" in url:
+                self.polls.append((gid, self.clock()))
+                return R({"id": gid, "taken": self.clock().isoformat(), "bookmakers": []}, cost=1)
+        return super().get(url, params, timeout, headers)
+
+
+def run_two_games(tmp_path, start, relays, seen):
+    cfg = load_cfg()
+    clock = Clock()
+    clock.t = start
+    s = S2(clock)
+    monitor.api_key = lambda: "k"
+    m = RawStore(tmp_path).manifest
+    if not m.exists():
+        m.write_text(json.dumps({"retrieved_at": "x", "credits_remaining": "10000"}) + "\n")
+    mon = monitor.Monitor(str(tmp_path), cfg, session=s, clock=clock, sleep=clock.sleep,
+                          relay=lambda: relays.append(clock()) or True)
+
+    def fake_forecast(games):              # record which snapshot each game's forecast would be built from
+        mon.forecasts_done = True
+        seen.update({e["id"]: mon.first_payload[e["id"]] for e in games if e["id"] in mon.first_payload})
+        mon.log("forecasts", n=len(seen))
+    mon.forecast = fake_forecast
+    mon.run()
+    return s, clock
+
+
+def test_successor_run_forecasts_from_the_earlier_runs_decision_snapshot(tmp_path):
+    """Nov 8: run A took the early game's decision poll, hit its job limit before the evening decisions and
+    handed over; run B built that game's forecast from its close poll, so all its props were excluded as
+    captured after the decision. Run B must reuse run A's decision snapshot and its original retrieved_at."""
+    relays, seen = [], {}
+    sa, ca = run_two_games(tmp_path, datetime(2026, 10, 20, 13, 30, tzinfo=timezone.utc), relays, seen)
+    assert [g for g, _ in sa.polls] == ["e0"] and len(relays) == 1 and seen == {}   # decision taken, no forecasts
+    a_dec = sa.polls[0][1]
+    assert a_dec.astimezone(monitor.ET).strftime("%H:%M") == "14:05"
+    sb, _ = run_two_games(tmp_path, ca() + timedelta(minutes=3), relays, seen)
+    assert ("e0", a_dec) not in sb.polls                                # the decision poll is not repeated
+    assert [g for g, _ in sb.polls].count("e0") == 1                    # only its close
+    payload, retrieved = seen["e0"]
+    log = [json.loads(l) for l in next((tmp_path / "monitor").glob("*.jsonl")).read_text().splitlines()]
+    a_poll = next(x for x in log if x["kind"] == "poll" and x["event_id"] == "e0" and x["reason"] == "decision")
+    assert payload["taken"] == a_dec.isoformat() and retrieved == a_poll["retrieved_at"]
+    assert any(x["kind"] == "rehydrated" and x["events"] == 1 for x in log)
+
+
+def test_nothing_is_reloaded_once_forecasts_are_written(tmp_path):
+    relays, seen = [], {}
+    run_two_games(tmp_path, datetime(2026, 10, 20, 17, 0, tzinfo=timezone.utc), relays, seen)   # one run, whole night
+    assert set(seen) == {"e0", "l1"}
+    mon = monitor.Monitor(str(tmp_path), load_cfg())
+    assert mon.rehydrate_decisions() == 0
