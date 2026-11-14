@@ -235,3 +235,5 @@
 {"at": "2026-11-14T03:50:00.319869+00:00", "kind": "fetch_error", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-13_10_45PM.pdf", "detail": "HTTPSConnectionPool(host='ak-static.cms.nba.com', port=443): Read timed out. (read timeout=30)"}
 {"at": "2026-11-14T04:03:58.230282+00:00", "kind": "kalshi_trades", "markets": 517, "skipped_for_job_budget": 0}
 {"at": "2026-11-14T04:03:58.230429+00:00", "kind": "done", "reason": "finished", "credits": 9, "remaining": 15853}
+{"at": "2026-11-14T04:06:07.845302+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-14/040607_basketball_nba_events_53c5fb24.json.gz"}
+{"at": "2026-11-14T04:06:07.845342+00:00", "kind": "done", "reason": "no games"}
