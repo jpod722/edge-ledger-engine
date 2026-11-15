@@ -254,3 +254,5 @@
 {"at": "2026-11-15T01:19:54.377774+00:00", "kind": "injury_change", "first_seen": "2026-11-15T01:19:54.290295+00:00", "ref": "raw/2026-11-15/011954_nba_injuries_espn_996cc1d9.json.gz", "team": "Indiana Pacers", "player": "Andrew Nembhard", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-11-15T01:14Z"}
 {"at": "2026-11-15T01:26:55.496764+00:00", "kind": "kalshi_trades", "markets": 260, "skipped_for_job_budget": 0}
 {"at": "2026-11-15T01:26:55.496896+00:00", "kind": "done", "reason": "finished", "credits": 5, "remaining": 15843}
+{"at": "2026-11-15T01:29:29.482172+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-15/012929_basketball_nba_events_de86e5fd.json.gz"}
+{"at": "2026-11-15T01:29:29.482218+00:00", "kind": "done", "reason": "no games"}
