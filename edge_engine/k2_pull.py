@@ -66,9 +66,12 @@ def ts(s) -> datetime:
 
 # ---------------------------------------------------------------- http + cache
 class Http:
-    """Thread-safe GET with a global request-rate cap and retry on 429 / 5xx / network errors."""
+    """Thread-safe GET with an adaptive request-rate cap and retry on 429 / 5xx / network errors. Kalshi's public limit
+    seen from this egress varied minute to minute (50% 429s at 1/s at one point, none at 2/s a few minutes later), so
+    the rate halves on every 429 (floor 0.5/s) and creeps back up on successes (ceiling `rps`)."""
     def __init__(self, rps: float = 12.0):
-        self.gap, self.lock, self.next, self.local, self.n = 1.0 / rps, threading.Lock(), 0.0, threading.local(), 0
+        self.max_rps, self.rps, self.lock, self.next, self.local = rps, rps / 2, threading.Lock(), 0.0, threading.local()
+        self.n = self.n429 = 0
 
     def _s(self):
         if not hasattr(self.local, "s"):
@@ -77,23 +80,27 @@ class Http:
         return self.local.s
 
     def get(self, url: str, params: dict | None = None):
-        for attempt in range(12):
+        for attempt in range(30):
             with self.lock:
                 now = time.monotonic()
                 wait = self.next - now
-                self.next = max(now, self.next) + self.gap
+                self.next = max(now, self.next) + 1.0 / self.rps
                 self.n += 1
             if wait > 0:
                 time.sleep(wait)
             try:
                 r = self._s().get(url, params=params, timeout=40)
             except requests.RequestException:
-                time.sleep(min(60, 2 ** attempt))
+                time.sleep(min(30, 2 ** attempt))
                 continue
             if r.status_code == 429 or r.status_code >= 500:
-                with self.lock:                       # back everyone off
-                    self.next = max(self.next, time.monotonic() + min(60, 2 ** attempt))
+                with self.lock:
+                    self.n429 += 1
+                    self.rps = max(0.5, self.rps / 2)
+                time.sleep(min(30, 1 + attempt))
                 continue
+            with self.lock:
+                self.rps = min(self.max_rps, self.rps + 0.05)
             if r.status_code == 404:
                 return None
             r.raise_for_status()
@@ -356,7 +363,7 @@ def pull_tape(http: Http, cache: Path, M: pd.DataFrame, workers: int = 10) -> No
         for i, f in enumerate(as_completed(fut)):
             f.result()
             if i % 500 == 0:
-                print(f"tape {i}/{len(todo)} requests={http.n} {time.time() - t0:.0f}s", flush=True)
+                print(f"tape {i}/{len(todo)} requests={http.n} 429s={http.n429} rps={http.rps:.1f} {time.time() - t0:.0f}s", flush=True)
 
 
 def main():
