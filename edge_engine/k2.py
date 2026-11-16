@@ -28,6 +28,7 @@ BAND_LO, BAND_HI = 0.10, 0.90
 CHECK_LAG_S, TRADABLE_S, MID_AFTER_S = 60, 60, 300
 PERIOD_MIN, PERIOD_MAX = 15 * 60, 75 * 60     # wallclock sanity: a quarter outside 15-75 min means broken stamps
 BOOT, SEED = 10000, 20261116
+QUOTE_LOOKBACK_S = 3 * 3600             # quote window starts at scheduled tip - 3 h (same for both seasons)
 CHECKPOINTS = {1: "q1", 2: "half", 3: "q3"}
 SEASON_SPLIT = "2026-08-01"
 
@@ -273,9 +274,13 @@ def run(cache: str, data: str) -> dict:
     M = M[M.event_ticker.map(lambda e: isinstance(eg.get(e), str))].copy()
     M["game_id"] = M.event_ticker.map(eg)
 
-    def tape(t):
+    def tape(t, sched=None):
+        """Candles inside the fixed quote window only (>= scheduled tip - 3 h), whichever endpoint fetched them."""
         cp, tp = cache / "candles" / f"{t}.json.gz", cache / "trades" / f"{t}.json.gz"
-        return (load(cp) if cp.exists() else []), (load(tp) if tp.exists() else [])
+        c = load(cp) if cp.exists() else []
+        if sched is not None:
+            c = [x for x in c if x[0] >= sched - QUOTE_LOOKBACK_S]
+        return c, (load(tp) if tp.exists() else [])
 
     bets, stats, bg, delays = [], defaultdict(int), [], []
     no_pbp = []
@@ -312,7 +317,7 @@ def run(cache: str, data: str) -> dict:
         delays.append((d, (ts(rg["actual_tip"]).timestamp() - sched) / 60))
         g = {**rg, "date": d, "game_id": gid, "event_ticker": mk.event_ticker.iloc[0], "away": mk.away.iloc[0],
              "home": mk.home.iloc[0]}
-        b, st = replay_game(g, recs, tape)
+        b, st = replay_game(g, recs, lambda t, s0=sched: tape(t, s0))
         bets += b
         for k, v in st.items():
             stats[f"{season(d)}:{k}"] += v

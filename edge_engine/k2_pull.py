@@ -38,7 +38,8 @@ FIRST_DATE, LAST_DATE = "2025-11-18", "2026-11-15"          # the background loo
 KALSHI_TO_ESPN = {"SAS": "SA", "NYK": "NY", "GSW": "GS", "NOP": "NO", "UTA": "UTAH", "WAS": "WSH", "PHO": "PHX",
                   "BRK": "BKN", "CHO": "CHA"}
 MON = {m: i + 1 for i, m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split())}
-CANDLE_LOOKBACK_H, CANDLE_AFTER_H, TRADE_LEAD_MIN = 48, 5, 30
+CANDLE_LOOKBACK_H, CANDLE_AFTER_H, TRADE_LEAD_MIN = 3, 5, 30   # quote window: tip - 3 h .. tip + 5 h (replay uses the same cut)
+BATCH_PERIODS = 10000                                          # /markets/candlesticks: tickers x minutes <= 10,000 per request
 
 
 def norm_name(s: str) -> str:
@@ -348,6 +349,21 @@ def tape_one(http: Http, cache: Path, m: dict, sched_tip: datetime) -> str:
     return t
 
 
+def batch_candles(http: Http, cache: Path, tickers: list[str], sched_tip: datetime) -> None:
+    """Live (post-archive) markets only: one /markets/candlesticks request per chunk of an event's tickers, same window
+    as tape_one. Archived tickers return nothing from this endpoint (checked 2026-11-16), so they go through tape_one."""
+    start = int((sched_tip - timedelta(hours=CANDLE_LOOKBACK_H)).timestamp()) // 60 * 60
+    end = int((sched_tip + timedelta(hours=CANDLE_AFTER_H)).timestamp()) // 60 * 60 + 60
+    k = max(1, BATCH_PERIODS // ((end - start) // 60 + 1))
+    for i in range(0, len(tickers), k):
+        chunk = tickers[i:i + k]
+        r = http.get(f"{API}/markets/candlesticks", {"market_tickers": ",".join(chunk), "start_ts": start, "end_ts": end,
+                                                     "period_interval": 1}) or {}
+        got = {m["market_ticker"]: m.get("candlesticks", []) for m in r.get("markets", [])}
+        for t in chunk:
+            save(cache / "candles" / f"{t}.json.gz", compact_candles(got.get(t, [])))
+
+
 def pull_tape(http: Http, cache: Path, M: pd.DataFrame, workers: int = 10) -> None:
     E = pd.read_csv(cache / "event_games.csv.gz", dtype={"game_id": str})
     G = pd.read_csv(cache / "espn_games.csv.gz", dtype={"game_id": str})
@@ -358,6 +374,18 @@ def pull_tape(http: Http, cache: Path, M: pd.DataFrame, workers: int = 10) -> No
             if not ((cache / "candles" / f"{r['ticker']}.json.gz").exists() and (cache / "trades" / f"{r['ticker']}.json.gz").exists())]
     print(f"tape: {len(W)} markets, {len(todo)} to pull", flush=True)
     t0 = time.time()
+    # 2026-27 (live, decides the stop rule) first, with batched candles; then 2025-26 market by market
+    live = [r for r in todo if r["src"] == "settled" and not (cache / "candles" / f"{r['ticker']}.json.gz").exists()]
+    by_ev = {}
+    for r in live:
+        by_ev.setdefault(r["event_ticker"], []).append(r["ticker"])
+    with ThreadPoolExecutor(workers) as ex:
+        fut = [ex.submit(batch_candles, http, cache, ts_, ts(tip[eg[ev]])) for ev, ts_ in by_ev.items()]
+        for i, f in enumerate(as_completed(fut)):
+            f.result()
+            if i % 50 == 0:
+                print(f"batch candles {i}/{len(fut)} events requests={http.n} 429s={http.n429} rps={http.rps:.1f}", flush=True)
+    todo.sort(key=lambda r: (r["src"] != "settled", r["date"]))
     with ThreadPoolExecutor(workers) as ex:
         fut = [ex.submit(tape_one, http, cache, r, ts(tip[eg[r["event_ticker"]]])) for r in todo]
         for i, f in enumerate(as_completed(fut)):

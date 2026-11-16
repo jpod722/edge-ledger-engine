@@ -21,6 +21,7 @@ game_state:
   wallclock_sanity: "checkpoint k is used only if quarters 1..k each span 15-75 min of wallclock (tip -> end Q1 -> end Q2 -> end Q3); otherwise that game's checkpoint is dropped and counted (2 games: 2026-10-20 Q3 stamped inside 72 s, 2026-10-23 Q1 '168 min')"
 quote:
   source: "minute candlesticks (period_interval 1). Kalshi emits a candle only when something changes, so the quote at time t is the close of the last candle with end_period_ts <= t"
+  window: "candles from max(market open, scheduled tip - 3 h) to scheduled tip + 5 h, for both seasons (2026-27 via the batch endpoint, archived 2025-26 market by market). A market with no quote change in that window before the checkpoint counts as not quoted"
   no_ask: "1 - YES bid close"
   no_bid: "1 - YES ask close"
   listed: "market open_time <= checkpoint and at least one candle at or before the checkpoint; YES bid > 0"
