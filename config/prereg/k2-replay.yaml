@@ -1,0 +1,54 @@
+# K2: in-game NO on Kalshi KXNBAPTS (NBA player points). HISTORICAL REPLAY ONLY (Phase 1). Requested by Justin 2026-11-16.
+# Hypothesis: during games YES prices run too high, so buying NO earns a positive return after fees.
+# Every mechanic below was fixed in this file BEFORE the replay was run; nothing is tuned on 2026-27 (already looked at).
+# Paper only: public unauthenticated Kalshi GET endpoints + ESPN. No order endpoint, no API key, zero Odds API credits.
+# Undercurrent (m3-forward.yaml, m3_forward.py, monitor decision logic, data/m3/) is untouched.
+# Code: edge_engine/k2_pull.py (fetch + cache outside the repo), edge_engine/k2.py (replay). Output: k2/ on the data branch.
+
+status: replay complete (stop rule: STOP, 2026-11-17)
+window: {first_et_date: "2025-11-18", last_et_date: "2026-11-15"}
+seasons: {"2025-26": "ET dates 2025-11-18 .. 2026-07-31 (mechanics check)", "2026-27": "ET dates 2026-08-01 .. 2026-11-15 (re-check only; already looked at)"}
+universe:
+  markets: "KXNBAPTS, strike_type greater (recent) or structured (archived; same contract, floor_strike N-0.5 for title N+), result yes/no (scalar = player did not play -> excluded, counted)"
+  games: "Kalshi event (ET date, away, home) matched to an ESPN game on the same ET date and teams; games without ESPN play-by-play wallclock are dropped and counted"
+  player_map: "Kalshi yes_sub_title name, normalised, matched to an ESPN athlete of either team (identity fields only; no box-score stats read)"
+game_state:
+  actual_tip: "wallclock of the first play in ESPN play-by-play"
+  checkpoint_times: "wallclock of ESPN 'End Period' play for periods 1, 2, 3, plus 60 s (Q1 end, HALFTIME, Q3 end)"
+  points_so_far: "sum of scoreValue over ESPN scoring plays credited to the athlete (first participant) with wallclock <= checkpoint"
+  decided: "points_so_far > floor_strike (YES already certain) -> not eligible; market closed at or before the checkpoint -> not eligible"
+  wallclock_dst_fix: "found while checking tips, before any replay result: ESPN stamps plays 1 h off on DST change days (Mar 8 2026: Q1-Q3 +1 h; Nov 1 2026: -1 h, one game until mid-Q3). Plays are split at 50-70 min jumps; the first segment gets the whole-hour offset that puts the tip within 45 min of schedule, later segments cancel their jump (7 games corrected, all on those two dates)"
+  wallclock_sanity: "checkpoint k is used only if quarters 1..k each span 15-75 min of wallclock (tip -> end Q1 -> end Q2 -> end Q3); otherwise that game's checkpoint is dropped and counted (2 games: 2026-10-20 Q3 stamped inside 72 s, 2026-10-23 Q1 '168 min')"
+quote:
+  source: "minute candlesticks (period_interval 1). Kalshi emits a candle only when something changes, so the quote at time t is the close of the last candle with end_period_ts <= t"
+  window: "candles from max(market open, scheduled tip - 3 h) to scheduled tip + 5 h, for both seasons (2026-27 via the batch endpoint, archived 2025-26 market by market). A market with no quote change in that window before the checkpoint counts as not quoted"
+  no_ask: "1 - YES bid close"
+  no_bid: "1 - YES ask close"
+  listed: "market open_time <= checkpoint and at least one candle at or before the checkpoint; YES bid > 0"
+selection: "one position per player per checkpoint: among that player's eligible strikes with NO ask in [0.10, 0.90], the strike whose NO ask is closest to 0.50; ties -> lower floor_strike"
+stake: "20 contracts per position"
+fees:
+  taker: "per order: ceil to the next cent of 0.07 x C x P x (1 - P) (KXNBAPTS fee_type 'quadratic', fee_multiplier 1, /series/KXNBAPTS; Kalshi fee-rounding doc: trade fee rounded up to $0.000001 per fill, balance then aligned to $0.01 with an order-level accumulator, i.e. one order pays the cent-ceiling of its model fee)"
+  maker: "0 for the primary maker figures (fee_type is 'quadratic', not 'quadratic_with_maker_fees'); also reported at 0.0175 x C x P x (1 - P), cent-ceiling, as a sensitivity"
+tradable_filter: "a taker quote counts as tradable only if a trade printed within 60 s either side of the checkpoint at a NO price <= the quoted NO ask (NO price = 1 - yes_price). Results reported with and without the filter"
+rules:
+  PRIMARY: "taker: buy 20 NO at the quoted NO ask at HALFTIME on the selected strike"
+  secondary_taker: ["same at end of Q1", "same at end of Q3"]
+  secondary_maker: "at each checkpoint rest a 20-contract NO bid at the best NO bid on the selected strike (needs NO bid >= 0.01); filled only if a later trade prints at a NO price strictly below the bid, before the next checkpoint (Q3 order: before game end); otherwise cancelled. For fills, also the NO mid 5 minutes after the fill"
+settlement: "NO pays $1 per contract if result = no. P&L = payout - (C x price + fee)"
+statistics:
+  roi: "sum(P&L) / sum(cost incl. fees)"
+  interval: "90%: 5th-95th percentile of ROI over 10,000 bootstrap draws resampling whole ET game dates with replacement, seed 20261116"
+  also: ["bets", "share of profitable nights (dates with bets)", "ROI by calendar month (November 2026 on its own line)"]
+  exploratory_only: ["price band of the NO ask (0.10-0.30, 0.30-0.50, 0.50-0.70, 0.70-0.90)", "pace = points_so_far / share of regulation elapsed, divided by (floor_strike + 0.5): <0.75, 0.75-1.00, 1.00-1.25, >=1.25"]
+background_reproduction:
+  trades: "in-game trades with yes_price in [0.10, 0.90], each capped at 100 contracts, after fees (taker 7%, maker 1.75% as in the background look; maker also at 0)"
+  in_game: "created_time >= tip and <= game end; scheduled tip = ESPN scheduled time (end = market close_time), actual tip = first play wallclock (end = ESPN game end)"
+stop_rule: "if the PRIMARY rule's ROI on 2026-27 with the tradable filter is <= 0: stop after Phase 1 and recommend not registering a forward test. No secondary rule is substituted"
+
+disposition_2026-11-17:   # stop rule applied as registered; Justin to review
+  status: "STOP — NEGATIVE. PRIMARY (taker NO at halftime, 2026-27, tradable filter): ROI -11.3%, 90% CI [-15.2%, -7.4%], 1,038 bets, 23% profitable nights"
+  recommendation: "do not register a forward test; no secondary rule is substituted (every 2026-27 rule, taker and maker, at every checkpoint, is negative anyway)"
+  mechanics_2025_26: "ESPN play-by-play final vs Kalshi settlement 22,381 / 22,382; 1 unmatched player; PBP-decided strikes that Kalshi still showed below 0.95 all settled yes (empty books, not a timing error); 5 games without play-by-play"
+  results: "data branch k2/ (result.json, report.md, bets.csv.gz, background_by_date.csv.gz)"
+  no_retest: "2026-27 through Nov 15 has now been used twice; it is not reused to pick a new rule"
