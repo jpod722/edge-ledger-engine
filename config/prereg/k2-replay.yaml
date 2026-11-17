@@ -5,7 +5,7 @@
 # Undercurrent (m3-forward.yaml, m3_forward.py, monitor decision logic, data/m3/) is untouched.
 # Code: edge_engine/k2_pull.py (fetch + cache outside the repo), edge_engine/k2.py (replay). Output: k2/ on the data branch.
 
-status: replay
+status: replay complete (stop rule: STOP, 2026-11-17)
 window: {first_et_date: "2025-11-18", last_et_date: "2026-11-15"}
 seasons: {"2025-26": "ET dates 2025-11-18 .. 2026-07-31 (mechanics check)", "2026-27": "ET dates 2026-08-01 .. 2026-11-15 (re-check only; already looked at)"}
 universe:
@@ -45,3 +45,10 @@ background_reproduction:
   trades: "in-game trades with yes_price in [0.10, 0.90], each capped at 100 contracts, after fees (taker 7%, maker 1.75% as in the background look; maker also at 0)"
   in_game: "created_time >= tip and <= game end; scheduled tip = ESPN scheduled time (end = market close_time), actual tip = first play wallclock (end = ESPN game end)"
 stop_rule: "if the PRIMARY rule's ROI on 2026-27 with the tradable filter is <= 0: stop after Phase 1 and recommend not registering a forward test. No secondary rule is substituted"
+
+disposition_2026-11-17:   # stop rule applied as registered; Justin to review
+  status: "STOP — NEGATIVE. PRIMARY (taker NO at halftime, 2026-27, tradable filter): ROI -11.3%, 90% CI [-15.2%, -7.4%], 1,038 bets, 23% profitable nights"
+  recommendation: "do not register a forward test; no secondary rule is substituted (every 2026-27 rule, taker and maker, at every checkpoint, is negative anyway)"
+  mechanics_2025_26: "ESPN play-by-play final vs Kalshi settlement 22,381 / 22,382; 1 unmatched player; PBP-decided strikes that Kalshi still showed below 0.95 all settled yes (empty books, not a timing error); 5 games without play-by-play"
+  results: "data branch k2/ (result.json, report.md, bets.csv.gz, background_by_date.csv.gz)"
+  no_retest: "2026-27 through Nov 15 has now been used twice; it is not reused to pick a new rule"

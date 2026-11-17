@@ -345,7 +345,7 @@ def report(B: pd.DataFrame, BG: pd.DataFrame, D: pd.DataFrame, counts: dict, sta
     bgt = {}
     for (tipdef, mr, pos), x in BG.groupby(["tipdef", "maker_rate", "position"]):
         for sn, y in x.groupby(x.date.map(season)):
-            bgt[f"{tipdef}|{mr}|{pos}|{sn}"] = summarize(y.rename(columns={}))
+            bgt[f"{tipdef}|{mr}|{pos}|{sn}"] = {**summarize(y), "trades": int(y.n.sum())}   # bets = market-nights
     res["background"] = bgt
     nob = BG[(BG.position == "no_taker") & (BG.maker_rate == MAKER_SENS)]
     res["background_no_taker_by_month"] = {td: {m: float(y.pnl.sum() / y.cost.sum()) for m, y in x.groupby(x.date.str[:7])}
@@ -394,7 +394,7 @@ def markdown(res: dict) -> str:
     for k, s in sorted(res["background"].items()):
         td, mr, pos, sn = k.split("|")
         if pos.startswith("maker") or float(mr) > 0:
-            L.append(f"| {pos} | {sn} | {td} | {mr} " + _fmt(s))
+            L.append(f"| {pos} | {sn} | {td} | {mr} " + _fmt({**s, "bets": s.get("trades", s["bets"])}))
     L += ["", "## Steps 4 + 6: quote replay", "", "| rule | checkpoint | season | quotes | bets | ROI | 90% CI | profitable nights |",
           "|---|---|---|---|---|---|---|---|"]
     for k, s in res["replay"].items():
