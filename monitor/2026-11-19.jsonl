@@ -2,3 +2,7 @@
 {"at": "2026-11-19T10:29:43.410787+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 12, "through": "2026-11-18"}
 {"at": "2026-11-19T15:34:42.390285+00:00", "kind": "relay", "why": "before_decision", "ok": true, "detail": null, "decision": "2026-11-19T17:30:00-05:00"}
 {"at": "2026-11-19T15:34:42.390413+00:00", "kind": "done", "reason": "relayed", "first_tip": "2026-11-20T01:10:00+00:00"}
+{"at": "2026-11-19T15:38:33.395909+00:00", "kind": "games", "n": 4, "events": [{"id": "3c082b72aa002131c276ff5e24bada1b", "home": "Memphis Grizzlies", "away": "Golden State Warriors", "commence_time": "2026-11-20T01:10:00Z"}, {"id": "20fa5e2d73cec494c113790161a89aec", "home": "San Antonio Spurs", "away": "Los Angeles Clippers", "commence_time": "2026-11-20T01:10:00Z"}, {"id": "006df00e5e48650d849d1bb4cd81565d", "home": "Milwaukee Bucks", "away": "Portland Trail Blazers", "commence_time": "2026-11-20T01:10:00Z"}, {"id": "5ee4efd00c1daaebd8249ff44fd6ac9d", "home": "Minnesota Timberwolves", "away": "New York Knicks", "commence_time": "2026-11-20T01:10:00Z"}], "ref": "raw/2026-11-19/153833_basketball_nba_events_dc0f06c9.json.gz"}
+{"at": "2026-11-19T15:38:33.734561+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-11-18"}
+{"at": "2026-11-19T17:55:01.489943+00:00", "kind": "relay", "why": "before_decision", "ok": true, "detail": null, "decision": "2026-11-19T17:30:00-05:00"}
+{"at": "2026-11-19T17:55:01.490020+00:00", "kind": "done", "reason": "relayed", "first_tip": "2026-11-20T01:10:00+00:00"}
