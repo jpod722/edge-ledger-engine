@@ -1,23 +1,23 @@
 {
- "generated_at": "2026-11-20T21:03:00.916922+00:00",
+ "generated_at": "2026-11-21T20:02:59.665494+00:00",
  "paper_only": true,
  "health": {
   "monitor_last_night": {
-   "date": "2026-11-20",
-   "games": 9,
-   "polls": 0,
-   "injury_changes": 0,
-   "kalshi_snapshots": 0,
+   "date": "2026-11-21",
+   "games": 6,
+   "polls": 1,
+   "injury_changes": 33,
+   "kalshi_snapshots": 16,
    "finished": true
   },
   "status": "green",
   "problems": [],
   "errors": {},
-  "injury_archive_snapshots_24h": 391
+  "injury_archive_snapshots_24h": 1180
  },
  "credits": {
-  "remaining": 15767,
-  "used_last_7_days": 104,
+  "remaining": 15748,
+  "used_last_7_days": 105,
   "floor": 9000,
   "reset": "Nov 18"
  },
@@ -25,10 +25,10 @@
   "gate_a": {
    "title": "Does the points model beat the market?",
    "state": "collecting",
-   "logged": 6936,
-   "eligible": 3911,
-   "resolved": 3831,
-   "game_dates": 21,
+   "logged": 7260,
+   "eligible": 4171,
+   "resolved": 4089,
+   "game_dates": 22,
    "need_forecasts": 500,
    "need_game_dates": 100,
    "complete": false,
@@ -37,9 +37,9 @@
   "k1": {
    "title": "Do Kalshi resting orders beat Kalshi's close?",
    "state": "collecting",
-   "rungs_logged": 11543,
-   "fills": 980,
-   "fill_dates": 21,
+   "rungs_logged": 12409,
+   "fills": 1027,
+   "fill_dates": 22,
    "need_fills": 300,
    "need_dates": 40,
    "complete": false,
@@ -48,7 +48,7 @@
   "n1": {
    "title": "Are books slow after injury news?",
    "state": "collecting",
-   "injury_changes": 2469,
+   "injury_changes": 2563,
    "reaction_polls": 154,
    "note": "collecting; the analysis plan is written and frozen before any of this data is analysed"
   }
