@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T22:34:01.112556-05:00",
+ "generated_at": "2026-11-22T09:36:45.358469-05:00",
  "captured_dk_props": 3170,
  "eligible": 1826,
  "exclusions": {
@@ -12,18 +12,18 @@
   "prior_games_1_lt_5": 7,
   "projected_minutes_lt_12": 1
  },
- "settled_eligible": 1722,
- "model_under_picks_settled": 994,
- "pick_dates": 21,
+ "settled_eligible": 1776,
+ "model_under_picks_settled": 1023,
+ "pick_dates": 22,
  "minimums": {
   "picks": 150,
   "dates": 30
  },
  "result": null,
  "kx": {
-  "eligible_settled": 1177,
-  "picks_settled": 633,
-  "pick_dates": 20,
+  "eligible_settled": 1220,
+  "picks_settled": 652,
+  "pick_dates": 21,
   "exclusions": {
    "kx_no_ladder": 496,
    "kx_stale": 73
