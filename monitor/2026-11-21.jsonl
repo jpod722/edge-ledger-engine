@@ -257,3 +257,5 @@
 {"at": "2026-11-22T03:19:03.486558+00:00", "kind": "official_report", "first_seen": "2026-11-22T03:19:03.221273+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-21_10_15PM.pdf", "ref": "raw/2026-11-22/031903_nba_injury_report_pdf_8235d951.json.gz"}
 {"at": "2026-11-22T03:28:10.125905+00:00", "kind": "kalshi_trades", "markets": 318, "skipped_for_job_budget": 0}
 {"at": "2026-11-22T03:28:10.126053+00:00", "kind": "done", "reason": "finished", "credits": 5, "remaining": 15737}
+{"at": "2026-11-22T03:31:46.955746+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-22/033146_basketball_nba_events_f1f65d78.json.gz"}
+{"at": "2026-11-22T03:31:46.955777+00:00", "kind": "done", "reason": "no games"}
