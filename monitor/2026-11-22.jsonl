@@ -298,3 +298,5 @@
 {"at": "2026-11-23T01:49:06.981794+00:00", "kind": "injury_change", "first_seen": "2026-11-23T01:49:06.881152+00:00", "ref": "raw/2026-11-23/014906_nba_injuries_espn_67427fe0.json.gz", "team": "San Antonio Spurs", "player": "Jordan McLaughlin", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-11-23T01:38Z"}
 {"at": "2026-11-23T01:56:36.679632+00:00", "kind": "kalshi_trades", "markets": 250, "skipped_for_job_budget": 0}
 {"at": "2026-11-23T01:56:36.679777+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 15723}
+{"at": "2026-11-23T02:00:21.917615+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-23/020021_basketball_nba_events_ad4416a0.json.gz"}
+{"at": "2026-11-23T02:00:21.917672+00:00", "kind": "done", "reason": "no games"}
