@@ -286,3 +286,15 @@
 {"at": "2026-11-23T01:19:12.762107+00:00", "kind": "relay", "why": "pending_closes", "ok": true, "detail": null}
 {"at": "2026-11-23T01:28:53.100934+00:00", "kind": "kalshi_trades", "markets": 370, "skipped_for_job_budget": 0}
 {"at": "2026-11-23T01:28:53.101083+00:00", "kind": "done", "reason": "finished", "credits": 12, "remaining": 15724}
+{"at": "2026-11-23T01:32:48.097384+00:00", "kind": "games", "n": 1, "events": [{"id": "b8c5bdb50209c7d050400c7d28c32e30", "home": "Golden State Warriors", "away": "Boston Celtics", "commence_time": "2026-11-23T01:40:00Z"}], "ref": "raw/2026-11-23/013248_basketball_nba_events_970d9d5b.json.gz"}
+{"at": "2026-11-23T01:32:48.622914+00:00", "kind": "box_ingest", "season": "2026-27", "games_added": 0, "through": "2026-11-21"}
+{"at": "2026-11-23T01:32:49.591179+00:00", "kind": "official_report", "first_seen": "2026-11-23T01:32:48.854774+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-22_08_15PM.pdf", "ref": "raw/2026-11-23/013249_nba_injury_report_pdf_751d165d.json.gz"}
+{"at": "2026-11-23T01:32:51.360856+00:00", "kind": "kalshi_snapshot", "markets": 250}
+{"at": "2026-11-23T01:34:11.518630+00:00", "kind": "poll", "event_id": "b8c5bdb50209c7d050400c7d28c32e30", "reason": "close", "retrieved_at": "2026-11-23T01:34:11.517634+00:00", "ref": "raw/2026-11-23/013411_basketball_nba_event_b8c5bdb5_c03594ad.json.gz", "minutes_to_tip": 5.81}
+{"at": "2026-11-23T01:34:19.645526+00:00", "kind": "forecasts", "n": 34, "eligible": 30, "file": "data/m1/forecasts/2026-11-22.jsonl", "frozen_at": "2026-10-19T16:44:17.515518Z"}
+{"at": "2026-11-23T01:34:24.009968+00:00", "kind": "k1_quotes", "n": 250, "eligible": 63, "file": "data/k1/quotes/2026-11-22.jsonl", "decision_at": "2026-11-23T01:32:51.360811+00:00"}
+{"at": "2026-11-23T01:37:04.546062+00:00", "kind": "official_report", "first_seen": "2026-11-23T01:37:04.273148+00:00", "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-22_08_30PM.pdf", "ref": "raw/2026-11-23/013704_nba_injury_report_pdf_3672b08f.json.gz"}
+{"at": "2026-11-23T01:49:06.981714+00:00", "kind": "injury_change", "first_seen": "2026-11-23T01:49:06.881152+00:00", "ref": "raw/2026-11-23/014906_nba_injuries_espn_67427fe0.json.gz", "team": "San Antonio Spurs", "player": "De'Aaron Fox", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-11-23T01:39Z"}
+{"at": "2026-11-23T01:49:06.981794+00:00", "kind": "injury_change", "first_seen": "2026-11-23T01:49:06.881152+00:00", "ref": "raw/2026-11-23/014906_nba_injuries_espn_67427fe0.json.gz", "team": "San Antonio Spurs", "player": "Jordan McLaughlin", "status": "Day-To-Day", "prev_status": null, "espn_date": "2026-11-23T01:38Z"}
+{"at": "2026-11-23T01:56:36.679632+00:00", "kind": "kalshi_trades", "markets": 250, "skipped_for_job_budget": 0}
+{"at": "2026-11-23T01:56:36.679777+00:00", "kind": "done", "reason": "finished", "credits": 1, "remaining": 15723}
