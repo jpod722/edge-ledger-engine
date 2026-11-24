@@ -234,3 +234,5 @@
 {"at": "2026-11-24T03:34:56.843758+00:00", "kind": "done", "reason": "finished", "credits": 10, "remaining": 15703}
 {"at": "2026-11-24T03:38:40.472079+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-24/033840_basketball_nba_events_86c494f8.json.gz"}
 {"at": "2026-11-24T03:38:40.472133+00:00", "kind": "done", "reason": "no games"}
+{"at": "2026-11-24T04:18:00.433216+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-24/041800_basketball_nba_events_85d5a6e3.json.gz"}
+{"at": "2026-11-24T04:18:00.433270+00:00", "kind": "done", "reason": "no games"}
