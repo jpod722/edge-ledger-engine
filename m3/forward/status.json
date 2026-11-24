@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T05:37:39.802126-05:00",
+ "generated_at": "2026-11-24T10:47:05.386372-05:00",
  "captured_dk_props": 3401,
  "eligible": 2020,
  "exclusions": {
@@ -12,8 +12,8 @@
   "prior_games_1_lt_5": 7,
   "projected_minutes_lt_12": 1
  },
- "settled_eligible": 1952,
- "model_under_picks_settled": 1114,
+ "settled_eligible": 1965,
+ "model_under_picks_settled": 1121,
  "pick_dates": 24,
  "minimums": {
   "picks": 150,
