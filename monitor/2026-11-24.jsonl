@@ -215,3 +215,5 @@
 {"at": "2026-11-25T03:04:22.111471+00:00", "kind": "k1_quotes", "n": 150, "eligible": 150, "file": "data/k1/quotes/2026-11-24.jsonl", "decision_at": "2026-11-24T23:21:13.637656+00:00"}
 {"at": "2026-11-25T03:24:20.024606+00:00", "kind": "kalshi_trades", "markets": 166, "skipped_for_job_budget": 0}
 {"at": "2026-11-25T03:24:20.024742+00:00", "kind": "done", "reason": "finished", "credits": 3, "remaining": 15697}
+{"at": "2026-11-25T03:27:56.036751+00:00", "kind": "games", "n": 0, "events": [], "ref": "raw/2026-11-25/032756_basketball_nba_events_f56ebb27.json.gz"}
+{"at": "2026-11-25T03:27:56.036786+00:00", "kind": "done", "reason": "no games"}
