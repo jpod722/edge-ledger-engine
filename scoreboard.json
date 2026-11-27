@@ -1,23 +1,25 @@
 {
- "generated_at": "2026-11-26T22:16:36.822263+00:00",
+ "generated_at": "2026-11-27T21:55:29.181711+00:00",
  "paper_only": true,
  "health": {
   "monitor_last_night": {
-   "date": "2026-11-26",
-   "games": 0,
+   "date": "2026-11-27",
+   "games": 11,
    "polls": 0,
    "injury_changes": 0,
    "kalshi_snapshots": 0,
    "finished": true
   },
-  "status": "green",
-  "problems": [],
+  "status": "red",
+  "problems": [
+   "injury archive idle 24 h"
+  ],
   "errors": {},
-  "injury_archive_snapshots_24h": 455
+  "injury_archive_snapshots_24h": 0
  },
  "credits": {
   "remaining": 15679,
-  "used_last_7_days": 96,
+  "used_last_7_days": 88,
   "floor": 9000,
   "reset": "Nov 18"
  },
@@ -27,8 +29,8 @@
    "state": "collecting",
    "logged": 8364,
    "eligible": 5052,
-   "resolved": 4742,
-   "game_dates": 26,
+   "resolved": 4958,
+   "game_dates": 27,
    "need_forecasts": 500,
    "need_game_dates": 100,
    "complete": false,
