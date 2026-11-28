@@ -233,6 +233,7 @@ def main(argv=None):
     pt.add_argument("--sport", default="NFL")
     pt.add_argument("--markets", default="player_rush_yds,player_reception_yds,player_receptions,player_anytime_td")
     pt.add_argument("--cap", type=int, default=80)
+    pt.add_argument("--date", default=None, help="ET date YYYY-MM-DD (default today)")
     ls = sub.add_parser("lineshop")
     ls.add_argument("--sport", default="NFL")
     pr = sub.add_parser("probe")
@@ -294,7 +295,7 @@ def main(argv=None):
         sk = {"NFL": "americanfootball_nfl", "NBA": "basketball_nba"}[a.sport]
         api = OddsAPI(api_key(), store, a.cap, min_remaining=3000, remaining=last_remaining_from_manifest(store))
         evs, _, _ = api._get(f"/sports/{sk}/events", {"dateFormat": "iso"}, f"{sk}_events", 0)
-        today = _dt.now(_Z("America/New_York")).date()
+        today = (_dt.fromisoformat(a.date).date() if a.date else _dt.now(_Z("America/New_York")).date())
         out = {"events": []}
         for e in evs:
             if _dt.fromisoformat(e["commence_time"].replace("Z", "+00:00")).astimezone(_Z("America/New_York")).date() != today:
